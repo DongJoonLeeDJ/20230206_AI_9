@@ -1,0 +1,4 @@
+﻿  myc04_struct.c
+D:\shareFolder\C\20230228\MaybeLastC\MaybeLastC\myc04_struct.c(14,2): warning C4013: 'strcpy'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+D:\shareFolder\C\20230228\MaybeLastC\MaybeLastC\myc04_struct.c(21,2): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  MaybeLastC.vcxproj -> D:\shareFolder\C\20230228\MaybeLastC\x64\Debug\MaybeLastC.exe

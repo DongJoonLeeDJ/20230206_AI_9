@@ -1,0 +1,83 @@
+#include<stdio.h>
+int main()
+{
+	//정수
+	int a = 100;
+	//정수 입력
+	printf("임의의 정수 입력\n");
+	scanf_s("%d", &a);//62 입력
+	printf("a=%d", a); //62 출력
+	printf("내 나이는 %d살입니다.\n", a); //내 나이는 62살입니다.
+
+	//문자 입력
+	//숫자입력하거나 문자 입력 엔터치면 엔터는 버퍼에 남음
+	//그 것에 대한 제거 작업
+	rewind(stdin);
+	printf("임의의 문자 입력\n");
+	char c = getchar();
+	printf("c=%c\n", c);
+
+	rewind(stdin);
+	char cc;
+	printf("임의의 문자 입력\n");
+	scanf_s("%c", &cc, sizeof(cc)); //sizeof(cc) = sizeof(char) = 1
+	printf("cc=%c\n", cc);
+
+
+	//pointer 개념
+	//pointer : 주소, 변수가 어디에 있는 지 알려줌
+	printf("a의 주소 출력 : %lld\n", &a); //lld = long long int = 8byte 정수
+	int* p = &a; //a의 주소를 저장하는 변수.
+	printf("a의 주소와 값 출력 : %lld %d\n", p, *p);
+	
+	*p = -1000; //a의 값을 바꾼 것과 같다.
+	printf("바뀐 a의 값 : %d %d\n", a, *p);
+
+
+	//배열 
+	//대괄호 안에 무조건 값 집어 넣어도 됨
+	int numbers[5] = { 1,20,33,4,0 };
+	int numbers2[3];
+	int aa[] = { 11,22,3,4,5,6,7,8 }; //이 경우엔 대괄호 안에 배열 길이 생략 가능
+	//sizeof(int) = sizeof(numbers2[0]) = 4
+	printf("aa의 길이 : %d\n", (int)(sizeof(aa) / sizeof(int)));
+	for (int i = 0; i < 3; i++) 
+	{
+		numbers2[i] = i + 10;
+	}
+	printf("numbers2의 크기 : %d\n", sizeof(numbers2));
+	printf("numbers2의 길이 : %d\n", sizeof(numbers2)/sizeof(int));
+	printf("numbers2의 길이 : %d\n", sizeof(numbers2)/sizeof(numbers2[0]));
+	printf("int의 크기 : %d\n", sizeof(int));
+	printf("numbers2[0]의 크기 : %d\n", sizeof(numbers2[0]));
+
+	for (int i = 0; i < sizeof(numbers2) / sizeof(numbers2[0]); i++)
+	{
+		printf("%d\n", numbers2[i]); //printf("%d\n", *(numbers2+i));
+	}
+
+
+	for (int i = 0; i < sizeof(numbers2) / sizeof(numbers2[0]); i++)
+	{
+		scanf_s("%d", numbers2 + i); //scanf_s("%d", &numbers2[i]);
+	}
+
+	for (int i = 0; i < sizeof(numbers2) / sizeof(numbers2[0]); i++)
+	{
+		printf("%d\n", *(numbers2+i)); //printf("%d\n", numbers2[i]);
+	}
+	for (int i = 0; i < sizeof(numbers2) / sizeof(numbers2[0]); i++)
+	{
+		scanf_s("%d", &numbers2[i]); //scanf_s("%d", &numbers2[i]);
+	}	
+	for (int i = 0; i < sizeof(numbers2) / sizeof(numbers2[0]); i++)
+	{
+		printf("%d\n", numbers2[i]); //printf("%d\n", *(numbers2+i));
+	}
+
+	rewind(stdin);//위에서 숫자 입력들을 많이 했기 때문
+	char message[100];
+	gets(message);
+	printf("내 메시지는 %s입니다.\n", message);
+	return 0;
+}

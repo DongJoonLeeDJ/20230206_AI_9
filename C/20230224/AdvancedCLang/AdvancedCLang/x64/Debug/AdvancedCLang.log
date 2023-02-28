@@ -1,0 +1,6 @@
+﻿  myc02_mycolor.c
+D:\shareFolder\C\20230224\AdvancedCLang\AdvancedCLang\myc02_mycolor.c(4,2): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+D:\shareFolder\C\20230224\AdvancedCLang\AdvancedCLang\myc02_mycolor.c(20,3): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+D:\shareFolder\C\20230224\AdvancedCLang\AdvancedCLang\myc02_mycolor.c(22,39): warning C4047: '!=': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+D:\shareFolder\C\20230224\AdvancedCLang\AdvancedCLang\myc02_mycolor.c(49,17): warning C4047: '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+  AdvancedCLang.vcxproj -> D:\shareFolder\C\20230224\AdvancedCLang\x64\Debug\AdvancedCLang.exe

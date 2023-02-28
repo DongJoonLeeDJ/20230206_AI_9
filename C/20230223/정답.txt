@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdbool.h>
+#include<wchar.h>
+#define SIZE 2014
+
+int main()
+{
+	char list[SIZE];
+	gets(list);
+	int kk=0;
+	//문자열 거꾸로 출력하기(한글 되게 하기)
+	char listRevers[SIZE];
+	printf("\n2. 문자열 거꾸로 출력하기\nPlese type string.\ninput : ");
+	//gets(list);
+	kk = 0;
+	for (int i = 0; i < SIZE; i++) {
+		if (list[i] == '\0'){
+			kk = i;
+			break;
+		}
+	}
+	listRevers[kk] = '\0';
+	for (int i = 0; i < kk; i++) {
+		if (list[i] >= 0 && list[i] <= 127)
+			listRevers[(kk - 1) - i] = list[i];
+		else {
+			listRevers[(kk - 1) - (i+1)] = list[i];
+			listRevers[(kk - 1) - i] = list[i + 1];
+			i++;
+		}
+	}
+	listRevers[kk] = '\0';
+		printf("~~output\nlist : %s\nReverse list : %s\n", list, listRevers);
+
+return 0;
+}
