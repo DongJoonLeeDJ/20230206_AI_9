@@ -1,0 +1,3 @@
+﻿  lotto.c
+C:\Users\KB\Desktop\새 폴더\Project7\Project7\lotto.c(55,11): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Project7.vcxproj -> C:\Users\KB\Desktop\새 폴더\Project7\x64\Debug\Project7.exe
