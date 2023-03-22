@@ -1,0 +1,52 @@
+
+Dump of file espeak_sapi.dll
+
+File Type: DLL
+
+  Section contains the following exports for espeak_sapi.dll
+
+    00000000 characteristics
+    5315FFC2 time date stamp Wed Mar  5 01:30:58 2014
+        0.00 version
+           1 ordinal base
+          28 number of functions
+          28 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0003013A ?CompileDictionary@@YGHPBD0@Z
+          2    1 0001A3B4 ?espeak_SetPhonemeCallback@@YAXP6AHPBD@Z@Z
+          3    2 0002A14C DllCanUnloadNow
+          4    3 0002A161 DllGetClassObject
+          5    4 0002A17E DllRegisterServer
+          6    5 0002A191 DllUnregisterServer
+          7    6 0001AAE9 espeak_Cancel
+          8    7 0001A986 espeak_Char
+          9    8 0001AAC9 espeak_CompileDictionary
+         10    9 00033C55 espeak_GetCurrentVoice
+         11    A 0001A9E2 espeak_GetParameter
+         12    B 0001ABB8 espeak_Info
+         13    C 0001A3C1 espeak_Initialize
+         14    D 0001AB30 espeak_IsPlaying
+         15    E 0001A93A espeak_Key
+         16    F 0003351A espeak_ListVoices
+         17   10 0001AA03 espeak_SetParameter
+         18   11 0001AA59 espeak_SetPhonemeTrace
+         19   12 0001AA46 espeak_SetPunctuationList
+         20   13 0001A39A espeak_SetSynthCallback
+         21   14 0001A3A7 espeak_SetUriCallback
+         22   15 0001A9C0 espeak_SetVoiceByName
+         23   16 0001A9D1 espeak_SetVoiceByProperties
+         24   17 0001AB37 espeak_Synchronize
+         25   18 0001A820 espeak_Synth
+         26   19 0001A8B8 espeak_Synth_Mark
+         27   1A 0001AB54 espeak_Terminate
+         28   1B 0001AA8E espeak_TextToPhonemes
+
+  Summary
+
+       23000 .data
+        5000 .rdata
+        5000 .reloc
+        4000 .rsrc
+       45000 .text
