@@ -1,0 +1,100 @@
+-- 테이블이라는 단어의 뜻
+-- 데이터를 저장하는 공간, 개발자들은 통상적으로 이걸 DB라고 부름
+-- 그냥 테이블이라고 부르기도 함 즉 db라는 말이랑 테이블이라는 말을 혼용함
+
+-- 테이블과 DB의 차이점?
+-- 테이블 여러 개를 보관하는 공간. 지금 여기선 c##scott이 User이면서 동시에
+-- DB가 됩니다. mysql에서는 이걸 스키마라고도 부른다.
+-- 즉 mysql에선 스키마=DB 이다. 
+
+-- SQL이란?
+-- DBMS에서 사용하는 코드, 가장 대표적인 것이 CRUD문
+-- INSERT, SELECT, UPATE, DELETE
+-- SQL문은 다른 DBMS에서도 똑같이 쓰인다.
+-- 이런 코드를 우리는 '쿼리문'이라고 부른다. 혹은 SQL문이라고 부름.
+
+
+
+--대표적으로 쓰이는 자료형들
+--VARCHAR, CHAR, INT, NCHAR, NVARCHAR
+
+-- VARCHAR는 VARCHAR2랑 같은 것
+-- 오라클에선 VARCHAR2를 써야 됨(권장사항) 
+-- 다른 DBMS에선 그냥 VARCHAR를 쓴다.
+-- '문자열'이다.
+-- VARCHAR2(20) 하면 최대 20BYTE까지 공간 할당함
+-- 실무에서 가장 흔하게, 가장 많이 쓰이는 자료형
+-- 장점 : 크기가 유연함(VARCHAR2(20)인데 2글자 입력하면 2BYTE만 할당)
+-- 단점 : 일일히 크기를 계산하니 속도에 영향을 준다.
+
+--글자수 출력
+SELECT LENGTH('한글') FROM DUAL; -- 2
+
+--한글은 1글자당 3바이트
+SELECT LENGTHB('한글') FROM DUAL;  -- 6
+
+--VARCHAR2(30) 하면 한글은 10글자만 입력가능. 영어, 숫자, 특수문자는 30글자 가능
+
+
+-- CHAR : 문자열인데, VARCHAR랑은 다르게 고정값
+-- CHAR(10)하면 무조건 10바이트 할당
+-- 크기가 절대 변하지 않을 경우에만 쓴다(EX. 학번, 사번 등)
+-- 장점 : 크기를 계산할 필요없다.
+-- 단점 : 공간 낭비가 심하게 된다. EX) 한글자만 필요한 경우에도 10바이트 다 할당
+
+-- INT: 정수형 자료형
+
+
+-- NCHAR, NVARCHAR = 글자수로 길이를 보는 것
+-- MYSQL에는 없고 MSSQL에는 있다.
+-- VARCHAR2(30) = 한글 10글자, 영어 최대 30글자
+-- NVARCHAR2(30) = 한글이나 영어나 둘 다 최대 30글자
+-- CHAR(30) = 무조건 30바이트
+-- NCHAR(30) = 무조건 30글자에 해당하는 공간을 할당 
+
+
+-- 가장 많이 쓰이는 자료형은 VARCHAR이고, 그 다음이 INT이다.
+
+-- 문자열은 따옴표 안에 적습니다.
+
+
+CREATE TABLE KBSTUDENT 
+(
+  NAME VARCHAR2(20) 
+, AGE INT 
+, BEONHO CHAR(5) PRIMARY KEY
+, GENDER NCHAR(2) 
+, HP NVARCHAR2(15) 
+);
+
+
+
+
+
+-- 데이터를 마우스 클릭과 키보드로 추가해 봄
+-- INSERT INTO "C##SCOTT"."KBSTUDENT" (NAME, AGE, BEONHO, GENDER, HP) VALUES ('이진곤', '23', '1', N'남자', N'010-1234-4321');
+
+-- 문자열은 따옴표로 감싸서 적고 있다
+-- 수는 따옴표 없이 그냥 적었다.
+INSERT INTO KBSTUDENT (NAME,AGE,BEONHO,GENDER,HP) VALUES ('LEE',35,'2','여성','010-1111-2222');
+
+
+SELECT * FROM KBSTUDENT;
+-- GENDER가 원래 남자로 되어 있는 데 이걸 전부 남성으로 변경함
+-- UPDATE, DELETE문을 쓸 때 주의점
+-- WHERE문을 반드시 써야합니다. 
+-- => WHERE 생략시 모두 똑같은 값으로 변경 혹은 삭제됨
+-- WHERE문을 명확하게 써줘야 한다.
+-- 학생 관리 테이블인 데 WHERE문에 이름을 쓰게 되면, 
+-- 동명이인이 부당하게 피해를 볼 수 있다.
+UPDATE KBSTUDENT SET GENDER='남성' WHERE GENDER='남자';
+
+-- 삭제
+DELETE FROM KBSTUDENT WHERE BEONHO='1';
+
+SELECT * FROM KBSTUDENT;
+
+
+
+
+
