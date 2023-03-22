@@ -1,0 +1,13 @@
+1. 기초 crud
+(select update delete insert)
+(update, delete는 where 절 간단히 쓸 줄 알기)
+
+2. pk, fk 개념 이해
+
+3. group by, having 이해
+
+4. join, view, 중첩질의 
+------------------------------
+
+5. 프로시저 함수 트리거
+(PL SQL 이런 거까진 자세히 알 건 없다.)
