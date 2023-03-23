@@ -1,0 +1,95 @@
+-- CRUD 연산을 해봤음
+-- 테이블을 만드는 것과 삭제하는 것을 해봤다.
+-- 테이블 = DB
+-- scott 계정에 여러 개의 테이블이 들어간다.
+-- 엄밀히 말하면
+-- scott = DB
+-- 그 안에 있는 것들을 테이블이라고 부른다.
+-- 즉 DB라는 것은 테이블 여러개를 보관하는 보관함
+
+-- 테이블을 만드는 법 2가지
+-- 1. GUI로 만드는 방법
+-- 2. 쿼리로 만드는 방법
+-- 쿼리 = SQL코드
+-- SQL : DBMS에서 쓰는 프로그래밍 언어
+
+-- 테이블을 만들기
+
+--군인 테이블
+CREATE TABLE MYSOLDIER
+(
+GNUM CHAR(10) PRIMARY KEY, --기본키
+NAME VARCHAR2(100) NOT NULL, --공백일 수 없다
+AGE INT
+);
+/*
+ CHAR, VARCHAR2, INT는 자료형
+CHAR, VARCHAR2는 문자열을 처리함
+ INT 정수
+테이블 만드는 법
+
+CREATE TABLE 테이블명 (
+ 속성명 자료형 기타특징) ; 
+*/
+SELECT * FROM MYSOLDIER;
+
+-- 어제 배운 자료를 참고하거나 옆사람 도움이나
+-- GPT 도움을 받아 군인 10명만 생성해보세요
+
+
+-- char, varchar2, nvarchar, nchar같은 문자열은 따옴표로 감싼다.
+-- 수는 따옴표 없이 그냥 쓰면 됩니다.
+INSERT INTO MYSOLDIER VALUES ('001', '김철수', 22);
+INSERT INTO MYSOLDIER VALUES ('002', '이영희', 23);
+INSERT INTO MYSOLDIER VALUES ('003', '박성호', 21);
+INSERT INTO MYSOLDIER VALUES ('004', '최현우', 20);
+INSERT INTO MYSOLDIER VALUES ('005', '강영민', 24);
+INSERT INTO MYSOLDIER VALUES ('006', '이승민', 25);
+INSERT INTO MYSOLDIER VALUES ('007', '박준영', 19);
+INSERT INTO MYSOLDIER VALUES ('008', '정재영', 22);
+INSERT INTO MYSOLDIER VALUES ('009', '한기영', 26);
+INSERT INTO MYSOLDIER VALUES ('010', '임동우', 21);
+
+-- 컬럼 추가
+--방법1: GUI 
+-- 방법2 : alter table 구문
+alter table mysoldier add gender char(1);
+
+
+-- varchar와 varchar2간의 차이가 있긴 한데
+--오라클 공식 문서에서는 varchar2를 쓰라고 하며 둘의 차이가
+--없다고 얘기함
+
+--mysql이나 mssql같은 다른 DBMS에서는 varchar만 있다.
+
+-- 수정 : update 문
+-- UPDATE, DELETE 주의사항 : 반드시 WHERE을 써줘야 한다.
+-- 안 쓰면 일괄 변경 OR 일괄 삭제가 됩니다.
+-- WHERE문을 잘 써야 된다.
+UPDATE mysoldier SET GENDER = 'M';
+--10개 행 이(가) 업데이트되었습니다.
+-- 모든 군인의 성별을 남성으로 일괄 변경한 것
+
+-- 이영희가 여자도 있고 남자도 있는 경우에 이 코드는 부적절
+UPDATE mysoldier SET GENDER='W' WHERE NAME='이영희';
+
+
+
+UPDATE mysoldier SET GENDER='W' WHERE NAME='이영희' OR NAME = '박성호';
+-- IN
+-- 여러 명 성별 변환 가능
+UPDATE mysoldier SET GENDER='W' WHERE NAME IN('강영민','이승민','박준영');
+
+
+-- 삭제 : delete 문
+-- 자동완성은 CTRL + SPACE
+DELETE FROM mysoldier WHERE NAME='임동우';
+
+SELECT * FROM mysoldier;
+
+
+
+
+
+
+
