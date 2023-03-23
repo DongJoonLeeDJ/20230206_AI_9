@@ -12,8 +12,23 @@ UPDATE mysoldier SET MAJOR='공군' WHERE AGE BETWEEN 20 AND 29;
 SELECT * FROM mysoldier;
 SELECT GNUM, NAME, MAJOR FROM mysoldier;
 
-SELECT * FROM mysoldier WHERE MAJOR = '육군';
+select gnum 군번, name "이 름", major as 병과,  gender as "성 별" from mysoldier;
 
+--데이터 삽입시 컬럼명은 생략이 가능
+--대신 그 경우엔 순서를 잘 지켜줘야 함(컬럼이 만들어진 순서대로 값 입력)
+insert into mysoldier values ('007','본드',50,'특수 부대','여','뽄드');
+
+--대신 컬럼명을 적을 경우 내가 원하는 순서, 내가 원하는 값만 제한적으로 추가 가능
+insert into mysoldier (gnum,name) values ('CODE-66', '김부장');
+
+--컬럼명 쓰긴 귀찮고, 필수값만 넣고싶다면...
+--참고로 MYSOLDIER는 이름이 NOT NULL이라서 반드시 이름을 넣어줘야 함
+INSERT INTO MYSOLDIER VALUES('001','이동준',NULL,NULL,NULL,NULL); -- 이건 됨
+
+--INSERT INTO MYSOLDIER VALUES('002','이동준'); -- 이건 안 됨.
+select * from mysoldier;
+
+SELECT * FROM mysoldier WHERE MAJOR = '육군';
 -- CHAR(1), VARCHAR2(1) 이렇게 적으면 1BYTE만 들어감
 -- ORACLE에선 한글 1글자가 3바이트
 -- CHAR(3) = 한글로 1글자만 들어감
@@ -34,6 +49,11 @@ select * from mysoldier;
 
 --TRIM 같은 함수를 통해서 공백을 제거하고 다시 업데이트를 해도 됨
 
+-- 공백이 싹 지워짐
+-- 앞뒤의 공백을 지우는 것
+UPDATE mysoldier SET NAME=TRIM(NAME);
+SELECT * FROM mysoldier;
+
 -- DROP TABLE
 -- 테이블을 삭제하는 키워드가 3개
 
@@ -52,6 +72,11 @@ TRUNCATE TABLE MYSOLDIER;
 -- Table MYSOLDIER이(가) 잘렸습니다.
 ROLLBACK;
 
+
+-- DROP
+-- 테이블 자체를 완전히 지워버림
+-- 각 컬럼들의 자료형들도 다 소실됨
+DROP TABLE MYSOLDIER;
 
 
 

@@ -1,0 +1,47 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 목요일-3월-23-2023   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table 연극예술과
+--------------------------------------------------------
+
+  CREATE TABLE "C##SCOTT"."연극예술과" 
+   (	"성명" VARCHAR2(20 BYTE), 
+	"나이" VARCHAR2(20 BYTE), 
+	"성별" VARCHAR2(20 BYTE), 
+	"주소" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into C##SCOTT."연극예술과"
+SET DEFINE OFF;
+Insert into C##SCOTT."연극예술과" ("성명","나이","성별","주소") values ('홍길동','25','남','수성구');
+Insert into C##SCOTT."연극예술과" ("성명","나이","성별","주소") values ('홍길순','21','여','남구');
+Insert into C##SCOTT."연극예술과" ("성명","나이","성별","주소") values ('김현우','24','남','북구');
+Insert into C##SCOTT."연극예술과" ("성명","나이","성별","주소") values ('장미정','23','여','달서구');
+Insert into C##SCOTT."연극예술과" ("성명","나이","성별","주소") values ('정순기','22','남','동구');
+--------------------------------------------------------
+--  DDL for Index 연극예술과_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##SCOTT"."연극예술과_PK" ON "C##SCOTT"."연극예술과" ("성명") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table 연극예술과
+--------------------------------------------------------
+
+  ALTER TABLE "C##SCOTT"."연극예술과" MODIFY ("성명" NOT NULL ENABLE);
+  ALTER TABLE "C##SCOTT"."연극예술과" ADD CONSTRAINT "연극예술과_PK" PRIMARY KEY ("성명")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
