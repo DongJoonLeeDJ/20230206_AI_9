@@ -1,0 +1,64 @@
+UPDATE mysoldier SET MAJOR='육군';
+
+SELECT * FROM mysoldier;
+-- 나이가 20대 = 20살 이상, 29살 이하 혹은 20살 이상 30살 미만
+-- 19살 초과, 30살 미만이라고 봐도 된다.
+
+--MYSQL에서는 AND랑 && 둘 다 쓸 수 있지만 ORACLE에선 AND만 쓸 수 있다.
+UPDATE mysoldier SET MAJOR ='공군' WHERE AGE >=20 AND AGE <=29;
+UPDATE mysoldier SET MAJOR='공군' WHERE AGE BETWEEN 20 AND 29;
+
+-- * : 모든 컬럼 = 컬럼 = 열
+SELECT * FROM mysoldier;
+SELECT GNUM, NAME, MAJOR FROM mysoldier;
+
+SELECT * FROM mysoldier WHERE MAJOR = '육군';
+
+-- CHAR(1), VARCHAR2(1) 이렇게 적으면 1BYTE만 들어감
+-- ORACLE에선 한글 1글자가 3바이트
+-- CHAR(3) = 한글로 1글자만 들어감
+
+--CHAR랑 VARCHAR 차이 : CHAR는 무조건 괄호 안에 있는 숫자만큼 바이트수를 할당
+-- VARCHAR의 경우엔 최대 N바이트 VARCHAR2(3) 최대 3바이트이다. 즉 데이터의 글자수가
+--적으면 그만큼 들어가는 용량이 작습니다.
+
+
+-- 테이블 변경할 때 쓰임 : ALTER TABLE
+ALTER TABLE mysoldier MODIFY GENDER VARCHAR2(3);
+
+update mysoldier set GENDER='남' where GENDER='M  ';
+
+update mysoldier set GENDER='여' where GENDER='W  ';
+
+select * from mysoldier;
+
+--TRIM 같은 함수를 통해서 공백을 제거하고 다시 업데이트를 해도 됨
+
+-- DROP TABLE
+-- 테이블을 삭제하는 키워드가 3개
+
+-- DELETE 
+-- WHERE문을 잘 써서 다 지워지는 걸 방지해야 한다.
+-- 다행스럽게도 ROLLBACK등으로 복구가 가능
+COMMIT;
+DELETE FROM MYSOLDIER;
+SELECT * FROM mysoldier;
+ROLLBACK;
+
+-- TRUNCATE
+-- DELETE가 휴지통에 넣는 거라면 TRUNCATE는 SHIFT+DELETE(완전 삭제)
+COMMIT;
+TRUNCATE TABLE MYSOLDIER;
+-- Table MYSOLDIER이(가) 잘렸습니다.
+ROLLBACK;
+
+
+
+
+
+
+
+
+
+
+
