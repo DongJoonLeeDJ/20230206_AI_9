@@ -34,10 +34,20 @@ insert into djsinger values(2, '김신혁', 2);
 insert into djsinger values(mymusician.nextval, '이동준', null);
 
 select * from djsinger;
+-- inner join = join 둘이 같음
+select djsinger.id, djsinger.name, djsong.title from 
+djsinger /*inner*/ join djsong on djsinger.hit_song_id = djsong.id;
+
 
 select djsinger.id, djsinger.name, djsong.title from 
-djsinger join djsong on djsinger.hit_song_id = djsong.id;
+djsinger right join djsong on djsinger.hit_song_id = djsong.id;
 
 
+select djsinger.id, djsinger.name, djsong.title from 
+djsinger left join djsong on djsinger.hit_song_id = djsong.id;
+
+
+select djsinger.id, djsinger.name, djsong.title from 
+djsinger full join djsong on djsinger.hit_song_id = djsong.id;
 
 
