@@ -1,0 +1,20 @@
+create sequence samsungperson;
+create table mysamsungpeople(
+id int primary key,
+name varchar2(30) not null,
+boss_id int);
+
+--id랑 boss_id는 서로 연결되므로 같은 자료형을 써야 한다.
+insert into mysamsungpeople values
+(samsungperson.nextval, '이건희', samsungperson.CURRVAL);
+-- samsungperson.nextval : 그 다음 값
+-- samsungperson.CURRVAL : 현재 값
+select * from mysamsungpeople;
+insert into mysamsungpeople values 
+(samsungperson.nextval, '홍라희', samsungperson.CURRVAL);
+
+
+
+
+
+
