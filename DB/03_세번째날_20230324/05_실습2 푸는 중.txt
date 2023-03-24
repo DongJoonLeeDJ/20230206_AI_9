@@ -1,0 +1,9 @@
+-- 부서 테이블
+create table mydepart
+(
+code char(3) primary key,
+name varchar2(100));
+
+INSERT INTO mydepart (code, name) VALUES ('001', '경영지원');
+INSERT INTO mydepart (code, name) VALUES ('002', 'S/W개발');
+INSERT INTO mydepart (code, name) VALUES ('003', 'H/W개발');
