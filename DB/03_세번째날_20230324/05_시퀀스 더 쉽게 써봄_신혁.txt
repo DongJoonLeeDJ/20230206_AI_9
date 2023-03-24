@@ -1,0 +1,24 @@
+CREATE SEQUENCE singer_seq START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE song_seq START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE Singer (
+  id INT DEFAULT singer_seq.NEXTVAL PRIMARY KEY,
+  name NVARCHAR2(10),
+  hit_song_id INT
+);
+
+CREATE TABLE Song (
+  id INT DEFAULT song_seq.NEXTVAL PRIMARY KEY,
+  title NVARCHAR2(20) NOT NULL,
+  price INT
+);
+
+INSERT INTO Song (title, price) VALUES ('dragon night', 10000);
+INSERT INTO Song (title, price) VALUES ('신호등', 9000);
+INSERT INTO Song (title, price) VALUES ('let it be', 8000);
+INSERT INTO Song (title, price) VALUES ('bad guy', 7000);
+INSERT INTO Song (title, price) VALUES ('분홍 신발', 5000);
+
+INSERT INTO Singer (name, hit_song_id) VALUES ('이무진', 2);
+INSERT INTO Singer (name, hit_song_id) VALUES ('세카이노오와리', 1);
+INSERT INTO Singer (name, hit_song_id) VALUES ('유이치 사카모토', 4);
