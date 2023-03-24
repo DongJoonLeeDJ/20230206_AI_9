@@ -19,8 +19,22 @@ REFERENCES hakgwatable(code)
 insert into hakgwatable values('001','컴공');
 insert into hakgwatable values('002','화공');
 insert into hakgwatable values('003','토목');
+insert into hakgwatable values('004','전자');
 
 -- 학생을 정합시다.
+insert into ourstudent values('12', '김신혁','001');
+insert into ourstudent values('13', '이수성','002');
+insert into ourstudent values('23', '박세진','003');
+insert into ourstudent values('22', '서정빈','001');
+insert into ourstudent values('20', '정홍근','002');
+insert into ourstudent values('19', '안교석','004');
+
+select * from hakgwatable;
+select * from ourstudent;
+
+
+
+
 
 
 
