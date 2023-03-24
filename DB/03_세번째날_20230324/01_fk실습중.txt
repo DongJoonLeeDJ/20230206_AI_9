@@ -1,0 +1,31 @@
+-- 외래키를 추가해서 테이블을 만들기
+-- 외래키를 추가하려면, 부모 테이블이 있어야 함
+-- ex 학과 테이블과 학생 테이블이 있을 때
+-- 학과 테이블이 부모 테이블이 됨
+create table hakgwatable
+(code char(3) primary key,
+name varchar2(100) not null);
+
+create table ourstudent
+(
+hakbeon char(2) primary key,
+name varchar2(100) not null,
+hakgwacode char(3),
+constraint myfk FOREIGN key(hakgwacode) 
+REFERENCES hakgwatable(code)
+);
+
+-- 학과부터 정합시다
+insert into hakgwatable values('001','컴공');
+insert into hakgwatable values('002','화공');
+insert into hakgwatable values('003','토목');
+
+-- 학생을 정합시다.
+
+
+
+
+
+
+
+

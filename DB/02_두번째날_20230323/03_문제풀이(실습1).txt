@@ -21,6 +21,9 @@ insert into mysoldier values ('007','본드',50,'특수 부대','여','뽄드');
 --대신 컬럼명을 적을 경우 내가 원하는 순서, 내가 원하는 값만 제한적으로 추가 가능
 insert into mysoldier (gnum,name) values ('CODE-66', '김부장');
 
+-- NAME이 not null이므로 이 쿼리는 실행되지 않음
+-- insert into mysoldier (gnum) values ('CODE-67');
+
 --컬럼명 쓰긴 귀찮고, 필수값만 넣고싶다면...
 --참고로 MYSOLDIER는 이름이 NOT NULL이라서 반드시 이름을 넣어줘야 함
 INSERT INTO MYSOLDIER VALUES('001','이동준',NULL,NULL,NULL,NULL); -- 이건 됨
