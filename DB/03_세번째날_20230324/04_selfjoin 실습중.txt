@@ -29,6 +29,16 @@ insert into mysamsungpeople values
 select * from mysamsungpeople;
 
 
+-- 저장작업
+-- 그냥 끄면 커밋하고 끌지 말지 대화창 나옴
+commit;
+
+
+-- 셀프 조인 : 자기 자신을 참조한 조인
+select b.name name ,a.name boss
+from mysamsungpeople a join mysamsungpeople b on
+a.id = b.boss_id;
+
 
 
 
