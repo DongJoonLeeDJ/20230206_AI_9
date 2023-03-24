@@ -1,0 +1,6 @@
+-- join : 교집합
+-- 두 개 이상의 테이블을 조합해서 정보를 표현해주는 것
+-- 학과 테이블의 코드랑 학생테이블의 학과 코드를 서로 교집합해서 표현해줌
+select hakbeon, ourstudent.name, hakgwatable.name from 
+ourstudent join hakgwatable on hakgwatable.code=
+ourstudent.hakgwacode;
