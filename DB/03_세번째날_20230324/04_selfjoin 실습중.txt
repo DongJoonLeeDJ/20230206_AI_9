@@ -14,6 +14,22 @@ insert into mysamsungpeople values
 (samsungperson.nextval, '홍라희', samsungperson.CURRVAL);
 
 
+insert into mysamsungpeople values 
+(samsungperson.nextval, '이부진', 1);
+insert into mysamsungpeople values 
+(samsungperson.nextval, '이재용', 1);
+insert into mysamsungpeople values 
+(samsungperson.nextval, '신라호텔', 3);
+insert into mysamsungpeople values 
+(samsungperson.nextval, '삼성전자', 4);
+insert into mysamsungpeople values 
+(samsungperson.nextval, '수원삼성', 4);
+insert into mysamsungpeople values 
+(samsungperson.nextval, '삼성라이온즈', 4);
+select * from mysamsungpeople;
+
+
+
 
 
 
