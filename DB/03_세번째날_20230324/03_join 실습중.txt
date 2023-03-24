@@ -1,0 +1,43 @@
+-- 시퀀스 
+-- for문의 int i와 같은 존재
+-- 변수인 데 하나씩 증가하는 것
+-- 초기 값 0
+-- 근데 초기값과 최댓값 설정도 되고, 순환할건지 말건지 여부도 설정 가능
+--이 코드는 가장 간단한 형태로 시퀀스를 만든 것
+create sequence mymusician;
+create sequence mymusic;
+--varchar2
+--drop table djsinger;
+
+create table djsinger
+(id int primary key,
+name varchar2(30), --최대 10글자 nvharchar2(10)을 써도 됨
+hit_song_id int);
+
+create table djsong
+(id int primary key,
+title varchar2(60) not null, --절대 빈 칸 일 수 없음
+price int);
+
+--외래 키 나중에 추가하는 방법
+alter table djsinger add constraint fk_mym 
+foreign key(hit_song_id) references djsong(id);
+
+insert into djsong values(mymusic.nextval, '멸공의 횃불',1000);
+insert into djsong values(mymusic.nextval, '진짜 사나이',5000);
+insert into djsong values(mymusic.nextval, '나 혼자 산다',10000);
+
+select * from djsong; --id값이 자동으로 증가된 게 보일 것이다.
+
+insert into djsinger values(mymusician.nextval, '소병수', 1);
+insert into djsinger values(2, '김신혁', 2);
+insert into djsinger values(mymusician.nextval, '이동준', null);
+
+select * from djsinger;
+
+select djsinger.id, djsinger.name, djsong.title from 
+djsinger join djsong on djsinger.hit_song_id = djsong.id;
+
+
+
+
