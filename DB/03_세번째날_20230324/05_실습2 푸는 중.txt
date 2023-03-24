@@ -7,3 +7,14 @@ name varchar2(100));
 INSERT INTO mydepart (code, name) VALUES ('001', '경영지원');
 INSERT INTO mydepart (code, name) VALUES ('002', 'S/W개발');
 INSERT INTO mydepart (code, name) VALUES ('003', 'H/W개발');
+
+-- 직급 테이블
+CREATE TABLE MYJIKGEUP
+(
+    CODE INT PRIMARY KEY,
+    NAME VARCHAR2(100)
+);
+
+INSERT INTO MYJIKGEUP (CODE, NAME) VALUES (1, '부장');
+INSERT INTO MYJIKGEUP (CODE, NAME) VALUES (2, '과장');
+INSERT INTO MYJIKGEUP (CODE, NAME) VALUES (3, '대리');
