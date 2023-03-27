@@ -1,0 +1,14 @@
+
+--order by : 순서정렬
+select * from mycompany order by 나이;
+select * from mycompany order by 나이 desc;
+-- 각 부서의 평균 나이를 출력하시오(group by)
+--뷰를 사용
+-- round : 소수점 처리 함수
+select 부서명, round(avg(나이),1) from mycompany group by 부서명;
+--뷰를 쓰지 않고 하는 방법
+select buseocode, round(avg(age),1) 
+from sbscompany group by buseocode;
+-- 평균 나이가 35를 넘는 부서만 출력해보시오(having)
+select 부서명, round(avg(나이),1) from mycompany group by 부서명 
+having round(avg(나이),1)>35;
