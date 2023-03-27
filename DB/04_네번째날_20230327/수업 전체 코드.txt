@@ -185,13 +185,113 @@ MYDBHAKGWA.CODE = MYDBSTUDENT.HAKGWACODE;
 
 
 
+---------------
+
+--학과 테이블
+CREATE TABLE MYKBMAJOR
+(
+NAME VARCHAR2(30) NOT NULL,
+CODE CHAR(3) PRIMARY KEY,
+REGDATE TIMESTAMP DEFAULT SYSDATE
+);
+
+INSERT INTO MYKBMAJOR(NAME,CODE) VALUES
+('컴공','001');
+INSERT INTO MYKBMAJOR(NAME,CODE) VALUES
+('화공','002');
+
+SELECT * FROM MYKBMAJOR;
+CREATE TABLE MYKBSTUDENT
+(
+    NAME VARCHAR2(30) NOT NULL,
+    AGE CHAR(2),
+    HAKBEON CHAR(10) PRIMARY KEY,
+    HAKGWACODE REFERENCES MYKBMAJOR(CODE),
+    REGDATE TIMESTAMP DEFAULT SYSDATE
+);
+INSERT INTO MYKBSTUDENT
+(NAME,AGE,HAKBEON,HAKGWACODE)
+VALUES ('이진곤','20','2023','001');
+INSERT INTO MYKBSTUDENT
+(NAME,AGE,HAKBEON,HAKGWACODE)
+VALUES ('안교석','22','2021','002');
+INSERT INTO MYKBSTUDENT
+(NAME,AGE,HAKBEON,HAKGWACODE)
+VALUES ('김신혁','21','2022','001');
+
+
+SELECT * FROM MYKBSTUDENT;
+
+
+--이름, 학번, 학과명 출력
+SELECT MYKBSTUDENT.NAME, HAKBEON, MYKBMAJOR.NAME 
+FROM MYKBSTUDENT JOIN MYKBMAJOR ON 
+mykbstudent.hakgwacode = MYKBMAJOR.CODE;
+
+--가독성 올리기
+SELECT MYKBSTUDENT.NAME 이름, HAKBEON 학번, 
+MYKBMAJOR.NAME 학과명 
+FROM MYKBSTUDENT JOIN MYKBMAJOR ON 
+mykbstudent.hakgwacode = MYKBMAJOR.CODE;
+
+
+
+-- 특정과를 찾는 방법
+
+--1. 그냥 학과코드를 이용한 검색
+select * from mykbstudent where hakgwacode='001';
+
+--2. 학과이름을 통해서 직접적으로 검색도 가능
+--뷰 안 쓴 거
+--저 괄호 안에 있는 게 하나의 뷰 즉 테이블이 된 것
+select * from (SELECT MYKBSTUDENT.NAME 이름, HAKBEON 학번, 
+MYKBMAJOR.NAME 학과명 
+FROM MYKBSTUDENT JOIN MYKBMAJOR ON 
+mykbstudent.hakgwacode = MYKBMAJOR.CODE) a where a.학과명='컴공';
+
+--뷰 만들고 찾기
+create view mykb as SELECT MYKBSTUDENT.NAME 이름, HAKBEON 학번, 
+MYKBMAJOR.NAME 학과명 
+FROM MYKBSTUDENT JOIN MYKBMAJOR ON 
+mykbstudent.hakgwacode = MYKBMAJOR.CODE;
+
+select * from mykb where 학과명='컴공';
 
 
 
 
+create table book
+(
+bookid int primary key,
+bookname varchar2(40) not null,
+publisher varchar2(40) not null,
+price int
+);
+create table customer
+(
+custid int primary key,
+name varchar2(40) not null,
+address varchar2(50),
+phone varchar2(20) unique
+);
 
+create sequence myorder;
+create table orders(
+orderid int default myorder.nextval primary key,
+custid int references customer(custid),
+bookid int references book(bookid),
+saleprice int,
+orderdate date default sysdate
+);
 
+insert into book values(1,'축구의 역사', '굿스포츠', 7000);
 
+insert into customer values(1,'박지성','영국 멘체스타', '000-5000-0001');
+
+insert into orders (custid,bookid,saleprice,orderdate) values 
+(1,1,7000,'2014-07-01');
+
+select * from orders;
 
 
 
