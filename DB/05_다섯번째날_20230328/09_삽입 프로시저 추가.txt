@@ -1,0 +1,19 @@
+--alt + f10 sql 워크시트 새로 생성
+-- 사람 추가하는 프로시저
+-- in : 매개변수
+-- myname이랑 myhp 뒤에도 in이 붙어야 하는 데,
+--하나만 붙어도 나머지 애들도 다 매개변수라고 생각함
+--in은 아예 생략하는 것도  생략이 가능하다.
+create or replace procedure add_person
+(
+mynum in int,
+myname varchar2,
+myhp varchar2
+)
+is begin 
+insert into simple_test_table values(mynum,myname,myhp);
+end add_person;
+
+-- 다 만들었으면 다른 워크시트에서 프로시저를 호출하는 게 좋으나 굳이
+--같은 워크시트(.sql파일)에서 하고 싶다면 /를 하나 써주고 나서 그 밑에 호출해본다.
+

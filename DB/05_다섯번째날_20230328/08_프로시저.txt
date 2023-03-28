@@ -1,0 +1,28 @@
+-- 프로시저 : 함수랑 유사한 것
+-- 하나 이상의 트랜 잭션을 손쉽게 호출해주는 것
+-- 함수 : 함수는 러프하게 말하면 리턴타입있는 것, 프로시저는 리턴타입이 없는 것
+-- 엄밀하게 말하면 이게 아니다.
+-- 정확하게 말하면 프로시저나 함수나 둘 다 리턴타입도 있고 매개변수도 있다.
+-- 이 것들을 잘 활용하면 코드가 훨씬 편해진다.
+-- 둘의 차이 : 프로시저 안에 함수 있다. 하나의 프로 시저 안에 여러 개의 함수가 있을 수 있다.
+-- 함수가 조금 더 작은 단위
+
+-- 프로시저 : insert, update, delete와 같은 트랜잭션을 좀 더 간단하게 수행하게 해줌
+create table simple_test_table(
+num int primary key,
+name varchar2(30) not null,
+hp varchar2(20) unique);
+
+insert into simple_test_table values(1, '이동준', '010-2940-1613');
+insert into simple_test_table values(2,'신동훈',null);
+
+--이제부터... 프로시저를 통해서 insert, update, delete 그리고 select를 해볼 것이다.
+
+
+
+
+
+
+
+
+

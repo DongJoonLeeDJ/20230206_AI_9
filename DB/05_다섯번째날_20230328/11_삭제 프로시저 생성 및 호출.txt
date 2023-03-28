@@ -1,0 +1,11 @@
+-- create or replace : 같은 이름의 프로시저를 또 만드려고 하면 덮어쓴다
+-- 없으면 새로 만든다.
+create or replace procedure delete_person
+(mynum in int)
+is begin 
+    delete from simple_test_table where num=mynum;
+end delete_person;
+/
+exec delete_person(2);
+select * from simple_test_table;
+exec add_person(2,'서정빈',NULL);

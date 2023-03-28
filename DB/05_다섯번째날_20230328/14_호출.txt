@@ -1,0 +1,3 @@
+var o_cursor refcursor 
+exec person_select('서정빈', :o_cursor) 
+print o_cursor;

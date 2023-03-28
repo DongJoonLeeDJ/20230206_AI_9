@@ -248,3 +248,245 @@ update orders set saleprice=saleprice*0.9 where custid=1;
 -- customer 테이블의 address를 삭제하고 주소를 관리하는 테이블이랑 연결한다.
 -- 책 5개, 고객 2명을 자유롭게 추가한다.
 -- orders에 주문 10개를 자유롭게 추가한다.
+
+alter table book drop column publisher;
+alter table customer drop column address;
+select* from book;
+select*from customer;
+
+
+--출판사 관리 테이블
+create table publisherlist 
+( code int primary key,
+name varchar2(100) not null);
+
+--주소 관리 테이블
+create table addresslist
+(code int primary key,
+name varchar2(100) not null);
+
+--컬럼 추가
+alter table book add publishercode int;
+alter table customer add addresscode int;
+--외래키 추가
+alter table book add constraint fk_pub 
+foreign key(publishercode) references publisherlist(code);
+
+alter table customer add constraint fk_address 
+foreign key(addresscode) references addresslist(code);
+
+
+
+insert into publisherlist values(1,'굿스포츠');
+insert into publisherlist values(2,'나무수');
+insert into publisherlist values(3,'대한미디어');
+insert into publisherlist values(4,'이상미디어');
+insert into publisherlist values(5,'삼성당');
+insert into publisherlist values(6,'Pearson');
+insert into publisherlist values(7,'문학동네');
+
+insert into addresslist values(1,'영국 맨체스타');
+insert into addresslist values(2,'대한민국 서울');
+insert into addresslist values(3,'대한민국 강원도');
+insert into addresslist values(4,'미국 클리블랜드');
+insert into addresslist values(5,'대한민국 대전');
+
+select * from book;
+
+update book set publishercode = 1 where bookid in(1,5,6);
+update book set publishercode = 2 where bookid in(2);
+update book set publishercode = 3 where bookid in(3,4);
+update book set publishercode = 4 where bookid in(7,8);
+update book set publishercode = 5 where bookid in(9);
+update book set publishercode = 6 where bookid in(10);
+
+select * from book;
+
+--이젠 두 개의 테이블을 join해야 우리가 원래 알던 book 테이블 형태를 볼 수 있다.(출판사 이름)
+select bookid, bookname, price, publisherlist.name publisher from 
+book join publisherlist on book.publishercode=publisherlist.code;
+
+
+update customer set addresscode=1 where custid=1;
+update customer set addresscode=2 where custid=2;
+update customer set addresscode=3 where custid=3;
+update customer set addresscode=4 where custid=4;
+update customer set addresscode=5 where custid=5;
+
+select custid, customer.name, addresslist.name address, phone from 
+customer join addresslist on customer.addresscode=addresslist.code;
+
+
+
+-- 트랜잭션 : 하나의 행위를 세는 단위
+-- 한 번의 트랜 잭션이 insert나 update나 delete 한 번일 수도 있고
+-- 한 번의 트랜 잭션이 insert 100번, update 50번, delete 10번을 묶어서 하나의 트랜잭션으로 보기도 한다.
+insert into customer (custid,name) values (6, '손흥민');
+insert into addresslist values (6,'영국 토트넘');
+update customer set addresscode=6 where custid=6;
+insert into customer values(7,'홍진호','22',2);
+select * from customer;
+
+insert into book values(11, '말씀중에 죄송합니다.', 10000,1);
+insert into book values(12, '연금술사', 8500,7);
+insert into book values(13, 'Computer Science', 20000,6);
+insert into book values(14, '피겨하는 여자', 10000,2);
+insert into book values(15, '이재용의 성공신화', 30000,6);
+
+select * from book;
+select * from customer;
+
+update book set bookname ='연금술사' where bookname='연금술사.';
+
+INSERT INTO orders(custid, bookid, saleprice) VALUES (1, 4, (select price from book where bookid=4));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (2, 1, (select price from book where bookid=1));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (3, 2, (select price from book where bookid=2));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (1, 3, (select price from book where bookid=3));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (4, 5, (select price from book where bookid=5));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (5, 6, (select price from book where bookid=6));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (2, 7, (select price from book where bookid=7));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (3, 8, (select price from book where bookid=8));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (4, 9, (select price from book where bookid=9));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (5, 10, (select price from book where bookid=10));
+
+
+
+select * from orders;
+
+INSERT INTO orders(custid, bookid, saleprice) VALUES (6, 9, (select price from book where bookid=9));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (7, 10, (select price from book where bookid=10));
+
+INSERT INTO orders(custid, bookid, saleprice) VALUES (6, 11, (select price from book where bookid=11));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (5, 12, (select price from book where bookid=12));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (4, 13, (select price from book where bookid=13));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (5, 14, (select price from book where bookid=14));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (7, 15, (select price from book where bookid=15));
+
+
+select * from orders;
+
+select orderid, customer.name, book.bookname, saleprice from
+orders join customer on orders.custid = customer.custid join book on 
+orders.bookid = book.bookid order by orderid;
+
+
+
+-- 시퀀스는 오류날 경우에도 자동 증가하므로 이 부분 유의할 것
+INSERT INTO orders(orderid, custid, bookid, saleprice) VALUES (myorder.nextval,'A','B','C'); -- 부적절한 구문
+INSERT INTO orders(custid, bookid, saleprice) VALUES (7, 15, (select price from book where bookid=15));
+select * from orders;
+
+
+
+
+
+commit;
+set autocommit on;
+set autocommit off;
+show autocommit;
+
+
+-- 프로시저 : 함수랑 유사한 것
+-- 하나 이상의 트랜 잭션을 손쉽게 호출해주는 것
+-- 함수 : 함수는 러프하게 말하면 리턴타입있는 것, 프로시저는 리턴타입이 없는 것
+-- 엄밀하게 말하면 이게 아니다.
+-- 정확하게 말하면 프로시저나 함수나 둘 다 리턴타입도 있고 매개변수도 있다.
+-- 이 것들을 잘 활용하면 코드가 훨씬 편해진다.
+-- 둘의 차이 : 프로시저 안에 함수 있다. 하나의 프로 시저 안에 여러 개의 함수가 있을 수 있다.
+-- 함수가 조금 더 작은 단위
+
+-- 프로시저 : insert, update, delete와 같은 트랜잭션을 좀 더 간단하게 수행하게 해줌
+create table simple_test_table(
+num int primary key,
+name varchar2(30) not null,
+hp varchar2(20) unique);
+
+insert into simple_test_table values(1, '이동준', '010-2940-1613');
+insert into simple_test_table values(2,'신동훈',null);
+
+--이제부터... 프로시저를 통해서 insert, update, delete 그리고 select를 해볼 것이다.
+
+
+--alt + f10 sql 워크시트 새로 생성
+-- 사람 추가하는 프로시저
+-- in : 매개변수
+-- myname이랑 myhp 뒤에도 in이 붙어야 하는 데,
+--하나만 붙어도 나머지 애들도 다 매개변수라고 생각함
+--in은 아예 생략하는 것도  생략이 가능하다.
+create or replace procedure add_person
+(
+mynum in int,
+myname varchar2,
+myhp varchar2
+)
+is begin 
+insert into simple_test_table values(mynum,myname,myhp);
+end add_person;
+
+-- 다 만들었으면 다른 워크시트에서 프로시저를 호출하는 게 좋으나 굳이
+--같은 워크시트(.sql파일)에서 하고 싶다면 /를 하나 써주고 나서 그 밑에 호출해본다.
+
+--프로시저를 그냥 함수처럼 호출해서 쓴다.
+-- 잘 만들어 두면 insert, update, delete를 좀 더 편하게 호출할 수 있다.
+exec add_person(3,'박연진','4444');
+select * from simple_test_table;
+
+-- create or replace : 같은 이름의 프로시저를 또 만드려고 하면 덮어쓴다
+-- 없으면 새로 만든다.
+create or replace procedure delete_person
+(mynum in int)
+is begin 
+    delete from simple_test_table where num=mynum;
+end delete_person;
+/
+exec delete_person(2);
+select * from simple_test_table;
+exec add_person(2,'서정빈',NULL);
+
+
+--CREATE OR REPLACE에서 OR REPLACE가 없으면 어떻게 될까?
+-- => 같은 이름으로 된 프로시저를 못 만든다. 만들고 싶다면 직접 DROP하고 다시 만들어야 됨
+-- => 혹은 SQL DEVELOPER GUI 툴에서 새로 고쳐야 한다.
+-- 또 만들려고 할 경우
+-- ORA-00955: 기존의 객체가 이름을 사용하고 있습니다. 이런 에러 띄움
+
+--이름 끝에 학생이라는 글자를 추가할 것
+CREATE PROCEDURE UPDATE_PERSON
+(MYNUM IN INT, NEWNAME IN VARCHAR2)
+IS TEMPVAR VARCHAR2(20) := '학생';
+    BEGIN TEMPVAR := NEWNAME || TEMPVAR;
+    UPDATE SIMPLE_TEST_TABLE SET NAME=TEMPVAR WHERE 
+    NUM = MYNUM;
+END UPDATE_PERSON;
+-- || 기호는 글자 이어 붙이기(SHIFT랑 역슬래시 같이 누르는 OR기호임)
+/
+EXEC UPDATE_PERSON(1,'박보검');
+SELECT * FROM SIMPLE_TEST_TABLE;
+
+--select 
+/
+CREATE OR REPLACE PROCEDURE PERSON_SELECT(
+MYNAME IN VARCHAR2,
+O_CURSOR OUT SYS_REFCURSOR)
+    IS BEGIN OPEN O_CURSOR 
+    FOR 
+    SELECT NUM,NAME,HP FROM SIMPLE_TEST_TABLE WHERE 
+    NAME = MYNAME;
+    EXCEPTION WHEN OTHERS THEN DBMS_OUTPUT.PUT_LINE(
+    'SQL ERROR' || SQLERRM);
+END PERSON_SELECT; 
+/
+
+
+
+var o_cursor refcursor 
+exec person_select('서정빈', :o_cursor) 
+print o_cursor;
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+--프로시저를 그냥 함수처럼 호출해서 쓴다.
+-- 잘 만들어 두면 insert, update, delete를 좀 더 편하게 호출할 수 있다.
+exec add_person(3,'박연진','4444');
+select * from simple_test_table;

@@ -1,0 +1,134 @@
+
+alter table book drop column publisher;
+alter table customer drop column address;
+select* from book;
+select*from customer;
+
+
+
+--출판사 관리 테이블
+create table publisherlist 
+( code int primary key,
+name varchar2(100) not null);
+
+--주소 관리 테이블
+create table addresslist
+(code int primary key,
+name varchar2(100) not null);
+
+--컬럼 추가
+alter table book add publishercode int;
+alter table customer add addresscode int;
+--외래키 추가
+alter table book add constraint fk_pub 
+foreign key(publishercode) references publisherlist(code);
+
+alter table customer add constraint fk_address 
+foreign key(addresscode) references addresslist(code);
+
+
+
+insert into publisherlist values(1,'굿스포츠');
+insert into publisherlist values(2,'나무수');
+insert into publisherlist values(3,'대한미디어');
+insert into publisherlist values(4,'이상미디어');
+insert into publisherlist values(5,'삼성당');
+insert into publisherlist values(6,'Pearson');
+insert into publisherlist values(7,'문학동네');
+
+insert into addresslist values(1,'영국 맨체스타');
+insert into addresslist values(2,'대한민국 서울');
+insert into addresslist values(3,'대한민국 강원도');
+insert into addresslist values(4,'미국 클리블랜드');
+insert into addresslist values(5,'대한민국 대전');
+
+
+select * from book;
+
+update book set publishercode = 1 where bookid in(1,5,6);
+update book set publishercode = 2 where bookid in(2);
+update book set publishercode = 3 where bookid in(3,4);
+update book set publishercode = 4 where bookid in(7,8);
+update book set publishercode = 5 where bookid in(9);
+update book set publishercode = 6 where bookid in(10);
+
+select * from book;
+
+--이젠 두 개의 테이블을 join해야 우리가 원래 알던 book 테이블 형태를 볼 수 있다.(출판사 이름)
+select bookid, bookname, price, publisherlist.name publisher from 
+book join publisherlist on book.publishercode=publisherlist.code;
+
+
+update customer set addresscode=1 where custid=1;
+update customer set addresscode=2 where custid=2;
+update customer set addresscode=3 where custid=3;
+update customer set addresscode=4 where custid=4;
+update customer set addresscode=5 where custid=5;
+
+select custid, customer.name, addresslist.name address, phone from 
+customer join addresslist on customer.addresscode=addresslist.code;
+
+
+-- 트랜잭션 : 하나의 행위를 세는 단위
+-- 한 번의 트랜 잭션이 insert나 update나 delete 한 번일 수도 있고
+-- 한 번의 트랜 잭션이 insert 100번, update 50번, delete 10번을 묶어서 하나의 트랜잭션으로 보기도 한다.
+insert into customer (custid,name) values (6, '손흥민');
+insert into addresslist values (6,'영국 토트넘');
+update customer set addresscode=6 where custid=6;
+insert into customer values(7,'홍진호','22',2);
+select * from customer;
+
+insert into book values(11, '말씀중에 죄송합니다.', 10000,1);
+insert into book values(12, '연금술사', 8500,7);
+insert into book values(13, 'Computer Science', 20000,6);
+insert into book values(14, '피겨하는 여자', 10000,2);
+insert into book values(15, '이재용의 성공신화', 30000,6);
+
+select * from book;
+select * from customer;
+
+update book set bookname ='연금술사' where bookname='연금술사.';
+
+INSERT INTO orders(custid, bookid, saleprice) VALUES (1, 4, (select price from book where bookid=4));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (2, 1, (select price from book where bookid=1));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (3, 2, (select price from book where bookid=2));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (1, 3, (select price from book where bookid=3));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (4, 5, (select price from book where bookid=5));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (5, 6, (select price from book where bookid=6));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (2, 7, (select price from book where bookid=7));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (3, 8, (select price from book where bookid=8));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (4, 9, (select price from book where bookid=9));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (5, 10, (select price from book where bookid=10));
+
+
+select * from orders;
+
+INSERT INTO orders(custid, bookid, saleprice) VALUES (6, 9, (select price from book where bookid=9));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (7, 10, (select price from book where bookid=10));
+
+INSERT INTO orders(custid, bookid, saleprice) VALUES (6, 11, (select price from book where bookid=11));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (5, 12, (select price from book where bookid=12));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (4, 13, (select price from book where bookid=13));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (5, 14, (select price from book where bookid=14));
+INSERT INTO orders(custid, bookid, saleprice) VALUES (7, 15, (select price from book where bookid=15));
+
+
+select * from orders;
+
+select orderid, customer.name, book.bookname, saleprice from
+orders join customer on orders.custid = customer.custid join book on 
+orders.bookid = book.bookid order by orderid;
+
+
+
+
+
+-- 시퀀스는 오류날 경우에도 자동 증가하므로 이 부분 유의할 것
+INSERT INTO orders(orderid, custid, bookid, saleprice) VALUES (myorder.nextval,'A','B','C'); -- 부적절한 구문
+INSERT INTO orders(custid, bookid, saleprice) VALUES (7, 15, (select price from book where bookid=15));
+select * from orders;
+
+
+
+
+
