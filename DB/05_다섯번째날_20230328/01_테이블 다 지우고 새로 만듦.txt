@@ -1,0 +1,37 @@
+drop table orders;
+drop table book;
+drop table customer;
+drop sequence myorder;
+
+
+create table book
+(
+bookid int primary key,
+bookname varchar2(40) not null,
+publisher varchar2(40) not null,
+price int
+);
+create table customer
+(
+custid int primary key,
+name varchar2(40) not null,
+address varchar2(50),
+phone varchar2(20) unique
+);
+
+create sequence myorder;
+create table orders(
+orderid int default myorder.nextval primary key,
+custid int references customer(custid),
+bookid int references book(bookid),
+saleprice int,
+orderdate date default sysdate
+);
+
+
+
+
+
+
+
+

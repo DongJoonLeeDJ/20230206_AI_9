@@ -1,0 +1,3 @@
+select count(saleprice) 구매수량, customer.name 고객명 from customer
+left join orders on customer.custid=orders.custid
+group by customer.name having count(saleprice)=0;
