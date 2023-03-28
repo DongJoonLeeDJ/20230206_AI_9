@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="book">
+
+
+	<!-- 게시판 글의 총 개수 or 검색된 글의 총 개수 -->
+	<select id="countBookBoard" parameterType="hashMap"
+		resultType="int">
+		 <![CDATA[
+			 select count(*) from book 
+			 where 1=1 
+		 ]]>
+		<if test="keyword!=null and keyword!=''">
+			and (bookname like CONCAT('%',#{keyword},'%') )
+		</if>
+		order by bookid desc
+
+	</select>
+
+
+
+	<select id="select_list" parameterType="hashMap"
+		resultType="hashMap">
+		<![CDATA[
+			select bookid,bookname,bookisbn,publisher,price 
+			 from book 
+			 where 1 = 1 
+		 ]]>
+		<if test="keyword!=null and keyword!=''">
+			and (bookname like CONCAT('%',#{keyword},'%') )
+		</if>
+		order by bookid desc
+		<choose>
+			<when test="skipCount==null">
+				limit 0,10
+			</when>
+			<when test="skipCount!=null">
+				limit ${skipCount}, 10
+			</when>
+		</choose>
+	</select>
+
+	<select id="select_detail" parameterType="hashMap"
+		resultType="hashMap">
+<![CDATA[
+	select bookid,bookname,bookisbn,publisher,price,bookImg 
+	 from 
+	book where bookid=#{bookid}
+]]>
+	</select>
+	<insert id="insert" parameterType="hashMap"
+		useGeneratedKeys="true" keyProperty="bookid">  
+    <![CDATA[
+    insert into book
+    (bookisbn, bookname, publisher, price, bookImg) 
+    values
+    (#{bookisbn}, #{bookname}, #{publisher}, #{bookprice}, #{bookImg})
+    ]]>
+	</insert>
+	
+	<delete id="delete" parameterType="hashMap">
+		<![CDATA[
+			delete from book where bookid=#{bookid}
+		]]>
+	</delete>
+	<update id="update" parameterType="hashMap">
+		<![CDATA[
+			update book set bookisbn=#{bookisbn}, bookname=#{bookname}, publisher=#{publisher}, price=#{bookprice}, bookImg=#{bookImg} where bookid=#{bookid}
+		]]>
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<bean id="dataSource"
+  class="org.apache.commons.dbcp2.BasicDataSource"
+  destroy-method="close">
+  <property name="driverClassName"
+   value="com.mysql.cj.jdbc.Driver" />
+  <property name="url"
+   value="jdbc:mysql://localhost:3306/kb_book_store?serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowPublicKeyRetrieval=true" />
+  <property name="username" value="kb_bookstore_admin" />
+  <property name="password" value="kbadmin" />
+ </bean>
+
+ <bean id="sqlSessionFactory"
+  class="org.mybatis.spring.SqlSessionFactoryBean">
+  <property name="dataSource" ref="dataSource" />
+  <property name="mapperLocations"
+   value="classpath:/sqlmap/**/*_SQL.xml" />
+ </bean>
+ <bean id="sqlSessionTemplate"
+  class="org.mybatis.spring.SqlSessionTemplate">
+  <constructor-arg index="0" ref="sqlSessionFactory" />
+ </bean>  
+</beans>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orders">
+
+	<select id="countTotalOrders" parameterType="hashMap"
+		resultType="int">
+		 <![CDATA[
+			 select count(*) from total_order 
+			 where 1=1 
+		 ]]>
+		<if test="keyword!=null and keyword!=''">
+			and (name like CONCAT('%',#{keyword},'%')  
+			or bookname like CONCAT('%', #{keyword},'%'))
+		</if>
+		order by orderdate desc
+
+	</select>
+
+
+
+	<select id="select_list" parameterType="hashMap"
+		resultType="hashMap">
+		<![CDATA[
+			select orderid, custid, name, bookname
+			 from total_order 
+			 where 1 = 1 
+		 ]]>
+		<if test="keyword!=null and keyword!=''">
+			and (name like CONCAT('%',#{keyword},'%')  
+			or bookname like CONCAT('%', #{keyword},'%'))
+		</if>
+		order by orderdate desc 
+		<choose>
+			<when test="skipCount==null">
+				limit 0,5
+			</when>
+			<when test="skipCount!=null">
+				limit ${skipCount}, 5
+			</when>
+		</choose>
+	</select>
+
+	<select id="select_detail" parameterType="hashMap"
+		resultType="hashMap">
+<![CDATA[
+	select orderid, custid, bookid, bookisbn, saleprice, bookname, name, orderdate 
+	 from 
+	total_order where orderid=#{orderid}
+]]>
+	</select>
+	<insert id="insert" parameterType="hashMap"
+		useGeneratedKeys="true" keyProperty="orderid">  
+    <![CDATA[
+    insert into orders(custid,bookid,saleprice)
+    values
+    (#{custid}, #{bookid}, find_price(#{bookid}))
+    ]]>
+	</insert>
+	
+	<delete id="delete" parameterType="hashMap">
+		<![CDATA[
+			delete from orders where orderid=#{orderid}
+		]]>
+	</delete>
+	<update id="update" parameterType="hashMap">
+		<![CDATA[
+			update orders set custid=#{custid}, bookid=#{bookid}, saleprice=#{saleprice} where orderid=#{orderid}
+		]]>
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
