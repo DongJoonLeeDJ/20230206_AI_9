@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--action을 따로 적지 않으면 get이 기본 값이다.-->
+    <form action="">
+        취미 : <br>
+        <input type="checkbox"> 축구<br>
+        <input type="checkbox"> 농구<br>
+        <input type="checkbox"> 게임<br>
+        성별 <br>
+        <input type="radio" name="gender" checked>남<br>
+        <input type="radio" name="gender">녀<br>
+        <hr> 
+        <!--id는 반드시 중복되면 안 된다.-->
+        <!--중복시, 당장은 별 문제 없지만 
+            나중에 js 할 때 문제가 될 수 있다.-->
+        성적 <br>
+        <input type="radio" name="grade" id="sang"> 
+        <label for="sang">상</label> <br>
+        <input type="radio" name="grade" id="jung" checked> 
+        <label for="jung">중</label>
+         <br>
+        <input type="radio" name="grade" id="ha"> 
+        <label for="ha">하</label> <br>
+
+        <!--textarea는 띄어쓰기 등이 그대로 들어감-->
+        <!--게시글 쓸 때 주로 많이 사용됨-->
+        <textarea>Hello,</textarea>
+        <!--textarea와 /textarea 사이의 공백들도 그대로 들어감-->
+        <textarea>
+            안녕하세요.
+            제 이름은 이동준입니다.
+        </textarea>
+    </form>
+</body>
+</html>
