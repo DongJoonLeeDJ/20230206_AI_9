@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- table[border=1] -->
+    <!--이런식으로 작성해서 태그 만드는 걸 젠코딩 혹은
+    Emmet 코딩이라고 한다.-->
+    <!--vscode는 vs처럼 단축키나 각종 기능 지원이 많다.-->
+    <!--alt+shift+위나 아래 키 : 한 줄 추가-->
+
+    <table border="1">
+        <caption>표1. 비교 데이터</caption>
+        <colgroup> <!--column(컬럼, 열)을 의미-->
+            <!--처음 두 개의 열은 빨강으로 지정-->
+            <col span="2" style="background: red;">
+            <!-- 마지막 하나의 열은 파랑으로 지정-->
+            <col style="background: blue;">
+        </colgroup>
+        <!-- tr*4 -->
+        <!--태그의 머리 부분을 녹색으로 칠함-->
+        <thead style="background: green;">
+            <tr>
+                <th>헤드1</th>
+                <th>헤드2</th>
+                <th>헤드3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>데이터1</td>
+                <td>데이터2</td>
+                <td>데이터3</td>
+            </tr>
+            <tr>
+                <td>Data1</td>
+                <td>Data2</td>
+                <td>Data3</td>
+            </tr>
+        </tbody>
+        <!--태그의 맨 밑 부분은 노랑으로 칠했다-->
+        <tfoot style="background: yellow;">
+            <tr>
+                <td>다리1</td>
+                <td>다리2</td>
+                <td>다리3</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
