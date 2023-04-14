@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            width: 150px;
+            height: 70px;
+            background-color: #FF6a00;
+            border: 10px solid #F0F0F0;
+            border-radius: 30px;
+            box-shadow: 5px 5px 5px #a9a9a9;
+        }
+
+        .button>a {
+            display: block;
+            /*a태그는 마진 개념이 없어서 block으로 변경*/
+            line-height: 70px;
+            /*수직 가운데 정렬 위해서 height랑 동일*/
+            text-align: center;
+            /*수평 가운데 정렬*/
+        }
+
+        .font_big {
+            font-size: 2em;
+        }
+
+        .font_bold {
+            font-weight: bold;
+        }
+
+        .font_italic {
+            font-style: italic;
+        }
+        body>div{
+            width: 480px;
+            margin:0 auto;
+        }
+        body>div>div{
+            width: 480px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="button">
+            <a href="" class="font_big font_bold font_italic">Click</a>
+        </div>
+    </div>
+</body>
+
+</html>

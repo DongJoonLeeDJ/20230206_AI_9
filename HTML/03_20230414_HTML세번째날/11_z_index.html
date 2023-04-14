@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* z-index : 화면 위로 가게 하기 속성. 값이 클수록 맨 위
+        엄청 큰 값을 넣으면 무조건 위에 있음
+        근데 너무 큰 수를 넣으면 그걸 문자로 인식하니 적당히 큰 수
+        넣어야 함 */
+        .box{width: 100px; height: 100px; position: fixed;}
+        .red{z-index:3; background-color: red; left:50px; top:50px}
+        .green{z-index:99999;background-color: green; left:0px; top:0px}
+        .blue{background-color: blue;}
+    </style>
+</head>
+<body>
+    <div class="box red"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+</body>
+</html>

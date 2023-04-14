@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 표준 레이아웃 실습</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* 브라우저별로 똑같은 화면이 나오게 하는 css */
+        /* reset css, ress css, normalize css, meyerweb css 등 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
+    </style>
+    <style>
+        #title{
+            font-family: 'Sedgwick Ave Display', cursive;
+        }
+        #main_header {
+            width: 960px;
+            margin:0 auto;
+            height: 160px;
+            position: relative; /*부모가 static이 아니어야 absolute가 먹힘*/
+        }
+        #main_header>#title {
+            position: absolute; /*부모를 기준으로 fixed한다*/
+            left:20px; top:30px;
+        }
+        #main_header>#main_gnb {
+            position: absolute;
+            right:0; top:0;
+        }
+        #main_header>#main_lnb {
+            position: absolute;
+            right:0; bottom:10px;
+        }
+
+    </style>
+    <style>
+        #main_gnb>ul{overflow: hidden;}
+        #main_gnb>ul>li{float: left;}
+        #main_gnb>ul>li>a{display:block;
+        padding: 2px 10px;
+        border: 1px solid black;}
+        #main_gnb>ul>li>a:hover{
+            background-color: black;
+            color:white;
+        }
+        #main_gnb>ul>li:first-child>a{border-radius: 10px 0 0 10px;}
+        #main_gnb>ul>li:last-child>a{border-radius: 0 10px 10px 0;}
+
+        #main_lnb>ul{overflow: hidden;}
+        #main_lnb>ul>li{float: left;}
+        #main_lnb>ul>li>a{display:block;
+        padding: 10px 20px;
+        border: 1px solid black;}
+        #main_lnb>ul>li>a:hover{
+            background-color: black;
+            color:white;
+        }
+        #main_lnb>ul>li:first-child>a{border-radius: 10px 0 0 10px;}
+        #main_lnb>ul>li:last-child>a{border-radius: 0 10px 10px 0;}
+
+    </style>
+    <style>
+        #content {
+            width:960px; margin:0 auto;
+            overflow: hidden;
+        }
+        #content>#main_section{
+            width: 750px;
+            float: left;
+        }
+        #content>#main_aside{
+            width: 200px;
+            float: right;
+        }
+        #main_section>article.main_article{
+            margin-bottom: 10px;
+            padding:20px;
+            border: 1px solid black;
+        }
+    </style>
+    <style>
+        input:nth-of-type(1) {display: none;}
+        input:nth-of-type(1) ~ div:nth-of-type(1) {display: none;}
+        input:nth-of-type(1):checked ~ div:nth-of-type(1)
+        {display: block;}
+        input:nth-of-type(2) {display: none;}
+        input:nth-of-type(2) ~ div:nth-of-type(2) {display: none;}
+        input:nth-of-type(2):checked ~ div:nth-of-type(2)
+        {display: block;}
+        section.buttons{overflow: hidden;}
+        section.buttons>label{display: block; float: left;
+        width: 100px; 
+        /* 수평 수직 가운데 정렬 */
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        /* 테두리 지정 */
+        box-sizing: border-box;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+    }
+    input:nth-of-type(1):checked~section.buttons>label:nth-of-type(1){
+        background-color: white;
+        color: black;
+    }
+    input:nth-of-type(2):checked~section.buttons>label:nth-of-type(2){
+        background-color: white;
+        color: black;
+    }
+
+    </style>
+    <style>
+        .item{
+            overflow: hidden;
+            padding: 10px;
+            border: 1px solid black;
+            border-top: none;
+        }
+        .thumbnail {
+            float: left;
+        }
+        .description {
+            float: left;
+            margin-left: 10px;
+        }
+        .description>strong{
+            display: block;
+            width: 120px;
+
+            /* 글자 길 때 쓰는 3인방(생략 표시 해주는 거) */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+        <style>
+            #main_footer {
+                /* 중앙 정렬 */
+                width: 960px; margin: 0 auto;
+                margin-bottom: 10px;
+    
+                /* 테두리 */
+                box-sizing: border-box;
+                padding: 10px;
+                border: 1px solid black;
+    
+                /* 글자 정렬 */
+                text-align: center;
+            }
+        </style>
+</head>
+
+<body>
+    <header id="main_header">
+        <div id="title">
+            <h1>Rint Development</h1>
+            <h2>HTML5+CSS3 Basic</h2>
+        </div>
+        <nav id="main_gnb">
+            <ul>
+                <!-- (li>a[href=#])*5 -->
+                <li><a href="#">Web</a></li>
+                <li><a href="#">Mobile</a></li>
+                <li><a href="#">Game</a></li>
+                <li><a href="#">Simulation</a></li>
+                <li><a href="#">Data</a></li>
+            </ul>
+        </nav>
+        <nav id="main_lnb">
+            <ul>
+                <!-- (li>a[href=#])*5 -->
+                <li><a href="#">HTML5</a></li>
+                <li><a href="#">CSS3</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">jQuery</a></li>
+                <li><a href="#">Node.js</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <section id="main_section">
+            <!-- (article.main_article>h1+p)*3 -->
+            <article class="main_article">
+                <h1>Lorem, ipsum dolor.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nam natus laudantium quos nulla aspernatur cupiditate praesentium, perspiciatis ratione sed, impedit maxime explicabo architecto vitae illo, delectus facilis nisi deleniti cum? Nihil harum vel tenetur aperiam. Odio quasi perspiciatis repudiandae neque fugit iste libero officia laborum laboriosam earum cum ipsam, harum hic exercitationem quibusdam? Cupiditate natus minus fuga delectus sit voluptatibus quo, ipsa deleniti, ullam aliquam alias eaque. Consequuntur, alias? Ex veniam totam a animi, voluptatum facere unde placeat, consequuntur distinctio sapiente, eaque alias. Labore unde facilis deleniti vero iusto quae similique quisquam eaque repellendus culpa asperiores illo et quod, laborum, aspernatur consequatur sit commodi possimus voluptates sed qui? Incidunt quaerat illum necessitatibus iste, facilis eligendi? Quisquam enim mollitia, quos numquam incidunt dolores sunt laudantium nisi sint voluptatum? Reprehenderit eaque eius natus. Perferendis officia in tempora dolore eos enim dignissimos dicta eveniet eligendi, vitae mollitia fugiat repellat quisquam commodi repudiandae explicabo iste suscipit assumenda quidem ratione quaerat vel nihil doloremque? Et, sequi reprehenderit temporibus porro delectus quaerat aliquid consectetur expedita illum molestias laudantium perspiciatis ducimus doloribus incidunt facilis nemo autem dignissimos. Laudantium, ipsam. Dolorum atque, eaque repellendus similique ullam quisquam at officia repellat consequatur maiores, exercitationem odio ex inventore numquam? Nulla porro pariatur harum reprehenderit at ad, ullam iste vero sequi ipsam cupiditate libero totam eum est sint nam optio voluptatibus non provident qui praesentium iure sit illum. Nam libero iste optio expedita voluptatem. Voluptatem esse officia quas sint magni alias repudiandae nemo hic culpa officiis molestiae ad harum sequi maxime, et sit autem magnam omnis, quod earum? Beatae, voluptate. Neque corrupti soluta ab! Debitis, omnis aspernatur neque at sunt excepturi nostrum fugit nisi recusandae! Animi magnam dolorum iusto consectetur, omnis iure minima. Fugiat odio dolore assumenda ducimus inventore. Perferendis, ad necessitatibus! Quis ipsam modi minus, id molestias blanditiis veniam neque architecto alias, rerum, ipsa fugit nostrum corrupti illo vero. Praesentium ducimus sunt numquam dicta debitis voluptas, tempore, minima dolorem, voluptatibus velit eos aperiam sed molestias accusantium voluptatem libero earum sint delectus natus dolore autem! Unde officiis adipisci libero deserunt qui ratione asperiores tempore ipsam similique ducimus eligendi nostrum, earum alias, enim aliquid, dolorum optio eum eveniet voluptatum quam error at. Voluptatibus vero quia labore omnis nesciunt dolor quo nemo repellat aliquid. Sunt sed, voluptatem tempora magni dolore incidunt ut quidem aperiam dicta sint laudantium esse at saepe fugiat? Voluptatum animi, consequuntur quae sunt natus esse qui id nemo doloribus nulla culpa possimus! Quibusdam delectus dolorem dolorum sequi. Doloremque quod quisquam, quia fugiat eum ab dolorum tempore labore a nostrum rerum totam error ducimus sed cum suscipit animi unde architecto? Tempore molestias illum doloribus qui nam! Iusto omnis facilis animi magni est, velit, maxime expedita beatae illo, aut corrupti ab eum dolorum eos ratione officia illum. Nemo soluta laborum, corporis esse a possimus laudantium illum, corrupti, fugiat rem nobis iusto. Adipisci eligendi officia velit nihil laudantium assumenda soluta, ullam animi nisi corrupti sit a, blanditiis aliquam perspiciatis suscipit. Iste, ex vero rem corrupti adipisci dolore distinctio? Voluptatem molestiae nobis optio! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis dolores quod architecto libero
+                    asperiores, ab doloribus ullam suscipit praesentium modi expedita illo, labore atque ipsum saepe
+                    molestiae delectus cum? Quae.</p>
+            </article>
+            <article class="main_article">
+                <h1>Lorem, ipsum dolor.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nam natus laudantium quos nulla aspernatur cupiditate praesentium, perspiciatis ratione sed, impedit maxime explicabo architecto vitae illo, delectus facilis nisi deleniti cum? Nihil harum vel tenetur aperiam. Odio quasi perspiciatis repudiandae neque fugit iste libero officia laborum laboriosam earum cum ipsam, harum hic exercitationem quibusdam? Cupiditate natus minus fuga delectus sit voluptatibus quo, ipsa deleniti, ullam aliquam alias eaque. Consequuntur, alias? Ex veniam totam a animi, voluptatum facere unde placeat, consequuntur distinctio sapiente, eaque alias. Labore unde facilis deleniti vero iusto quae similique quisquam eaque repellendus culpa asperiores illo et quod, laborum, aspernatur consequatur sit commodi possimus voluptates sed qui? Incidunt quaerat illum necessitatibus iste, facilis eligendi? Quisquam enim mollitia, quos numquam incidunt dolores sunt laudantium nisi sint voluptatum? Reprehenderit eaque eius natus. Perferendis officia in tempora dolore eos enim dignissimos dicta eveniet eligendi, vitae mollitia fugiat repellat quisquam commodi repudiandae explicabo iste suscipit assumenda quidem ratione quaerat vel nihil doloremque? Et, sequi reprehenderit temporibus porro delectus quaerat aliquid consectetur expedita illum molestias laudantium perspiciatis ducimus doloribus incidunt facilis nemo autem dignissimos. Laudantium, ipsam. Dolorum atque, eaque repellendus similique ullam quisquam at officia repellat consequatur maiores, exercitationem odio ex inventore numquam? Nulla porro pariatur harum reprehenderit at ad, ullam iste vero sequi ipsam cupiditate libero totam eum est sint nam optio voluptatibus non provident qui praesentium iure sit illum. Nam libero iste optio expedita voluptatem. Voluptatem esse officia quas sint magni alias repudiandae nemo hic culpa officiis molestiae ad harum sequi maxime, et sit autem magnam omnis, quod earum? Beatae, voluptate. Neque corrupti soluta ab! Debitis, omnis aspernatur neque at sunt excepturi nostrum fugit nisi recusandae! Animi magnam dolorum iusto consectetur, omnis iure minima. Fugiat odio dolore assumenda ducimus inventore. Perferendis, ad necessitatibus! Quis ipsam modi minus, id molestias blanditiis veniam neque architecto alias, rerum, ipsa fugit nostrum corrupti illo vero. Praesentium ducimus sunt numquam dicta debitis voluptas, tempore, minima dolorem, voluptatibus velit eos aperiam sed molestias accusantium voluptatem libero earum sint delectus natus dolore autem! Unde officiis adipisci libero deserunt qui ratione asperiores tempore ipsam similique ducimus eligendi nostrum, earum alias, enim aliquid, dolorum optio eum eveniet voluptatum quam error at. Voluptatibus vero quia labore omnis nesciunt dolor quo nemo repellat aliquid. Sunt sed, voluptatem tempora magni dolore incidunt ut quidem aperiam dicta sint laudantium esse at saepe fugiat? Voluptatum animi, consequuntur quae sunt natus esse qui id nemo doloribus nulla culpa possimus! Quibusdam delectus dolorem dolorum sequi. Doloremque quod quisquam, quia fugiat eum ab dolorum tempore labore a nostrum rerum totam error ducimus sed cum suscipit animi unde architecto? Tempore molestias illum doloribus qui nam! Iusto omnis facilis animi magni est, velit, maxime expedita beatae illo, aut corrupti ab eum dolorum eos ratione officia illum. Nemo soluta laborum, corporis esse a possimus laudantium illum, corrupti, fugiat rem nobis iusto. Adipisci eligendi officia velit nihil laudantium assumenda soluta, ullam animi nisi corrupti sit a, blanditiis aliquam perspiciatis suscipit. Iste, ex vero rem corrupti adipisci dolore distinctio? Voluptatem molestiae nobis optio! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis dolores quod architecto libero
+                    asperiores, ab doloribus ullam suscipit praesentium modi expedita illo, labore atque ipsum saepe
+                    molestiae delectus cum? Quae.</p>
+            </article>
+            <article class="main_article">
+                <h1>Lorem, ipsum dolor.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nam natus laudantium quos nulla aspernatur cupiditate praesentium, perspiciatis ratione sed, impedit maxime explicabo architecto vitae illo, delectus facilis nisi deleniti cum? Nihil harum vel tenetur aperiam. Odio quasi perspiciatis repudiandae neque fugit iste libero officia laborum laboriosam earum cum ipsam, harum hic exercitationem quibusdam? Cupiditate natus minus fuga delectus sit voluptatibus quo, ipsa deleniti, ullam aliquam alias eaque. Consequuntur, alias? Ex veniam totam a animi, voluptatum facere unde placeat, consequuntur distinctio sapiente, eaque alias. Labore unde facilis deleniti vero iusto quae similique quisquam eaque repellendus culpa asperiores illo et quod, laborum, aspernatur consequatur sit commodi possimus voluptates sed qui? Incidunt quaerat illum necessitatibus iste, facilis eligendi? Quisquam enim mollitia, quos numquam incidunt dolores sunt laudantium nisi sint voluptatum? Reprehenderit eaque eius natus. Perferendis officia in tempora dolore eos enim dignissimos dicta eveniet eligendi, vitae mollitia fugiat repellat quisquam commodi repudiandae explicabo iste suscipit assumenda quidem ratione quaerat vel nihil doloremque? Et, sequi reprehenderit temporibus porro delectus quaerat aliquid consectetur expedita illum molestias laudantium perspiciatis ducimus doloribus incidunt facilis nemo autem dignissimos. Laudantium, ipsam. Dolorum atque, eaque repellendus similique ullam quisquam at officia repellat consequatur maiores, exercitationem odio ex inventore numquam? Nulla porro pariatur harum reprehenderit at ad, ullam iste vero sequi ipsam cupiditate libero totam eum est sint nam optio voluptatibus non provident qui praesentium iure sit illum. Nam libero iste optio expedita voluptatem. Voluptatem esse officia quas sint magni alias repudiandae nemo hic culpa officiis molestiae ad harum sequi maxime, et sit autem magnam omnis, quod earum? Beatae, voluptate. Neque corrupti soluta ab! Debitis, omnis aspernatur neque at sunt excepturi nostrum fugit nisi recusandae! Animi magnam dolorum iusto consectetur, omnis iure minima. Fugiat odio dolore assumenda ducimus inventore. Perferendis, ad necessitatibus! Quis ipsam modi minus, id molestias blanditiis veniam neque architecto alias, rerum, ipsa fugit nostrum corrupti illo vero. Praesentium ducimus sunt numquam dicta debitis voluptas, tempore, minima dolorem, voluptatibus velit eos aperiam sed molestias accusantium voluptatem libero earum sint delectus natus dolore autem! Unde officiis adipisci libero deserunt qui ratione asperiores tempore ipsam similique ducimus eligendi nostrum, earum alias, enim aliquid, dolorum optio eum eveniet voluptatum quam error at. Voluptatibus vero quia labore omnis nesciunt dolor quo nemo repellat aliquid. Sunt sed, voluptatem tempora magni dolore incidunt ut quidem aperiam dicta sint laudantium esse at saepe fugiat? Voluptatum animi, consequuntur quae sunt natus esse qui id nemo doloribus nulla culpa possimus! Quibusdam delectus dolorem dolorum sequi. Doloremque quod quisquam, quia fugiat eum ab dolorum tempore labore a nostrum rerum totam error ducimus sed cum suscipit animi unde architecto? Tempore molestias illum doloribus qui nam! Iusto omnis facilis animi magni est, velit, maxime expedita beatae illo, aut corrupti ab eum dolorum eos ratione officia illum. Nemo soluta laborum, corporis esse a possimus laudantium illum, corrupti, fugiat rem nobis iusto. Adipisci eligendi officia velit nihil laudantium assumenda soluta, ullam animi nisi corrupti sit a, blanditiis aliquam perspiciatis suscipit. Iste, ex vero rem corrupti adipisci dolore distinctio? Voluptatem molestiae nobis optio! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis dolores quod architecto libero
+                    asperiores, ab doloribus ullam suscipit praesentium modi expedita illo, labore atque ipsum saepe
+                    molestiae delectus cum? Quae.</p>
+            </article>
+        </section>
+        <aside id="main_aside">
+            <input id="first" type="radio" name="tab" checked>
+            <input id="second" type="radio" name="tab">
+            <section class="buttons">
+                <label for="first">첫번째</label>
+                <label for="second">두번째</label>
+            </section>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a href="#">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" alt="">
+                            </div>
+                            <div class="description">
+                                <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus necessitatibus inventore deleniti, quos officia nostrum totam eveniet error tempora esse quia ea molestias atque repudiandae voluptates fugiat optio, blanditiis commodi.</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
+                        <li class="item"><a href="#">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" alt="">
+                            </div>
+                            <div class="description">
+                                <strong>HTML5 Canvas</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
+                        <li class="item"><a href="#">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" alt="">
+                            </div>
+                            <div class="description">
+                                <strong>HTML5 Canvas</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
+                        <li class="item"><a href="#">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" alt="">
+                            </div>
+                            <div class="description">
+                                <strong>HTML5 Canvas</strong>
+                                <p>2012-03-15</p>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 1234</strong>
+                            <p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Canvas</strong>
+                            <p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Canvas</strong>
+                            <p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Canvas</strong>
+                            <p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer id="main_footer">
+        <h3>HTML5 + CSS3 Basic</h3>
+        <address>Website Layout Basic</address>
+    </footer>
+</body>
+
+</html>
