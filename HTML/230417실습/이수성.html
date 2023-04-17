@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>풀스택 개발자가 되고 싶어</title>
+</head>
+<style>
+    /*해더파일 스타일*/
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'a옛날사진관3';
+        
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        border: 0;
+    }
+
+    #main_header {
+        width: 1000px;
+        margin: 0 auto;
+        height: 100px;
+        position: relative;
+        /*부모가 static이 아니어야 absolute가 먹힘*/
+        display: flex;
+        justify-content: center
+    }
+
+    #main_header>#title {
+        position: absolute;
+        top: 25px;
+    }
+
+    #main_header>#main_gnb {
+        position: absolute;
+        left: 250px;
+        top: 100px;
+    }
+
+    hr {
+        position: relative;
+        top: 60px;
+    }
+</style>
+
+<style>
+    #main_gnb>ul {
+        overflow: hidden;
+    }
+
+    #main_gnb>ul>li {
+        float: left;
+    }
+
+    #main_gnb>ul>li>a {
+        display: inline-block;
+        padding: 10px 30px;
+        border: 1px solid black;
+    }
+
+    #main_gnb>ul>li>a:hover {
+        background-color: black;
+        color: white;
+    }
+
+    #main_gnb>ul>li:first-child>a {
+        border-radius: 10px 0 0 10px;
+    }
+
+    /* li 둥글게 깎아주는 코드*/
+    #main_gnb>ul>li:last-child>a {
+        border-radius: 0 10px 10px 0;
+    }
+</style>
+<style>
+    /* content 스타일 지정 */
+    #content {
+        width: 960px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    #content>#main_section {
+        width: 750px;
+        float: left;
+    }
+
+    #content>#main_aside{
+            width: 200px;
+            float: right;
+        }
+    #main_section>article.main_article {
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid black;
+       box-sizing: border-box;
+    }
+   
+</style>
+<style>
+    .item {
+        overflow: hidden;
+        padding: 10px;
+        border: 1px solid black;
+    
+    }
+
+    .thumbnail {
+        float: left;
+    }
+
+    .description {
+        float: left;
+        margin-left: 10px;
+        position: relative;
+        top: 4px;
+    }
+
+    .description>strong {
+        display: block;
+        width: 120px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<style>
+    input:nth-of-type(1) {
+        display: none;
+    }
+
+    input:nth-of-type(1)~div:nth-of-type(1) {
+        display: none;
+    }
+
+    input:nth-of-type(1):checked~div:nth-of-type(1) {
+        display: block;
+    }
+
+    input:nth-of-type(2) {
+        display: none;
+    }
+
+    input:nth-of-type(2)~div:nth-of-type(2) {
+        display: none;
+    }
+
+    input:nth-of-type(2):checked~div:nth-of-type(2) {
+        display: block;
+    }
+
+    section.buttons {
+        overflow: hidden;
+    }
+
+    section.buttons>label {
+        display: block;
+        float: left;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+    }
+
+    input:nth-of-type(1):checked~section.buttons>label:nth-of-type(1) {
+        background-color: black;
+        color: white;
+    }
+
+    input:nth-of-type(2):checked~section.buttons>label:nth-of-type(2) {
+        background-color: black;
+        color: white;
+    }
+    #introduce {
+        display: flex;
+    }
+    #introduce>img{
+        margin-right: 10px;
+    }
+</style>
+
+<body>
+    <header id="main_header">
+        <div id="title">
+            <h1> 안녕하세요 이수성 입니다</h1>
+
+        </div>
+        <nav id="main_gnb">
+            <ul>
+                <li><a href="#">축구</a></li>
+                <li><a href="#">영화</a></li>
+                <li><a href="#">출신지</a></li>
+                <li><a href="#">뭐쓰지</a></li>
+                <li><a href="#">코딩</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="content">
+        <section id="main_section">
+            <article id="introduce" class="main_article" >
+                <img src="https://imgnn.seoul.co.kr/img/upload/2014/05/30/SSI_20140530134057_V.jpg" width="200px" height="200px"  alt="">
+                <div>
+                    <h1 style="font-size: 2em;"> 이수성  <br> Soosung Lee </h1>
+                    <br>
+                    <p> 풀스택 개발자가 되고 싶어서 공부 중입니다</p>
+                    <br>
+                    <a href="https://www.instagram.com/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" height="50px" width="50px" alt=""> </a> &nbsp; &nbsp;
+                    <a href="https://twitter.com/" target="_blank"> <img src="data:image/png;base64,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" height="50px" width="50px" alt=""> </a>
+
+                    
+                </div>
+                
+                <br>
+            </article>
+            <article class="main_article">
+                <h1> 축구 </h1>
+                <br>
+                <p>아스날 FC를 사랑합니다</p>
+            </article>
+            <article class="main_article">
+                <h1> 영화 </h1>
+                <br>
+                <p>장르 가리지 않고 모든 영화를 잘 봅니다</p>
+            </article>
+        </section>
+        <aside id="main_aside">
+            <input id="first" type="radio" name="tab" checked>
+            <input id="second" type="radio" name="tab">
+            <section class="buttons">
+                <label for="first"> 첫번째 </label>
+                <label for="second"> 두 번째 </label>
+            </section>
+            <div class="tab_item">
+            <ul>
+                <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+
+                        </div>
+                        <div class="description">
+                            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae esse assumenda
+                                qui?</strong>
+                            <p>2023-04-16</p>
+                        </div>
+                    </a></li>
+                <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+
+                        </div>
+                        <div class="description">
+                            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae esse assumenda
+                                qui?</strong>
+                            <p>2023-04-16</p>
+                        </div>
+                    </a></li>
+                <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+
+                        </div>
+                        <div class="description">
+                            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae esse assumenda
+                                qui?</strong>
+                            <p>2023-04-16</p>
+                        </div>
+                    </a></li>
+                <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+
+                        </div>
+                        <div class="description">
+                            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae esse assumenda
+                                qui?</strong>
+                            <p>2023-04-16</p>
+                        </div>
+                    </a></li>
+                <ul>
+                </div>
+                <div class="tab_item">
+                    <ul>
+                        <li class="item"><a href="#">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/45x45" alt="">
+        
+                                </div>
+                                <div class="description">
+                                    <strong>아스날 개 좆같은 팀 내가 이팀을 왜 응원했지 시발 놈들 진짜</strong>
+                                    <p>2023-04-16</p>
+                                </div>
+                            </a></li>
+                        <li class="item"><a href="#">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/45x45" alt="">
+        
+                                </div>
+                                <div class="description">
+                                    <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae esse assumenda
+                                        qui?</strong>
+                                    <p>2023-04-16</p>
+                                </div>
+                            </a></li>
+                        <li class="item"><a href="#">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/45x45" alt="">
+        
+                                </div>
+                                <div class="description">
+                                    <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae esse assumenda
+                                        qui?</strong>
+                                    <p>2023-04-16</p>
+                                </div>
+                            </a></li>
+                        <li class="item"><a href="#">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/45x45" alt="">
+        
+                                </div>
+                                <div class="description">
+                                    <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae esse assumenda
+                                        qui?</strong>
+                                    <p>2023-04-16</p>
+                                </div>
+                            </a></li>
+                        <ul>
+                        </div>
+        </aside>
+    </div>
+<hr>
+<div class="army">
+    <div class="army_inside">
+        
+    </div>
+</div>
+
+
+
+
+</body>
+
+</html>
