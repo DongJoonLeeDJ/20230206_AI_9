@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dark Mode Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Material Design for Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.2/css/mdb.min.css" integrity="sha512-KU6a9xo6iR03RykaI6aT0iCpInT7IuZKzRGZ7EiaGQ9XO7OuN/STsMkTVw/hukD7IzBZbcv3qDBx6ravU6n9Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .card-title {
+  color: black;
+}
+    .card-text {
+  color: black;
+}
+</style>
+<script>
+    // navbar 링크 클릭 시 해당 section으로 스크롤링
+    $('.nav-link').click(function(){
+      $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top
+      }, 500);
+      return false;
+    });
+  </script>
+<body class="bg-dark">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">신동훈</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about-me">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-me">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- 각 섹션의 ID를 지정해줍니다. -->
+<section id="home">
+</section>
+
+
+
+
+
+
+
+
+
+  <!-- Header -->
+  <header>
+    <div class="container text-center text-white">
+      <img src="https://holorifle.github.io/html/image/yesman.jpg" alt="Profile Picture" class="rounded-circle img-thumbnail mb-4">
+      <h1>신동훈</h1>
+      <h4>Web Developer</h4>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section>
+    <div class="container text-white">
+        <section id="about-me">
+        </section>
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quaerat doloribus laborum optio consequatur veniam magni? Necessitatibus architecto, quas ratione ullam nulla, voluptatem molestiae sint ad quae perferendis consequuntur excepturi et, error sunt odit molestias incidunt ducimus magni sapiente optio eos. Quis, ex rerum aperiam odit excepturi assumenda quisquam perferendis.</p>
+      <section id="skills">
+    </section>
+      <h2>Skills</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card bg-primary text-white">
+            <div class="card-body">
+              <h4 class="card-title">HTML</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare neque eget turpis pretium, at consectetur nunc rhoncus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-primary text-white">
+            <div class="card-body">
+              <h4 class="card-title">CSS</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare neque eget turpis pretium, at consectetur nunc rhoncus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-primary text-white">
+            <div class="card-body">
+              <h4 class="card-title">JavaScript</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare neque eget turpis pretium, at consectetur nunc rhoncus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <section id="portfolio">
+    </section>
+      <h2>Portfolio</h2>
+      <div class="card-columns">
+        <div class="card">
+          <img class="card-img-top" src="https://holorifle.github.io/html/image/yesman.jpg" alt="Portfolio Item">
+          <div class="card-body">
+            <h4 class="card-title">Portfolio Item 1</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare neque eget turpis pretium, at consectetur nunc rhoncus.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://holorifle.github.io/html/image/yesman.jpg" alt="Portfolio Item">
+          <div class="card-body">
+            <h4 class="card-title">Portfolio Item 2</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare neque eget turpis pretium, at consectetur nunc rhoncus.</p>
+          </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="https://holorifle.github.io/html/image/yesman.jpg" alt="Portfolio Item">
+        </section>
+        <!-- Footer -->
+        <section id="contact-me">
+        </section>
+        <footer class="page-footer font-small blue pt-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="text-uppercase">Contact Me</h5>
+                <p><i class="fas fa-envelope"></i> jdoe@example.com</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> 1234 Main St, Anytown USA</p>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-uppercase">Follow Me</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      </body>
+      </html>    
