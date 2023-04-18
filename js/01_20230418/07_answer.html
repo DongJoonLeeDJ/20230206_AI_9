@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="korean_age"></h1>
+    <h1 id="age"></h1>
+    <script>
+        //참고로 js에선 문자열 할 때 따옴표도 되고 쌍따옴표도 됨
+        let myYear = prompt("몇년생이야?")
+        //참고 : 올해 연도 구하는 코드 : new Date().getFullYear()
+        let myage = new Date().getFullYear()-myYear
+        let kage = myage+1
+
+        document.querySelector('#korean_age').textContent =
+        '한국식 나이 : ' + kage
+        document.querySelector('#age').textContent = 
+        '나이 : ' + myage 
+
+    </script>
+</body>
+</html>

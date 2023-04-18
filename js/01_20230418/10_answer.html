@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="">
+    <script>
+        let month = prompt('몇월생?')
+        //js는 타입이 정해져 있지 않다.
+        //month값이 문자열일수도 있다.
+        //그걸 수 타입으로 강제 변환해주는 것
+        console.log(month)
+        //month = Number(month) 이걸 추가하든 /1을 추가하든 하면 됨
+        switch(month/1) //1번문제에선 % 연산하니 수로 인식
+        {
+            case 12:
+            case 1:
+            case 2:
+                document.querySelector('img').src = '겨울.png'
+                break
+            case 3:
+            case 4:
+            case 5:
+                document.querySelector('img').src = '봄.png'
+                break
+            case 6:
+            case 7:
+            case 8:
+                document.querySelector('img').src = '여름.png'
+                break    
+            case 9:
+            case 10:
+            case 11:
+                document.querySelector('img').src = '가을.png'
+                break
+            default:
+                document.querySelector('img').src = '4.png'
+                break
+
+        }
+        //js에는 ==이랑 ===이 있다.
+        //==에선 '1'==1 이 같다.
+        //==== 에선 '1'===1이 거짓
+        //==은 타입은 대충비교하고 값을 비교
+        //=== 타입이랑 값 둘 다 비교
+    </script>
+</body>
+</html>

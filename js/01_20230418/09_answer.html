@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let month = prompt('몇월생?')
+        //js는 타입이 정해져 있지 않다.
+        //month값이 문자열일수도 있다.
+        //그걸 수 타입으로 강제 변환해주는 것
+        console.log(month)
+        //month = Number(month) 이걸 추가하든 /1을 추가하든 하면 됨
+        switch(month/1) //1번문제에선 % 연산하니 수로 인식
+        {
+            case 12:
+            case 1:
+            case 2:
+                alert('겨울')
+                break
+            case 3:
+            case 4:
+            case 5:
+                alert('봄')
+                break
+            case 6:
+            case 7:
+            case 8:
+                alert('여름')
+                break    
+            case 9:
+            case 10:
+            case 11:
+                alert('가을')
+                break
+            default:
+                alert('잘못된 계절')
+                break
+
+        }
+        //js에는 ==이랑 ===이 있다.
+        //==에선 '1'==1 이 같다.
+        //==== 에선 '1'===1이 거짓
+        //==은 타입은 대충비교하고 값을 비교
+        //=== 타입이랑 값 둘 다 비교
+    </script>
+</body>
+</html>

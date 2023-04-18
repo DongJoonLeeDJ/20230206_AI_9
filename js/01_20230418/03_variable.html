@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        //변수는 중복될 수 없다.
+        //그러나 var는 이를 허용한다.
+        //그래서 나중에 문제가 생기면 디버깅하기가 굉장히 어렵다.
+        var a = '안녕'
+        var a = '하이'
+        alert(a)
+        //이런 var의 문제점때문에 let이 나온다.
+        let b = 'Hello' //빨간색 밑줄 그어진다.
+        let b = '안뇽'
+        //caught SyntaxError: Identifier 'b' has already been declared
+        //변수 중복되면 실행 자체를 막는다.
+        //그래서 변수 중복에 의한 문제는 안 생기게 한다.
+
+        //상수
+        const c= '경북산업직업전문학교'
+
+    </script>
+</body>
+</html>
