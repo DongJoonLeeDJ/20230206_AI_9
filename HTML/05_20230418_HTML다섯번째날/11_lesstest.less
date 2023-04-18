@@ -1,0 +1,11 @@
+@color: #0f0; /*변수 선언*/
+div{height:30px}
+/*darken : less에서 제공하는 기본 함수, 점점 어두워 지게 함*/
+/*less에 이렇게 만들어두면, easy less라는 플러그인에서
+컴파일한 다음 css파일을 만들어 준다.*/
+div:nth-child(1){background: darken(@color,0%);}
+div:nth-child(2){background: darken(@color,10%);}
+div:nth-child(3){background: darken(@color,20%);}
+div:nth-child(4){background: darken(@color,30%);}
+div:nth-child(5){background: darken(@color,40%);}
+div:nth-child(6){background: darken(@color,50%);}

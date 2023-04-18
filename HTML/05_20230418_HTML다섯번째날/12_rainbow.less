@@ -1,0 +1,16 @@
+@color: #f00;
+@hue:hue(@color);
+@saturation:saturation(@color);
+@lightness:lightness(@color);
+div{height:5px;}
+@iteration:37;
+
+.rainbow-loop(@i) when (@i>0)
+{
+    div:nth-child(@{i})
+    {
+        background: hsl(@hue + ((@i)*10), @saturation,@lightness);
+    }
+    .rainbow-loop((@i)-1)
+}
+.rainbow-loop(@iteration);

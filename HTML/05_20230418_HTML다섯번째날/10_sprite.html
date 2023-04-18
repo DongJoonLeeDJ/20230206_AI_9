@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.bg-header_left_button {
+        width: 62px; height: 32px;
+        background: url('css_sprites.png') -10px -10px;
+    }
+    .bg-header_right_button {
+    width: 32px; height: 32px;
+    background: url('css_sprites.png') -92px -10px;
+}
+/* i 태그 원래 이탤릭체였으나 지금은 아이콘 삽입용으로 많이 쓰임 */
+   /* i 태그는 원래 글자이므로 display값을 inline-block이나
+   block으로 바꿔야 한다. */
+    i {         display: block;    }
+    </style>
+</head>
+<body>
+    <i>최은지 안녕하세요</i>
+    <i class="bg-header_left_button"></i>
+    <i class="bg-header_right_button"></i>
+</body>
+</html>

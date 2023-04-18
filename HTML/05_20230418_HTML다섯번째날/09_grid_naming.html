@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 이름을 붙여서 그 걸 이용해서 병합 작업을 할 것임 */
+        .Header{grid-area:Header} /*grid-area(영역) 이름 짓기*/
+        .Aside{grid-area:Aside} /*grid-area(영역) 이름 짓기*/
+        .Section{grid-area:Section} /*grid-area(영역) 이름 짓기*/
+        .Footer{grid-area:Footer}
+        #container {
+            display: grid;
+            gap:10px;
+            grid-template-columns: 1fr 200px 1fr;
+            grid-template-rows: 100px 1fr;
+            grid-template-areas:  /*쌍따옴표 쓰면 안 됨*/
+            'Header Header'
+            'Aside Section'
+            'Footer Footer';
+        }
+        #container>div{
+            background-color: aqua;
+            border: 1px solid black;
+            /* 글자 너무 길어서 넣은 것 */
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="Header"><h1>Header</h1></div>
+        <div class="Aside"><h1>Aside</h1></div>
+        <div class="Section"><h1>Section</h1></div>
+        <div class="Footer"><h1>Footer</h1></div>
+    </div>
+</body>
+</html>

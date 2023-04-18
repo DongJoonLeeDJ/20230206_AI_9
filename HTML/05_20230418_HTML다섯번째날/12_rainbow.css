@@ -1,0 +1,114 @@
+div {
+  height: 5px;
+}
+div:nth-child(37) {
+  background: hsl(10, 100%, 50%);
+}
+div:nth-child(36) {
+  background: hsl(0, 100%, 50%);
+}
+div:nth-child(35) {
+  background: hsl(350, 100%, 50%);
+}
+div:nth-child(34) {
+  background: hsl(340, 100%, 50%);
+}
+div:nth-child(33) {
+  background: hsl(330, 100%, 50%);
+}
+div:nth-child(32) {
+  background: hsl(320, 100%, 50%);
+}
+div:nth-child(31) {
+  background: hsl(310, 100%, 50%);
+}
+div:nth-child(30) {
+  background: hsl(300, 100%, 50%);
+}
+div:nth-child(29) {
+  background: hsl(290, 100%, 50%);
+}
+div:nth-child(28) {
+  background: hsl(280, 100%, 50%);
+}
+div:nth-child(27) {
+  background: hsl(270, 100%, 50%);
+}
+div:nth-child(26) {
+  background: hsl(260, 100%, 50%);
+}
+div:nth-child(25) {
+  background: hsl(250, 100%, 50%);
+}
+div:nth-child(24) {
+  background: hsl(240, 100%, 50%);
+}
+div:nth-child(23) {
+  background: hsl(230, 100%, 50%);
+}
+div:nth-child(22) {
+  background: hsl(220, 100%, 50%);
+}
+div:nth-child(21) {
+  background: hsl(210, 100%, 50%);
+}
+div:nth-child(20) {
+  background: hsl(200, 100%, 50%);
+}
+div:nth-child(19) {
+  background: hsl(190, 100%, 50%);
+}
+div:nth-child(18) {
+  background: hsl(180, 100%, 50%);
+}
+div:nth-child(17) {
+  background: hsl(170, 100%, 50%);
+}
+div:nth-child(16) {
+  background: hsl(160, 100%, 50%);
+}
+div:nth-child(15) {
+  background: hsl(150, 100%, 50%);
+}
+div:nth-child(14) {
+  background: hsl(140, 100%, 50%);
+}
+div:nth-child(13) {
+  background: hsl(130, 100%, 50%);
+}
+div:nth-child(12) {
+  background: hsl(120, 100%, 50%);
+}
+div:nth-child(11) {
+  background: hsl(110, 100%, 50%);
+}
+div:nth-child(10) {
+  background: hsl(100, 100%, 50%);
+}
+div:nth-child(9) {
+  background: hsl(90, 100%, 50%);
+}
+div:nth-child(8) {
+  background: hsl(80, 100%, 50%);
+}
+div:nth-child(7) {
+  background: hsl(70, 100%, 50%);
+}
+div:nth-child(6) {
+  background: hsl(60, 100%, 50%);
+}
+div:nth-child(5) {
+  background: hsl(50, 100%, 50%);
+}
+div:nth-child(4) {
+  background: hsl(40, 100%, 50%);
+}
+div:nth-child(3) {
+  background: hsl(30, 100%, 50%);
+}
+div:nth-child(2) {
+  background: hsl(20, 100%, 50%);
+}
+div:nth-child(1) {
+  background: hsl(10, 100%, 50%);
+}
