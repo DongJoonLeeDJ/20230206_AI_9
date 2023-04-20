@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div,img {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+</head>
+<body>
+<script>
+        let output = ''
+        const SIZE = 5
+        const DIAMOND = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Coraz%C3%B3n.svg/1200px-Coraz%C3%B3n.svg.png'
+        for(let i = 1; i<=SIZE; i++)
+        {
+            //for(let j = SIZE; j>i; j--)
+            //  output += '&nbsp;' //&nbsp;으로 해야 띄어쓰기 됨
+            for(let j = SIZE ; j>i; j--) //띄어쓰기 부분
+            {
+              let space = document.createElement('div')
+              document.body.appendChild(space)
+            }
+            //  for(let k = 0; k<2*i-1; k++)
+            //    output+='*'
+            for(let k =0; k<2*i-1; k++)
+            {
+              let star = document.createElement('img')
+              star.src = DIAMOND
+              document.body.appendChild(star)
+            }
+            let br = document.createElement('br')
+            document.body.appendChild(br)
+            //output +='<br>' //\n은 콘솔이나 pre에서만 줄바꿈
+        }
+        for(let i = SIZE-1; i>0; i--)
+        {
+          for(let j = SIZE; j>i; j--)
+          {
+            let space = document.createElement('div')
+            document.body.appendChild(space)
+          }
+          for(let k = 0; k<2*i-1; k++)
+          {
+            let star = document.createElement('img')
+            star.src = DIAMOND
+            document.body.appendChild(star)
+          }
+          document.body.appendChild(document.createElement('br'))
+            // for(let j = SIZE; j>i; j--)
+            //   output += '&nbsp;'
+            // for(let k = 0; k<2*i-1; k++)
+            //   output +='*'
+            // output +='<br>'
+        }
+        
+        //innerHTML : html 태그를 삽입
+        //textContent : 글자를 삽입
+        //document.querySelector('h1').innerHTML= output
+
+    </script>
+</body>
+</html>

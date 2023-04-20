@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="07_dinner.json"></script>
+</head>
+<body>
+    <h1>오늘의 저녁은?</h1>
+    <button></button>
+    <img src="" alt="">
+    <h1 id="result"></h1>
+    <script>
+        let 짜장면 = {
+            이름 : '짜장면',
+            사진 : 'https://i.ytimg.com/vi/Yn8ZFTBCJJQ/maxresdefault.jpg'
+        }
+        let 순두부찌개 = {
+            이름 : '순두부찌개',
+            사진 : 'https://static.wtable.co.kr/image-resize/production/service/recipe/1074/4x3/d3c0b5c1-2671-483e-9bbf-76496bb443fd.jpg'
+        }
+        let 딸기카레 = {
+            이름 : '딸기카레',
+            사진 : 'https://t1.daumcdn.net/cfile/tistory/26220E3D5533134829'
+        }
+
+        let btn = document.querySelector('button')
+        let mydinner = document.querySelector('img')
+        let result = document.querySelector('#result')
+
+        btn.textContent = '메뉴 선택'
+        mydinner.width = 0
+        mydinner.height = 0
+        mydinner.src = ''
+        mydinner.style.display='block'
+        let previous = -1 //기존에 선택한 것
+
+        let menu = [짜장면,순두부찌개,딸기카레,민트초코치킨]
+
+        menu[menu.length] = {
+            이름 : '김치찌개',
+            사진 : 'https://recipe1.ezmember.co.kr/cache/recipe/2021/05/03/9854d8e57cca177b94f339dd2d28a6cb1.jpg'
+        }
+
+        btn.onclick = function() {
+            mydinner.width=300
+            mydinner.height=300
+            mydinner.src = ''
+            result.textContent = ''
+            let idx = Math.floor(Math.random()*menu.length)
+            while(idx==previous) //중복되면 다시 랜덤 뽑게 함
+                idx = Math.floor(Math.random()*menu.length)
+            previous = idx
+            mydinner.src = menu[idx].사진
+            // result.textContent = menu[idx].이름
+            //속성 접근 방법이 두 가지인 데,
+            //점으로 접근도 되고 배열 처럼 대괄호 써도 됨
+            //근데 그 때는 속성명을 따옴표로 감싸서 써줘야 함
+            result.textContent = menu[idx]['이름']
+        }
+
+
+
+
+    </script>
+</body>
+</html>

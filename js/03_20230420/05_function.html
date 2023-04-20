@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Abs(num)
+        {
+            if(num<0)
+                num*=-1
+            return num
+        }
+        console.log(Abs(-1))
+
+        //함수에 매개변수로 함수가 들어간 것
+        //매개변수처럼 쓰이는 함수를 콜백함수
+        function printConsole(func, count)
+        {
+            for(let i = 0; i<count; i++)
+                func()
+        }
+        function HelloWorld()
+        {
+            console.log('안녕')
+        }
+        let myfunc = ()=>{console.log('바이바이')}
+        printConsole(HelloWorld,5)
+        printConsole(()=>{console.log('djzzang')},5)
+        printConsole(function(){console.log('박준호 안녕')},5)
+        printConsole(myfunc,5)
+
+
+
+    </script>
+</body>
+</html>

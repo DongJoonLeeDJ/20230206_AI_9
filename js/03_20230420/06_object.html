@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //C 언어의 구조체, java,c#의 class처럼
+        //js에도 여러 개를 하나의 변수가 저장하는 게 있다.
+        //객체
+
+        let student1 = {
+            //속성 : 값
+            //키 : 벨류
+            //왼쪽 : 키(=속성)
+            //오른쪽 : 값
+            이름 : '소병수',
+            특기 : '수업 방해하기',
+            나이 : 20,
+            money : 10000,
+            friend : '박준호',
+            '+' : '수업듣기'
+        }
+        student1['나이']++
+        console.log(student1['나이'])
+        console.log(student1.나이)
+        // console.log(student1.'+')
+        console.log(student1['+'])
+        for(let item in student1) //student1의 모든 key들이 출력됨
+            console.log(item)
+
+        let arr = [10,20,30,40,50]
+        for(let item in arr) //0,1,2,3,4 => 인덱스가 출력됨
+            console.log(item)
+
+        //for in (for of랑 다름. for of는 배열의 값들을 출력)
+        //1. 배열의 인덱스만 가져온다.
+        //2. 그 객체의 key만 출력함
+
+        //속성 추가
+        student1['teacher'] = '이동준'
+        student1.옆자리 = '서정빈'
+
+        console.log(student1)
+
+        delete student1['+'] //속성 삭제하기
+        console.log(student1)
+        delete student1.옆자리
+        console.log(student1)
+
+        let school = [student1,{
+            이름:'정홍근',
+            짝꿍:'박세진',
+            '담임':'이동준',
+            나이:17
+        }]
+        //새로 추가 하는 방법 1
+        school[1] = {
+            name:'박세진',
+            mate : '홍근 정',
+            나이 : 21
+        }
+        //새로 추가 하는 방법 2
+        school.push(
+            {
+                name:'이수성',
+                짝꿍:'안교석',
+                나이:30
+            }
+        )
+
+    </script>
+</body>
+</html>

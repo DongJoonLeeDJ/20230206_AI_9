@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- pre 태그 안에선 띄어쓰기 같은 게 다 그대로 나타납니다. -->
+    <pre>
+        <h1></h1>
+    </pre>
+
+    <script>
+        let output = ''
+        const SIZE = 5
+        for(let i = 1; i<=SIZE; i++)
+        {
+            for(let j = SIZE; j>i; j--)
+              output += ' '
+            for(let k = 0; k<2*i-1; k++)
+              output+='*'
+            output +='\n'
+        }
+        for(let i = SIZE-1; i>0; i--)
+        {
+            for(let j = SIZE; j>i; j--)
+              output += ' '
+            for(let k = 0; k<2*i-1; k++)
+              output +='*'
+            output +='\n'
+        }
+        
+        document.querySelector('h1').textContent= output
+/*
+pre 태그 안에 있는 태그의 폰트는 기본적으로 모노스페이스가 적용됨
+pre {
+    font-family: monospace;
+    white-space: pre;
+}
+*/
+    </script>
+</body>
+</html>
