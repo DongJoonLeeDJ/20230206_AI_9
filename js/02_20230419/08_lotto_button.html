@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .span {
+            display: inline;
+        }
+        button {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button>로또를 삽시다!</button>
+    <h1 class="span"></h1>
+    <h1 class="span"></h1>
+    <h1 class="span"></h1>
+    <h1 class="span"></h1>
+    <h1 class="span"></h1>
+    <h1 class="span"></h1>
+    <h1 class="span"></h1>
+    <script>
+
+        document.querySelector('button').onclick = 
+        function(){
+        
+        let lottoarr = []
+        let bns = Math.floor(Math.random()*45)+1
+        //let spanArr = document.querySelectorAll('span')
+        let spanArr = document.getElementsByClassName('span')
+
+        //1부터 45까지의 수 6개를 무작위로 뽑기
+        for(let i = 0; i<6; i++)
+        {
+            lottoarr[i] = Math.floor(Math.random()*45)+1
+            for(let j = 0; j<i; j++)
+            {
+                if(lottoarr[i] == lottoarr[j])
+                {
+                    i--
+                    continue
+                }
+            }
+        }
+        console.log(lottoarr)
+
+        //로또 번호 오름차순 정렬
+        for(let i = 0; i<lottoarr.length; i++)
+        {
+            for(let j = 0; j<lottoarr.length-1;j++)
+            {
+                if(lottoarr[j] > lottoarr[j+1])
+                {
+                    let temp = lottoarr[j]
+                    lottoarr[j] = lottoarr[j+1]
+                    lottoarr[j+1] = temp
+                }
+            }
+        }
+        console.log(lottoarr)
+
+        //중복없이 보너스 번호 체크
+        for(let i = 0 ; i<lottoarr.length; i++)
+        {
+            if(lottoarr[i] == bns)
+            {
+                i=-1
+                bns=Math.floor(Math.random()*45)+1
+            }
+        }
+        for(let i = 0; i<lottoarr.length; i++)
+        {
+            spanArr[i].textContent = ` ${lottoarr[i]} `
+        }
+        spanArr[spanArr.length-1].textContent = 
+        '보너스 번호 : '+bns
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

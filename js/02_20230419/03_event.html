@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="one">
+    <input type="text" id="two">
+    <button id="add">더하기</button>
+    <button id="mul">곱하기</button>
+    <h1></h1>
+    <script>
+        let o = document.querySelector('#one')
+        let t = document.getElementById('two')
+        let add = document.querySelector('#add')
+        let mul = document.querySelector('#mul')
+        let result = document.querySelector('h1')
+
+        //click 이벤트를 추가한 것
+        //오른쪽은 함수, 즉 add를 클릭하면 오른쪽에 있는 함수 실행
+        add.onclick = function() {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = Number(num1) + Number(num2)
+        }
+
+        mul.onclick = () => {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = Number(num1) * Number(num2)
+        }
+
+    </script>
+</body>
+</html>

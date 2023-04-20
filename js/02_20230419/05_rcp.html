@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="05_rcp.js"></script>
+</head>
+<body>
+    <button id="gawi">가위</button>
+    <button id="bawi">바위</button>
+    <button id="bo">보</button>
+    <h1>내가 낸 거</h1>
+    <img src="" alt="">
+    <h1>컴퓨터가 낸 거</h1>
+    <img src="" alt="">
+    <h1></h1>
+    <script>
+        let myresultimg = document.querySelectorAll('img')[0]
+        let computerimg = document.querySelectorAll('img')[1]
+        //가독성 위해 상수
+        const GAWI = 0
+        const BAWI = 1
+        const BO = 2
+        //Math.random()  0 이상, 1 미만의 랜덤 실수를 반환
+        //거기에 3을 곱하고, 그 것의 소수점을 버리므로 최댓값은 2
+        //최솟값은 0이 된다.
+       let result = document.querySelector('h1')
+
+        //이 함수를 호출하는 것의 ID값을 매개변수로 쓴다
+        function fnc_result(mychoice)
+        {
+            let pc_choice = Math.floor(Math.random()*3)//0~2까지만 선택
+            computerimg.src = gbb[pc_choice]
+            switch(mychoice.target.id)
+            {
+                case 'gawi':
+                    myresultimg.src = gbb[GAWI]
+                    switch(pc_choice)
+                    {
+                        case GAWI:
+                            result.textContent='비김'
+                            break
+                        case BAWI:
+                            result.textContent='패배'
+                            break
+                        case BO:
+                            result.textContent='이김'
+                            break
+                    }
+                    break
+                    case 'bawi':
+                    myresultimg.src = gbb[BAWI]
+                    switch(pc_choice)
+                    {
+                        case GAWI:
+                            result.textContent='이김'
+                            break
+                        case BAWI:
+                            result.textContent='비김'
+                            break
+                        case BO:
+                            result.textContent='패배'
+                            break
+                    }
+                    break
+                    case 'bo':
+                    myresultimg.src = gbb[BO]
+                    switch(pc_choice)
+                    {
+                        case GAWI:
+                            result.textContent='패배'
+                            break
+                        case BAWI:
+                            result.textContent='이김'
+                            break
+                        case BO:
+                            result.textContent='비김'
+                            break
+                    }
+                    break
+            }
+        }
+
+        gawi.onclick = fnc_result
+        bawi.onclick = fnc_result
+        bo.onclick = fnc_result
+
+
+    </script>
+</body>
+</html>

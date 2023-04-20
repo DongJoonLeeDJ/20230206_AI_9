@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="one">
+    <input type="text" id="two">
+    <button id="add">더하기</button>
+    <button id="mul">곱하기</button>
+
+    <button id="sub">빼기</button>
+    <button id="dv">나누기</button>
+    <button id="dv_int">나누기(소수점 버림)</button>
+    <button id="mod">나머지</button>
+    <h1></h1>
+    <script>
+        let o = document.querySelector('#one')
+        let t = document.getElementById('two')
+        let add = document.querySelector('#add')
+        let mul = document.querySelector('#mul')
+        let result = document.querySelector('h1')
+
+        //click 이벤트를 추가한 것
+        //오른쪽은 함수, 즉 add를 클릭하면 오른쪽에 있는 함수 실행
+        add.onclick = function() {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = Number(num1) + Number(num2)
+        }
+
+        mul.onclick = () => {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = Number(num1) * Number(num2)
+        }
+
+        document.querySelector('#sub').onclick = function() {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = Number(num1) - Number(num2)
+        }
+
+        let dv = document.getElementById('dv')
+        function mydv()
+        {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = Number(num1) / Number(num2)
+        }
+        dv.onclick = mydv
+
+        let dv_int = document.querySelector('#dv_int')
+        let myintdv = function() {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = 
+            Math.floor( Number(num1) / Number(num2))
+            //소수점 버리기
+        }
+        dv_int.onclick = myintdv
+
+        let mod = document.querySelector('#mod')
+        //addEventListener 함수에 두 번째 매개변수에 함수를 넣음
+        mod.addEventListener('click', () => {
+            let num1 = o.value
+            let num2 = t.value
+            result.textContent = 
+             Number(num1) % Number(num2)
+        })
+        mod.addEventListener('click', function() {
+            alert('이벤트 추가 가능')
+        })
+
+    </script>
+</body>
+</html>

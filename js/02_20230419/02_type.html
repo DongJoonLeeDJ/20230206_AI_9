@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = 20
+        console.log(20=='20')
+        console.log(20==='20')
+
+        //js에선 문자라는 개념이 없고, 문자열만 존재
+        //문자열은 큰따옴표로도 표기되고, 작은 따옴표로도 표기 됨
+        console.log("안녕 내 이름은 '서정빈'이야")
+        console.log('안녕 내 이름은 "장대건"이야')
+        // `(그레이브키 )
+        console.log(`나는 소병수야. 믿기지 않겠지만 난 ${num}살이야`)
+        console.log('나는 소병수야. 믿기지 않겠지만 난 ' + num +' 살이야')
+        //따옴표 안에 따옴표를 출력하거나
+        //큰 따옴표 안에 큰 따옴표를 출력하려면 어떻게 해야 할까요?
+        console.log('나는 \'소병수\'때문에 실습을 못 해서 못 쉰다.')
+
+        //변수에 타입은 없는 데, 어쨌든 자료형은 존재
+        //Boolean, String, Number, Null, undefined, object
+        //Symbol이라는 것도 최근에 추가 됨
+        
+        //Boolean : 참/거짓 True/False
+        console.log(false)
+        console.log(true)
+        //거짓인 것들
+        console.log(Boolean(0)) //0이라는 값은 무조건 거짓
+        console.log(Boolean(null))
+        console.log(Boolean(''))
+        //Not a Number : 'abc' 이런 걸 수로 바꿀 때 생기는 오류
+        console.log(Boolean(NaN))
+        console.log(Boolean(undefined))//정의되지 않은 변수
+        //거짓인 것들 ↑
+
+        console.log(Boolean(' ')) //true!
+
+        console.log(num) //20
+        num = String(num) //num은 정수인 데, 문자열로 변환한 것
+        num+=23
+        console.log(num) //2023
+        num=Number(num)
+        num++
+        console.log(num)//2024
+
+        //문자열 처리
+        let sentense = '안녕 잘 지내니 워워우어!'
+        console.log(sentense.length) //문자열 길이(바이트 값 아님)
+        console.log(sentense.charAt(0)) //가장 첫 글자(Java스타일)
+        console.log(sentense[0]) //가장 첫 글자
+        console.log(sentense[sentense.length-1]) //가장 끝 글자
+        
+        //배열
+        //js의 배열은 굉장히 구조가 유연함
+        //크기를 미리 정할 필요도 없고
+        //C,C#,Java의 배열처럼 
+        //같은 타입의 값만 넣어야 하는 것도 없다
+        let arr1 = []
+        arr1[5] = '최은지'
+        arr1[0] = 10
+        arr1[2] = true
+        let arr2 = [1,'안녕',"잘가",arr1,null,false,[1,2,3]]
+        console.log('-')
+        console.log(arr1) //배열 자체를 통째로 출력하는 것도 됨
+        console.log('-')
+        console.log(arr2) //배열 자체를 통째로 출력하는 것도 됨
+        console.log('-')
+        for(let i = 0; i<arr1.length; i++)
+            console.log(arr1[i]) //우리가 아는 for문
+        console.log('-')
+        for(let item of arr2) //배열 안에 있는 모든 값들 출력
+            console.log(item)
+        console.log('-')
+        for(let item in arr1) //나중에 '객체' 나올 때 다뤄야 할 것
+            console.log(item)
+
+
+    </script>
+</body>
+</html>

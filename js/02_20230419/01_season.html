@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>당신이 태어난 계절은?</h1>
+    <img src="" alt="">
+    <script>
+        //switch와는 다르게 if문은 바로 비교가 가능
+        //왜냐면 ==과 ===이 있기 때문(이 두 가지는 다른 것)
+        //==은 타입은 상관없고 그 안에 있는 값만 비교
+        //즉 '12'==12 는 같다고 간주
+        //'12'===12는 다르다고 간주(타입까지 체크)
+        let image = document.querySelector('img')
+        let mymonth = prompt('몇월생이니?')
+        if(mymonth==12 || mymonth==1 || mymonth==2) //겨울
+            image.src = 'https://th.bing.com/th/id/OIG.TevKrWWtt7RIYMuQ.SSJ?pid=ImgGn'
+        else if(mymonth>=3 && mymonth <=5) //봄
+            image.src = 'https://th.bing.com/th/id/OIG.HVWYRFWUsXYyKMa3odwJ?pid=ImgGn'
+        else if(mymonth>=6 && mymonth<=8)
+            image.src = 'https://th.bing.com/th/id/R.7f193675e7ea392c0869a7cf2299e1f3?rik=0lYrLGiep71Jjg&riu=http%3a%2f%2fwww.geochat.co.kr%2fdata%2ffile%2fB64%2f1904394176_d07b6e89_b10_gooodream.jpg&ehk=QF0OmNIUPwvYlD5wamVa80EDB%2fKatqY3KbEzCZd2hws%3d&risl=&pid=ImgRaw&r=0'
+        else if(mymonth>=9 && mymonth<=11)
+            image.src = 'https://th.bing.com/th/id/R.096c43de7188a7f5d4df89d9f06fa9f4?rik=8blOf%2bApRPzSZw&riu=http%3a%2f%2fpds34.cafe.daum.net%2fimage%2f41%2fcafe%2f2007%2f10%2f03%2f12%2f46%2f4703105b9f7ab&ehk=stw8fV1xmDAPVzELDRkUQNWgrOfAfNIPq8IHDK9%2bNNc%3d&risl=&pid=ImgRaw&r=0'
+        else
+            image.src = 'https://th.bing.com/th/id/OIG.C6JT3cdeMNJmwMUHNIlp?pid=ImgGn'
+    </script>
+</body>
+</html>
