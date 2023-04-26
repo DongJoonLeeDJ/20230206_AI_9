@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:first-of-type{
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            let mydinner = document.querySelector('img')
+            let result = document.querySelector('#result')
+
+            let 된장국 = {
+                name : '된장국',
+                image : 'data:image/jpeg;base64,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'
+            }
+            let 누룽지탕 = {
+                name : '누룽지탕',
+                image : 'https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/66ce/37cbb16515ed913c9a9852618791ee0f71c665e8ed966654978c440ca4ca.jpg'
+            }
+            let 단식 = {
+                name : '굶어',
+                image : 'https://res.heraldm.com/phpwas/restmb_idxmake.php?idx=507&simg=/content/image/2019/03/06/20190306000020_0.jpg'
+            }
+            let dinner = [된장국,누룽지탕,단식]
+            dinner[3] = {
+                name:'쫄병스낵',
+                image : 'https://image.nongshim.com/non/pro/1549601483686.jpg'
+            }
+
+            mydinner.width = 0
+            mydinner.height = 0
+            mydinner.src = ''
+            mydinner.style.display = 'block'
+
+            let btn = document.querySelector('button:first-of-type')
+            
+            let previous = -1
+            
+            btn.onclick = function(){
+                mydinner.width=300
+                mydinner.height=300
+                mydinner.src = ''
+                result.textContent = ''
+                let idx = Math.floor(Math.random()*dinner.length)
+                
+                while(previous==idx)
+                    idx = Math.floor(Math.random()*dinner.length)
+                previous = idx
+                mydinner.src = dinner[idx].image
+
+                //둘 다 되는 코드다. 점을 찍어도 되고
+                //배열처럼 써도 된다.
+                //단, 배열처럼 쓸 경우엔 따옴표로 속성명 감싸줄 것
+                // result.textContent = dinner[idx].name
+                 result.textContent = dinner[idx]['name']
+            }
+            let timerid = setInterval(() => {
+                btn.click()
+            }, 100)
+            document.querySelector('#stop').onclick = () => {
+                //clearInterval = 인터벌 종료시켜 버림
+                //따라소 해당 인터벌에 아이디가 있어야 함
+                //여기선 timerid가 아이디에 해당함
+                clearInterval(timerid)
+            }
+            document.querySelector('#start').onclick = () => {
+                clearInterval(timerid) //점점 빨라지는 현상 방지
+                timerid = setInterval(() => {
+                btn.click()
+            }, 100)
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>오늘의 저녁은?</h1>
+    <button></button>
+    <button id="stop">멈춰!</button>
+    <button id="start">시작!</button>
+    <img src="" alt="">
+    <h1 id="result"></h1>
+</body>
+</html>

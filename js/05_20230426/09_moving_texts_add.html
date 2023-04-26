@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button,input{
+            left:0px;
+            top:500px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button>글자추가</button>
+    <input type="text">
+    <script>
+        //limit값이 25라면 0부터 25까지의 값 중 하나를 리턴
+        function nextRandomInteger(limit) {
+            //round = 반올림(참고로 floor는 버림)
+            return Math.round(Math.random()*limit)
+        }
+        //함수 안에 함수를 리턴하는 걸 집어넣음
+        //randomAlphabet 변수는 함수다.
+        //근데 이 함수는 또 다른 함수를 리턴한다.
+        let randomAlphabet = (
+            function()
+            {
+                //let 대신 const써도 상관없음. 어차피 안 변하니까
+                const alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                const alphabet2 = '가나다라마바사아자차카타파하'
+                const alphabet3 = 'abcdefghijklmnopqrstuvwxyz'
+                const alphabet4 = '0123456789'
+                const langs = [alphabet,alphabet2,alphabet3,alphabet4]
+
+                
+                return function() {
+                    const myalpha = langs[nextRandomInteger(langs.length-1)]
+                    return myalpha[nextRandomInteger(myalpha.length-1)]
+                }
+            }
+        )() //이 것의 역할은 이 거 자체가 
+        // 안쪽에 있는 함수를 불러온다.
+        //따라서 randomAlpahbet() 이렇게 하면 저 안 쪽 
+        //함수의 리턴값이 나옴
+
+        //글자 움직이는 속도를 무작위로 결정하는 함수
+        function randomSpeed(maxSpeed) {
+            return Math.random()*maxSpeed - Math.random()*maxSpeed
+        }
+
+        //글자 움직일 수 있는 범위
+        let canvasWidth = 700
+        let canvasHeight = 400
+
+        //객체 만드는 틀.
+        function MovingText(param) //함수가 아니고 틀(class같은 것)
+        {
+            this.x = nextRandomInteger(canvasWidth)
+            this.y = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            while(this.vx == 0 && this.vy==0 )
+            {
+                this.vx = randomSpeed(10)
+                this.vy = randomSpeed(10)
+            }
+            this.text = document.createElement('h1')
+            if(!param) //아무 것도 없다면
+                this.text.innerText = randomAlphabet()
+            else
+                this.text.innerText = param
+            this.text.style.position = 'fixed'
+            document.body.appendChild(this.text)
+        }
+        MovingText.prototype.move = function() {
+            if(this.x<0 || this.x>canvasWidth)
+                this.vx *= -1
+            if(this.y<0 || this.y>canvasHeight)
+                this.vy *= -1
+            this.x += this.vx
+            this.y += this.vy
+            this.text.style.left = this.x+'px'
+            this.text.style.top = this.y+'px'
+        }
+        let movingTexts = []
+        for(let i =0; i<100; i++)
+            movingTexts.push(new MovingText())
+        setInterval(function(){
+            //in : index
+            // of : 안에 있는 값
+            for(let i in movingTexts)
+                movingTexts[i].move()
+        },1000/30)
+    </script>
+    <script>
+        let adder = document.querySelector('button')
+        let input = document.querySelector('input')
+        adder.onclick = function(){
+            movingTexts.push(new MovingText(input.value))
+        }
+    </script>
+</body>
+</html>

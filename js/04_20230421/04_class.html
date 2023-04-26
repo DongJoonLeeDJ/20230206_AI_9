@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        class Student {
+            //constructor: 생성자, 붕어빵틀
+            constructor (name,age,score) {
+                this.name = name
+                this.age = age
+                this.score = score
+            }
+            //함수, 문자열을 리턴해주는 함수
+            toString() {
+                return `이름:${this.name}, 나이:${this.age},
+                점수: ${this.score}`
+            }
+        }
+        let s = new Student('임나현',22,100)
+        document.querySelector('h1').textContent = s.toString()
+    </script>
+</body>
+</html>

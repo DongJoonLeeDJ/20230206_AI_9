@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:first-of-type {display: none;}
+    </style>
+    <!-- <script src="02_mincho.json"></script> -->
+    <script>
+        // window : document보다 더 상위 계층
+        // 우리가 보는 창(웹브라우저) 의미 함
+        // window.onload = function() {} 의 의미
+        // body태그에 있는 걸 다 불러들인 다음에 실행하겠다
+        window.onload = function () {
+            let btn = document.querySelector('button')
+            let mylunch = document.querySelector('img')
+            let result = document.querySelector('#result')
+            
+            let 국수 = {
+                이름 : '국수',
+                사진 : 'https://thingool123.godohosting.com/data/goods/editor/211129/4_153627.jpg'
+            }
+            let 햄버거 = {
+                이름 : '햄버거',
+                사진 : 'https://newsimg.hankookilbo.com/cms/articlerelease/2021/04/29/62a1cda6-ec70-44a8-811c-fbc6300a18ed.png'
+            }
+
+            let 샌드위치 = {
+                이름 : '샌드위치',
+                사진 : 'https://recipe1.ezmember.co.kr/cache/recipe/2021/12/23/8f1022f46829257d51b21cf1d08d72241.jpg'
+            }
+
+            let lunch = [국수,햄버거,샌드위치]
+            lunch[3] = {
+                이름 : '하와이안 피자',
+                사진 : 'http://ojsfile.ohmynews.com/STD_IMG_FILE/2020/1104/IE002715486_STD.jpg'
+            }
+            // lunch[4] = 민초
+
+            btn.textContent = '점심선택'
+            mylunch.width = 0
+            mylunch.height = 0
+            mylunch.src = ''
+            mylunch.style.display = 'block'
+
+            let previous = -1
+            btn.onclick = ()=>{
+                mylunch.width = 300
+                mylunch.height = 300
+                mylunch.src = ''
+                result.textContent = ''
+                let idx = 
+                Math.floor(Math.random()*lunch.length)
+                while(idx==previous)
+                {
+                    idx = Math.floor(Math.random()*lunch.length)
+                }
+                previous = idx
+                
+                mylunch.src = lunch[idx].사진
+                // 속성 불러올 때 배열 연산자 써도 됨
+                result.textContent = lunch[idx]['이름']
+            
+            }
+
+        let timerid
+        timerid = setInterval(() => {
+            btn.click()
+        }, 100)
+
+        document.querySelector('#stop').onclick = () => {
+            clearInterval(timerid)
+        }
+        document.querySelector('#start').onclick = () => {
+            timerid = setInterval(() => {
+            btn.click()
+        }, 100)
+        }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>오늘의 점심은?</h1>
+    <button></button>
+    <button id="stop">멈춰!</button>
+    <button id="start">시작!</button>
+    <img src="" alt="">
+    <h1 id="result"></h1>
+</body>
+
+</html>

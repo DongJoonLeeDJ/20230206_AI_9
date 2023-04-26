@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        let sun = document.querySelector('#sun')
+        let earth = document.querySelector('#earth')
+        let moon = document.querySelector('#moon')
+        let mercury = document.querySelector('#mercury')
+        let mars = document.querySelector('#mars')
+        sun.style.position = 'fixed'
+        earth.style.position = 'fixed'
+        moon.style.position = 'fixed'
+        mercury.style.position = 'fixed'
+        mars.style.position = 'fixed'
+        const leftStartPos = 550
+        const topStartPos = 300
+        sun.style.left = leftStartPos+'px'
+        sun.style.top = topStartPos+'px'
+        let earthAngle = 0
+        let moonAngle = 0
+        let marsAngle = 0
+        let mercuryAngle = 0
+        setInterval(function() {
+            let earthLeft = leftStartPos+150*Math.cos(earthAngle)
+            let earthTop = topStartPos+150*Math.sin(earthAngle)
+            let moonLeft = earthLeft+50*Math.cos(moonAngle)
+            let moonTop = earthTop+50*Math.sin(moonAngle)
+            let marsLeft = leftStartPos+(150*1.8)*Math.cos(marsAngle)
+            let marsTop = topStartPos+(150*1.8)*Math.sin(marsAngle)
+            let mercuryLeft = leftStartPos+(150/3)*Math.cos(mercuryAngle)
+            let mercuryTop = topStartPos+(150/3)*Math.sin(mercuryAngle)
+            earth.style.left = earthLeft+'px'
+            earth.style.top = earthTop+'px'
+            moon.style.left = moonLeft+'px'
+            moon.style.top = moonTop+'px'
+            mars.style.left = marsLeft+'px'
+            mars.style.top = marsTop+'px'
+            mercury.style.left = mercuryLeft+'px'
+            mercury.style.top = mercuryTop+'px'
+            earthAngle+=0.1
+            moonAngle+=0.3
+            marsAngle+=0.05
+            mercuryAngle+=0.4
+        }, 1000/33) //33ms쯤에 한 번씩 수행
+        })
+        
+    </script>
+</head>
+<body>
+    <h1 id="sun">@</h1>
+    <h1 id="mercury">.</h1>
+    <h1 id="earth">O</h1>
+    <h1 id="moon">*</h1>
+    <h1 id="mars">♂</h1>
+    
+</body>
+</html>

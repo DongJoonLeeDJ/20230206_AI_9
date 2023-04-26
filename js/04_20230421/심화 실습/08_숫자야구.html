@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 30px;
+            height: 30px;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        #answer,#submit,#cancel {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+        #input {
+            position:fixed;
+            top:50px;
+            left:150px
+        }
+        #time {
+            position: fixed;
+            top:50px;
+            left:500px;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 60px;">
+        <h1 id="output" style="margin-left:170px"></h1>
+    </div>
+    <div>
+        <div style="margin-bottom: 20px;">
+            <button class="choiceValue"></button>
+            <button class="choiceValue"></button>
+            <button class="choiceValue"></button>
+            <button class="choiceValue"></button>
+            <button class="choiceValue"></button>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <button class="choiceValue"></button>
+            <button class="choiceValue"></button>
+            <button class="choiceValue"></button>
+            <button class="choiceValue"></button>
+            <button class="choiceValue"></button>
+        </div>
+    </div>
+    <button id="cancel" style="margin-left: 20px">취소</button>
+    <button id="submit" style="margin-left: 20px">제출</button>
+    <!-- div[style='height:60px'] -->
+
+    <!-- 현재까지 제출한 숫자랑, 현재 경과시간표시 -->
+    <div style="height:60px">
+        <h3 id="input" style="margin-left:170px"></h3>
+        <h5 id="time"></h5>
+    </div>
+
+    <button id="answer">
+        정답은 ?
+    </button>
+
+    <script>
+        //정답을 먼저 생성해야 함
+        let output='' //정답
+        let array = []
+        let input = 0
+        do {
+            input=Math.floor(Math.random()*10)//0~9
+            const idx = array.indexOf(input)
+            if(idx==-1) {
+                array.push(input)
+                output+=input
+            }
+        }while(array.length<3)
+        ///////////////// 프로그램 시작시 정답 생성하는 부분
+
+
+        let cancel = document.querySelector('#cancel')
+        let submit = document.querySelector('#submit')
+        //querySelector랑 getElement 시리즈 모두
+        //알고 있어야 된다.
+        let h1output =document.getElementById('output')
+        let h3input = document.getElementById('input')
+
+        let answer = document.getElementById('answer')
+        let time = document.getElementById('time')
+        let count = 0
+        let timecount = 0
+        //실시간으로 숫자 올라가게 하기
+        let timeCountInterval =setInterval (
+            function() {
+                timecount++
+                time.innerText = timecount
+            }, 100
+        )
+
+        let buttons 
+        = document.getElementsByClassName('choiceValue')
+            //document.querySelectorAll('.choiceValue')
+        
+        //버튼 위의 글자 적기
+        for(let i = 0; i<buttons.length; i++)
+            buttons[i].textContent = i
+        
+        //버튼 눌렀을 때, 글자 나타나게 하기
+        for(let i = 0; i<buttons.length; i++)
+        {
+            buttons[i].addEventListener('click',
+            function(){
+                //i 값이 이 안에 이미 있다면 실행 안 함
+                if(h1output.innerHTML.includes(i)==false)
+                {
+                    //길이가 3이상이면 실행 안 함
+                    if(h1output.innerHTML.length<3)
+                        h1output.innerHTML+=i
+                }
+            })
+        }
+
+        //정답 맞췄거나 끝까지 못 맞춰서
+        //새로운 답을 내야 하는 경우
+        function shuffleNewNumber() {
+            //버튼들에 적용된 스타일들을 해지
+            for(let i = 0; i<buttons.length; i++) 
+            {
+                //색상 적용된 거 없애기
+                buttons[i].style.color=''
+                //disabled : 클릭 못하게 하는 옵션
+                //클릭 못하게 한 게 있다면 그거 없애기
+                //즉 버튼 클릭되게 하기
+                buttons[i].disabled = false
+            }
+
+            //정답 초기화 과정
+            array=[]
+            input=0
+            output=''
+
+            do {
+                input=Math.floor(Math.random()*10)//0~9
+                const idx = array.indexOf(input)
+                if(idx==-1) {
+                    array.push(input)
+                    output+=input
+                }
+            }while(array.length<3)
+        }
+
+        cancel.addEventListener('click',
+        function() {
+            h1output.innerHTML=''
+            answer.innerHTML='정답은?'
+        })
+        answer.addEventListener('click', function() {
+            this.innerHTML = '정답은 ' + output
+        })
+        submit.addEventListener('click', function(){
+            if(h1output.innerHTML.length!=3)
+            {
+                alert("3글자를 입력하세요.")
+                return
+            }
+            count++ //시도 횟수
+            if(output==h1output.innerHTML) //정답맞춤
+            {
+                count=0
+                alert('정답!')
+                if(timecount<100)
+                    alert("천재")
+                else
+                    alert('보통')
+                h3input.innerHTML=''
+                shuffleNewNumber() //정답 다시 만들기
+                h1output.innerHTML=''
+                answer.innerHTML='정답은?'
+                timecount=0
+                //타이머 리셋
+                clearInterval(timeCountInterval)
+                timeCountInterval = setInterval(
+                    function() {
+                        timecount++
+                        time.innerHTML = timecount
+                    },100
+                )
+                
+            } else //일치하지 않는 경우
+            {
+                //ball, strike 개수를 센다.
+                let arr = [output[0], output[1], output[2]]
+                let ball = 0
+                let strike = 0
+                //h1output : 내가 이번에 시도하는 숫자
+                //h1output.innerHTML.length = 3
+                for(let i = 0; i<h1output.innerHTML.length; i++)
+                {
+                    let test = arr.indexOf(h1output.innerHTML[i])
+                    if(test!=-1) //h1output의 i번째 글자가 정답에 포함된 경우
+                    {               //즉 내가 정답에 해당하는 숫자를 맞춘 것
+                                    //다만... 그게 자리수까지 맞는진 몰라             
+                        if(arr[i]==h1output.innerHTML[i])
+                            strike++
+                        else
+                            ball++
+                    }          
+                }                
+
+                
+                //h1Temp의 용도 : 맨 마지막에
+                //입력한 값 표시(9번 시도해도
+                // 다 틀렸을 때 마지막으로 시도한 값 표기)
+                let h1Temp = h1output.innerHTML
+                
+                //ball, strike에 따른 결과 표시
+                if(ball==0 && strike==0)
+                {
+                    h3input.innerHTML +=
+                    '['+h1output.innerHTML+'] out<br>'
+                    h1output.innerHTML=''
+                }
+                else {
+                    h3input.innerHTML+='['+h1output.innerHTML+'] '
+                    h3input.innerHTML+= strike+'S '+ball+'B<br>'
+                    h1output.innerHTML=''
+                }
+                //count값에 따른 css 변화
+                //정답 아닌 건 빨간색으로 변하게 하고
+                //disable되게 할 것
+                if(count==3)
+                {
+                    let hintNum = Math.floor(Math.random()*10)
+                    //arr배열에 있는 건 문자열
+                    //hintNum+'' 해줘야 문자열 취급으로써 비교가능
+                    //숫자+문자열 = 문자열
+                    let checkNumber = arr.indexOf(hintNum+'')
+                    while(checkNumber!=-1) //이미 있는거면
+                    {
+                        hintNum = Math.floor(Math.random()*10)
+                        checkNumber = arr.indexOf(hintNum+'')
+                    }
+                    buttons[hintNum].style.color='red'
+                    buttons[hintNum].disabled=true
+                }
+                else if(count==5||count==7||count==8)
+                {
+                    let hintNum = Math.floor(Math.random()*10)
+                    let checkNumber = arr.indexOf(hintNum+'')
+                    while(checkNumber!=-1 
+                          || buttons[hintNum].style.color!='') 
+                    {
+                        hintNum = Math.floor(Math.random()*10)
+                        checkNumber = arr.indexOf(hintNum+'')
+                    }
+                    buttons[hintNum].style.color='red'
+                    buttons[hintNum].disabled=true
+                }
+                
+                //9번 시도해도 안 됐을 경우
+                if(count>=9)
+                {
+                    count = 0
+                    alert (
+                        `마지막으로 입력한 ${h1Temp}도 정답이` 
+                        +` 아닙니다. 정답은 ${output}입니다.`
+                    )
+                    h3input.innerHTML=''
+                    shuffleNewNumber() //초기화
+                    h1output.innerHTML=''
+                    answer.innerHTML='정답은?'
+                    timecount=0
+                    clearInterval(timeCountInterval)
+                    timeCountInterval=setInterval(
+                        function() {
+                            timecount++
+                            time.innerHTML=timecount
+                        },100
+                    )
+                }
+
+
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>

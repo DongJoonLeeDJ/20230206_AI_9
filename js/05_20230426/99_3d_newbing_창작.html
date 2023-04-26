@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+        #sun {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: yellow;
+            position: absolute;
+            left: 350px;
+            top: 250px;
+        }
+        #earth {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: blue;
+            position: absolute;
+        }
+        #moon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: gray;
+            position: absolute;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="sun"></div>
+        <div id="earth"></div>
+        <div id="moon"></div>
+    </div>
+    <script>
+        let sun = document.querySelector('#sun')
+        let earth = document.querySelector('#earth')
+        let moon = document.querySelector('#moon')
+        let earthAngle = 0
+        let moonAngle = 0
+        setInterval(function() {
+            let earthLeft = 400+150*Math.cos(earthAngle)
+            let earthTop = 300+150*Math.sin(earthAngle)
+            let moonLeft = earthLeft+50*Math.cos(moonAngle)
+            let moonTop = earthTop+50*Math.sin(moonAngle)
+            earth.style.left = earthLeft+'px'
+            earth.style.top = earthTop+'px'
+            moon.style.left = moonLeft+'px'
+            moon.style.top = moonTop+'px'
+            earth.style.transform = `rotateY(${earthAngle*180/Math.PI}deg)`
+            moon.style.transform = `rotateY(${moonAngle*180/Math.PI}deg)`
+            earthAngle+=0.1
+            moonAngle+=0.3
+        }, 100) //33ms쯤에 한 번씩 수행
+    </script>
+</body>
+</html>

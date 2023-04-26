@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener(
+            'DOMContentLoaded',
+        ()=>{
+            let sun = document.getElementById('sun')
+            let earth = document.getElementById('earth')
+            let moon = document.getElementById('moon')
+            let mars = document.getElementById('mars')
+
+            sun.style.position = 'fixed'
+            earth.style.position = 'fixed'
+            moon.style.position = 'fixed'
+            mars.style.position = 'fixed'
+
+            sun.style.left =550+'px'
+            sun.style.top=300+'px'
+            let earthAngle = 0
+            let moonAngle = 0
+            let marsAngle = 0
+            setInterval(function() {
+                let earthLeft = 550+150*Math.cos(earthAngle)
+                let earthTop = 300+150*Math.sin(earthAngle)
+                //달이 지구 주위를 돌기 때문에
+                //지구의 위치를 중심으로 돈다.
+                let moonLeft = earthLeft+50*Math.cos(moonAngle)
+                let moonTop = earthTop+50*Math.sin(moonAngle)
+                
+                let marsLeft = 550+250*Math.cos(marsAngle)
+                let marsTop = 300+250*Math.sin(marsAngle)
+                earth.style.left = earthLeft+'px'
+                earth.style.top = earthTop+'px'
+                moon.style.left = moonLeft+'px'
+                moon.style.top = moonTop+'px'
+                mars.style.left = marsLeft+'px'
+                mars.style.top = marsTop+'px'
+                earthAngle+=0.1
+                moonAngle+=0.3
+                marsAngle+=0.05
+
+            },1000/30) //33ms에 한 번씩 돔
+        })              //참고로 1000ms = 1s
+    </script>
+</head>
+<body>
+    <h1 id="sun">@</h1>
+    <h1 id="earth">O</h1>
+    <h1 id="moon">*</h1>
+    <h1 id="mars">♂</h1>
+</body>
+</html>

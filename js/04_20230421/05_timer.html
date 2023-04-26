@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //타이머
+        //1. 특정 시간에 "한 번" 실행
+        setTimeout(function() {
+            console.log('안녕하세요')
+        }, 5*1000)
+        //5초뒤에 한 번 안녕하세요를 출력
+
+
+        //2. 특정 시간마다 "한 번씩" 실행
+        //0.5초마다 ㅎㅇ을 출력
+        //Interval(구간) : 0.5초에 한 번 메시지를 출력
+        setInterval ( function()  {
+            console.log('ㅎㅇ')
+        }, 0.5*1000)
+
+        //0.1초에 한 번씩 실행되는 타이머를 mytimer에 저장시킴과
+        //동시에 0.1초에 한 번씩 하이루를 출력
+        let mytimer = setInterval (
+            function() {
+                console.log('하이루')
+            }, 100
+        )
+
+        //10초에뒤에는 이 '하이루'인터벌을 중지시킬 것
+        setTimeout(
+            function() {
+                clearInterval(mytimer)
+            }, 10*1000
+        )
+
+
+    </script>
+</body>
+</html>

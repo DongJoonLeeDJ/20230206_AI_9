@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="student_name">학생 이름 : </label>
+    <input type="text" id="student_name"><br>
+    <label for="student_age">학생 나이 : </label>
+    <input type="text" id="student_age"><br>
+    <label for="student_score">학생 점수 : </label>
+    <input type="text" id="student_score">
+    <button id="add_student">학생 추가</button>
+    <button id="show_one_student">학생 아무나 한 명 출력</button>
+    <h1 id="view_student"></h1>
+
+    <script>
+        function Student(name, age, score) {
+            this.name=name
+            this.age = age
+            this.score=score
+            this.study = function (){
+                console.log(`${name}학생의 나이는 ${age}살, 점수:${score}`)
+                console.log(`${name}학생이 열심히 공부합니다.`)
+            }
+            //문자열 리턴하는 함수
+            this.toString = function() {
+                return '이름,나이,점수:'
+                +this.name+'_'+this.age+'_'+this.score
+            }
+            this.sleep = function(){
+                console.log('쿨쿨 잠을 잡니다.')
+            }
+        }
+        let students = []
+        students[0] = new Student('이진곤',24,90)
+        students[1] = new Student('이동준',35, 10)
+        students.push(new Student('박준호',34,100))
+        students[students.length] = new Student('정홍근',59,70)
+        students[4] = new Student('박세진',62,80)
+        for(let item of students)
+        {
+            item.study()
+        }
+        
+        let addbutton = document.querySelector('#add_student')
+        addbutton.onclick = function(){
+            let name = document.querySelector('#student_name')
+            let age = document.querySelector('#student_age')
+            let score = document.querySelector('#student_score')
+            //주의! name, age, score 변수 자체는 태그 그 자체를 의미
+            //우리가 필요한 건 input태그에 넣은 값임...
+            students.push(new Student(name.value,age.value,score.value))
+            //전체 목록을 console 창에 띄워봄(test용)
+            let output = ''
+            for(let item of students) //7번 문제 해결
+            {
+                console.log(item.toString())
+                output += item.toString()+'<br>'
+            }
+            document.querySelector('#view_student').innerHTML
+            = output
+        }
+
+        document.querySelector('#show_one_student').onclick =
+        function() {
+            let idx = Math.floor(Math.random()*students.length)
+            document.querySelector('#view_student').textContent
+            = students[idx].toString()
+            console.log(students[idx].toString())
+            alert(students[idx].toString())
+        }
+
+
+
+    </script>
+</body>
+</html>

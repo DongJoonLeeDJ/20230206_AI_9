@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //limit값이 25라면 0부터 25까지의 값 중 하나를 리턴
+        function nextRandomInteger(limit) {
+            //round = 반올림(참고로 floor는 버림)
+            return Math.round(Math.random()*limit)
+        }
+        //함수 안에 함수를 리턴하는 걸 집어넣음
+        //randomAlphabet 변수는 함수다.
+        //근데 이 함수는 또 다른 함수를 리턴한다.
+        let randomAlphabet = (
+            function()
+            {
+                let alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                return function() {
+                    return alphabet[nextRandomInteger(alphabet.length-1)]
+                }
+            }
+        )() //이 것의 역할은 이 거 자체가 
+        // 안쪽에 있는 함수를 불러온다.
+        //따라서 randomAlpahbet() 이렇게 하면 저 안 쪽 
+        //함수의 리턴값이 나옴
+
+        //글자 움직이는 속도를 무작위로 결정하는 함수
+        function randomSpeed(maxSpeed) {
+            return Math.random()*maxSpeed - Math.random()*maxSpeed
+        }
+
+        //글자 움직일 수 있는 범위
+        let canvasWidth = 700
+        let canvasHeight = 400
+
+        //객체 만드는 틀.
+        function MovingText() //함수가 아니고 틀(class같은 것)
+        {
+            this.x = nextRandomInteger(canvasWidth)
+            this.y = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.text = document.createElement('h1')
+            this.text.innerText = randomAlphabet()
+            this.text.style.position = 'fixed'
+            document.body.appendChild(this.text)
+        }
+        MovingText.prototype.move = function() {
+            if(this.x<0 || this.x>canvasWidth)
+                this.vx *= -1
+            if(this.y<0 || this.y>canvasHeight)
+                this.vy *= -1
+            this.x += this.vx
+            this.y += this.vy
+            this.text.style.left = this.x+'px'
+            this.text.style.top = this.y+'px'
+        }
+        let movingTexts = []
+        for(let i =0; i<100; i++)
+            movingTexts.push(new MovingText())
+        setInterval(function(){
+            //in : index
+            // of : 안에 있는 값
+            for(let i in movingTexts)
+                movingTexts[i].move()
+        },1000/30)
+    </script>
+</body>
+</html>

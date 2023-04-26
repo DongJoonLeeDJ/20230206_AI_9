@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nextRandomInteger(limit) {
+            //round는 반올림
+            return Math.round(Math.random()*limit)
+        }
+        //변수에 함수를 집어넣음
+        //이 변수 안에 있는 함수를 호출이 좀 독특함
+        let randomAlphabet = (
+            function()
+            {
+                let alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                return function() {
+                    return alphabet[nextRandomInteger(alphabet.length-1)]
+                }
+            }
+        )()
+
+        function randomSpeed(maxSpeed) {
+            return Math.random()*maxSpeed-
+            Math.random()*maxSpeed
+        }
+
+        //최대 너비와 높이
+        let canvasWidth = 700
+        let canvasHeight = 400
+
+        //객체만드는 거(x,y,vx,vy,text,move함수)
+        function MovingText()
+        {
+            //최소 0 최대 canvasWidth(canvasHeight)값 
+            //만큼의
+            //너비(높이)를 가짐
+            this.x=nextRandomInteger(canvasWidth)
+            this.y=nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.text = document.createElement('h1')
+            this.text.innerText = randomAlphabet()
+            this.text.style.position='fixed'
+            document.body.appendChild(this.text)
+        }
+        MovingText.prototype.move = 
+        function() {
+            if(this.x<0 || this.x>canvasWidth)
+                this.vx *= -1 //방향 반대로
+            if(this.y<0 || this.y>canvasHeight)
+                this.vy *= -1 //방향 반대로
+            this.x += this.vx
+            this.y += this.vy
+            //좌표 위치 조정
+            this.text.style.left = this.x+'px'
+            this.text.style.top = this.y+'px'
+        }
+
+        let movingTexts = []
+        //push : 배열의 맨끝에다가 값을 추가하는 것
+        //즉 배열이 총 0칸이면 첫번째 데이터 집어넣고
+        //배열이 총 10칸이면 11번째에 값을 추가
+        for(let i = 0; i<100; i++)
+            movingTexts.push(new MovingText())
+        setInterval(function(){
+            //for in 
+            //for of랑 다르게 in 앞에 있는 값은
+            //배열의 인덱스이며 for of랑 공통점은
+            //배열의 길이만큼 반복한다는 것
+            for(let i in movingTexts)
+                movingTexts[i].move()
+        },1000/30)
+    </script>
+</body>
+</html>
