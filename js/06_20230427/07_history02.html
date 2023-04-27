@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /*cursor:pointer로 두면 손가락 모양으로 바뀜*/
+    h1{display: inline;}
+    h1:hover{color:pink; cursor: pointer;}
+    </style>
+</head>
+<body>
+    <h1>뒤로 가기</h1>
+    <script>
+        document.querySelector('h1').onclick = function(){
+            history.go(-1)
+        }
+    </script>
+</body>
+</html>

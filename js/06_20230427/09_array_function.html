@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mynums = [10,20,30,40,50,99,101]
+        //매개변수에 따라서 동작이 달라지는 forEach
+        //매개변수가 3개이면
+        //value : 각 요소의 값
+        //index : 각 요소의 인덱스
+        //arr : 그 배열 그 자체
+        //forEach : 배열의 길이만큼 각각 호출되는 함수
+        //매개변수 3개 버전
+        mynums.forEach((value,index,arr) => {
+            console.log('배열 그 자체 : ' + arr)
+            console.log(`[${index}]번째 값 : ${value}`)
+        })
+        //매개변수 2개 버전
+        mynums.forEach((value,index) => {
+            console.log(`[${index}]번째 값 : ${value}`)
+        })
+        //매개변수 1개 버전
+        mynums.forEach((value) => {
+            console.log(`값 : ${value}`)
+        })
+        //map
+        //배열에 있는 내용들을 재가공하며
+        //새로운 배열을 만든다.
+        const power_numbers = mynums.map(
+            (value)=>value*value
+        )
+        console.log(mynums)
+        console.log(power_numbers)//기존 배열값들을 하나씩 다
+        //제곱한 것들로 만든 새로운 배열
+
+        //filter : 재가공이고, forEach와 map처럼 원본은 안 건드림
+        //새로운 배열을 만든다. map과는 다르게 조건에 맞는 것만
+        //쏙쏙 복사해 가서 새로 만든다.
+        const even_numbers = mynums.filter(value=>
+        {return value>0 && value%2==0})
+
+        console.log(even_numbers)
+
+
+        console.log('복합 활용')
+        console.log('홀수만 가져온 다음 제곱시켜서 출력')
+        //계속 점을 찍어서 이어서 하는 형태의 메소드를 체이닝 메소드
+        mynums.filter(value=>value%2==1).map(value=>value*value)
+        .forEach(value=>console.log(value))
+
+    </script>
+</body>
+</html>

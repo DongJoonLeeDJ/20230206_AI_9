@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .max{color:deeppink}
+    </style>
+</head>
+<body>
+    <!-- h1{$}*6 -->
+    <h1>1</h1>
+    <h1 class="a1">0</h1>
+    <h2 class="a1">0</h1>
+    <h1>2</h1>
+    <h1 class="a2">0</h1>
+    <h2 class="a2">0</h1>
+    <h1>3</h1>
+    <h1 class="a3">0</h1>
+    <h2 class="a3">0</h1>
+    <h1>4</h1>
+    <h1 class="a4">0</h1>
+    <h2 class="a4">0</h1>
+    <h1>5</h1>
+    <h1 class="a5">0</h1>
+    <h2 class="a5">0</h1>
+    <h1>6</h1>
+    <h1 class="a6">0</h1>
+    <h2 class="a6">0</h1>
+    <script>
+        let bigCountLaw = prompt('주사위 시도 횟수')
+        let emptyArray = [0,0,0,0,0,0]
+        for(let i = 0; i<bigCountLaw; i++) {
+            let random = Math.floor(Math.random()*6)
+            emptyArray[random]++
+        }
+        for(let i = 1; i<=6; i++)
+        {
+            document.querySelector('h1.a'+i).textContent
+            = emptyArray[i-1]
+        }
+        let max = 0
+        let maxIndex = 0
+        for(let i = 1; i<=6; i++)
+        {
+            let percent = document.querySelector('h1.a'+i).textContent
+            if(max<Number(percent))
+            {
+                max = percent
+                maxIndex = i
+            }
+            percent = (percent/bigCountLaw)*100
+            document.querySelector('h2.a'+i).textContent
+            =percent.toFixed(2)+'%' //소수점 두번째 자리만 표시
+        }
+        document.querySelector('h1.a'+maxIndex).setAttribute
+        ('class','max')
+        document.querySelector('h2.a'+maxIndex).setAttribute
+        ('class','max')
+    </script>
+</body>
+</html>
