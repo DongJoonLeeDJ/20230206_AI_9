@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ★정규식★을 공부해두셔야 합니다.
+        document.addEventListener('DOMContentLoaded',
+        () => {
+            const input = document.querySelector('input')
+            const p = document.querySelector('p')
+            //이 메일 체크해주는 함수 (true나 false를 반환)
+            const isEmail = (value) => {
+                return (value.indexOf('@')>1 
+                && (value.split('@')[1].indexOf('.')>1))
+            }
+            //참고(따라적진 마세요.)
+            //isEmail을 아래와 같은 형태로도 적을 수 있다.
+            function checkEmail(value) {
+                return (value.indexOf('@')>1) &&
+                (value.split('@')[1].indexOf('.')>1)
+            }
+            input.addEventListener('keyup', (event) =>{
+                const value=event.currentTarget.value
+                if(isEmail(value)) {
+                    p.style.color='green'
+                    p.textContent=`이메일형식:${value}`
+                } else {
+                    p.style.color='red'
+                    p.textContent=`이메일형식아님:${value}`
+                }
+            })
+
+
+        })
+    </script>
+    
+    <input type="text">
+    <p></p>
+</body>
+</html>

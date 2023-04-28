@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체 태그 선택 */
+        * {
+            /* 모든 웹브라우저에서 동일한 여백을 보이게 하기 위함 */
+            margin:0;
+            padding:0;
+            
+        }
+        h1{
+            /* 여백과 글자의 크기가 똑같은 폰트를 설정 */
+            font-family: D2Coding;
+        }
+
+    </style>
+    <script>
+        window.onload = function() {
+            const star = document.querySelector('h1')
+            const myfontSize = 42 
+            star.style.fontSize = myfontSize+'px'
+
+            star.style.position = 'fixed' //absolute로 하면 스크롤이 늘어나서 언뜻보며 창에서 안 벗어난 것처럼 보임
+            let [x,y] = [0,0] //x라는 변수와 y라는 변수에 각각 0 대입
+            const block = 20 //20칸 단위로 움직인다.
+            //별의 위치를 옮겨주는 함수
+            const print = function() {
+                star.style.left = `${x*block}px`
+                star.style.top = `${y*block}px`
+            }
+            print() //별을 0,0에 위치시킴
+            //키 코드값 : 왼쪽 화살표의 코드값은 37로 정해져있음
+            //js에서 정해진 것임
+            const [left,up,right,down] = [37,38,39,40]
+            
+            let limitX = Math.floor(window.innerWidth/block)
+            let limitY = Math.floor(window.innerHeight/block)
+            document.body.addEventListener('keydown', 
+            function(event)
+            {
+                switch(event.keyCode) {
+                    case left://37인 경우
+                        if(x<1)
+                            break
+                        x-=1
+                        break
+                    case right:
+                    //window.innerWidth : 창 안 쪽 크기
+                    limitX = Math.round(window.innerWidth/block)        
+                    //console.log("wx:"+window.innerWidth)
+                    //console.log("lx:"+limitX)
+                    //console.log('x='+x)
+                    //console.log(star.style.left.split('px')[0])
+                        if(x+2>limitX)
+                           break
+                        
+                        x+=1
+                        break
+                    case up:
+                        if(y<1)
+                            break
+                        y-=1
+                        break
+                    case down:
+                    limitY = Math.round(window.innerHeight/block)
+                    
+                // console.log(star.style.top.split('px')[0])
+                // console.log("wy:"+window.innerHeight)
+                // console.log("ly:"+limitY)
+                // console.log('y='+y)
+                //     console.log(star.style.top.split('px')[0])
+                        if(y+3>limitY)
+                           break
+                        y+=1
+                        break
+                }
+                print()
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>★</h1>
+</body>
+</html>

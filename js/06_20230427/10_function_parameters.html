@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //...은 최신 문법
+        //매개 변수의; 개수를 모를 때 쓰는 것
+        function mysum(...items){
+            let sum = 0;
+            for(const iterator of items)
+                sum+=iterator
+            console.log('총합='+sum)
+        }
+        //...의 옛날 버전 sum 함수
+        //arguments라는 키워드를 활용(매개변수들)
+        function mysum2(){
+            let sum = 0;
+            for(const iterator of arguments)
+                sum+=iterator
+            console.log('총합='+sum)
+        }
+        mysum(1,2,3,4,5)
+        mysum2(1,2,3,4,5)
+        //a 자리에 아무 것도 없으면 1, 값 넣으면 그 값이 a값이 됨
+        //c#에 이런 문법이 있음
+        function mypower(a=1)
+        {
+            if(a==1)
+                console.log(1)
+            else
+                console.log(a*a)
+        }
+        mypower() //1 출력
+        mypower(10) //100 출력
+
+        function justprint(...items)
+        {
+            console.log(items)
+        }
+        const arr = [1,2,3,4,5]
+        justprint(arr) // arr 한 덩어리가 출력
+        justprint(...arr) // arr 에 있는 값들이 하나씩 출력됨
+    </script>
+</body>
+</html>

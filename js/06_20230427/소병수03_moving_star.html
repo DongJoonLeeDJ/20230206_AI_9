@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen {
+            
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            const star = document.querySelector('h1')
+            star.style.position = 'fixed'
+            let [x, y] = [0, 0]
+            const block = 20
+            const print = function () {
+                star.style.left = `${x * block}px`
+                star.style.top = `${y * block}px`
+            }
+            print()
+            const [left, up, right, down] = [37, 38, 39, 40]
+            document.body.addEventListener('keydown', function (event) {
+                let width_size=window.innerWidth
+                let height_size=window.innerHeight
+                let a=Math.floor(width_size/block)
+                let b=Math.floor(height_size/block)-1
+                
+                switch (event.keyCode) {
+                    case left:
+                        x -= 1
+                        break;
+                    case right:
+                        x += 1
+                        break; 
+                    case up:
+                        y -= 1
+                        break
+                    case down:
+                        y +=1
+                        break
+                }
+                if(x<0){
+                    x+=a
+                }else if(x>=a){
+                    x-=a
+                }else if(y<0){
+                    y+=b
+                }else if(y>=b){
+                    y-=b
+                }
+                print()
+            })
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>*</h1>
+</body>
+
+</html>

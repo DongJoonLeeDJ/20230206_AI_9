@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red { color:red}
+        .normal {color:black}
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <script>
+        const mytextarea = document.querySelector('textarea')
+        const myh1 = document.querySelector('h1')
+        //keyup : 키보드 누른 다음 다시 올라올 때 이벤트를 호출
+        mytextarea.addEventListener('keyup', function() {
+            const mylength = mytextarea.value.length
+
+            if(mylength>50)
+            {
+                myh1.setAttribute('class','red') //정답
+                myh1.setAttribute('style','background:pink')
+            }
+            else
+            {
+                myh1.setAttribute('class','normal') //정답
+                myh1.setAttribute('style','background:white')
+            }
+
+
+            myh1.textContent = `글자수 : ${mylength}`
+            //setAttribute 라는 걸 이용해서 글자수가 50글자 넘으면
+            //빨간색으로 바뀌게 하기(myh1의 색깔을...)
+            //50자 이하가 되면 다시 검은색으로 바뀌게 하기
+            //myh1.style.color 말고 setAttribute를 활용할 것!
+        })
+    </script>
+</body>
+</html>
