@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="myjq.js"></script>
+    <script src="myjs_jq_music.js"></script>
+
+</head>
+<body>
+    <div class="app">
+        <div id="header">
+            <h1>음악 플레이어</h1>
+            <p>음악은 국가에서 허락한 유일한 마약이다.</p>
+        </div>
+        <div class="visual"></div>
+        <p class="title"></p>
+        <div class="pads">
+            <!-- (div.pad$>audio[src=sound/$.mp3])*6 -->
+            <div class="pad1">
+                <audio src="sound/1.mp3"></audio>
+            </div>
+            <div class="pad2">
+                <audio src="sound/2.mp3"></audio>
+            </div>
+            <div class="pad3">
+                <audio src="sound/3.mp3"></audio>
+            </div>
+            <div class="pad4">
+                <audio src="sound/4.mp3"></audio>
+            </div>
+            <div class="pad5">
+                <audio src="sound/5.mp3"></audio>
+            </div>
+            <div class="pad6">
+                <audio src="sound/6.mp3"></audio>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

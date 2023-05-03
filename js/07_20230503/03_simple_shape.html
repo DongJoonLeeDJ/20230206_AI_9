@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myjq.js"></script>
+    <style>
+        .box {
+            width:60px;
+            height:60px;
+            background-color: blueviolet;
+            float:left;
+            margin:15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+    <script>
+        //filter : 특정 태그만 선택하는 것
+        //클래스명이 box인 태그들 중에서
+        //클래스 명에 border_box인 태그들만 선택해서
+        //css에 border를 적용한 것
+        //$('.box').filter('.border_box').css('border','3px solid black')
+    
+        let boxes = document.querySelectorAll('.box.border_box')
+        /*
+        let boxes = document.getElementsByClassName('box border_box')
+        */
+        for(const item of boxes)
+            item.style.border = '3px solid black'
+    
+    </script>
+</body>
+</html>
