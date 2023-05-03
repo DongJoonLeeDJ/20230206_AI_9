@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>결과 확인</h1>
+    <h1 id="result"></h1>
+    <h1>위 결과 확인</h1>
+    <script>
+        fetch('https://dongjoonleedj.github.io/testWebHosting/myjson.json')
+        .then(response=>{
+            if(!response.ok) //요청 실패시
+                throw new Error('400 or 500 error')
+            //요청 성공하면 
+            return response.json()
+        }).then(result=>{
+            console.log(result)
+            let h1 = document.querySelector('#result')
+            h1.textContent = result.price //json의 price 속성
+        }).catch(()=>{console.log('error!')})
+    </script>
+</body>
+</html>

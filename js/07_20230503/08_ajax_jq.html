@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myjq.js"></script>
+</head>
+<body>
+    <h1>가격은 아래와 같다.</h1>
+    <div id="result"></div>
+    <h1>가격은 위와 같다.</h1>
+    <script>
+        $.ajax(
+            {
+                url:'https://dongjoonleedj.github.io/animated-computing-machine/myjson.json',
+                dataType:'json',
+                //통신 성공한 경우
+                success : function(data){
+                    let result = $('#result')
+                    result.text(data.price)
+                },
+                error : function(r,s,e) {
+                    alert('error!!!')
+                }
+            }
+        )
+    </script>
+</body>
+</html>
