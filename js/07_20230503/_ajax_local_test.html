@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="djtest.json"></script>
+</head>
+<body>
+    <h1>가격은 아래와 같습니다.</h1>
+    <div id="result"></div>
+    <h1>위 결과 확인해보세요.</h1>
+    <script>
+        let ajax = new XMLHttpRequest()
+        //통신 준비 되면
+        ajax.onreadystatechange = function() {
+            if(this.readyState==4 && this.status==200) //통신 성공시
+            {
+                let h1 = document.querySelector('#result')
+                h1.textContent = JSON.parse(ajax.responseText)['price']
+            }
+        }
+        //로컬 안 됨
+        //CORS 이슈때문에 안 됨
+        //기본적으로 ajax는 서버를 통해서만 된다.
+        //참고로 로또 api도 동일한 이슈때문에 일반적인 방법으론
+        //못 읽어온다.c#, python은 되지만 js는 cors 이슈때문에
+        //브라우저 자체에서 막는다.
+         ajax.open('GET', data)
+        // ajax.open('GET', (JSON.stringify(data)))
+        // ajax.open('GET', JSON.parse(JSON.stringify(data)))
+        //  ajax.open('GET', JSON.parse((data)))
+        ajax.send()
+    </script>
+</body>
+</html>
