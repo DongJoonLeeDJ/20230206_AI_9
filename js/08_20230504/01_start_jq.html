@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<style>
+    .pink{
+        color:deeppink
+    }
+</style>
+    <script>
+        //js
+        //document.addEventListner('DOMContentLoaded', function(){})
+        //window.onload=function(){}
+        //jQ
+        //$().ready(function(){})
+        //$(document).ready(function(){})
+        $( //body를 다 불러오고 나서 호출되는 함수
+            function() {
+                $('p').addClass('pink')
+            }
+        )
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis pariatur exercitationem aliquam est dolorum a, maiores dolorem repudiandae error possimus iste. Iusto optio voluptatibus sint molestiae adipisci impedit quis blanditiis.</h1>
+    <script>
+        $('h1')
+        .css('color','cyan')
+        .css('background-color','black')
+        .css('border', '3px red solid')
+        .on('click', function(){
+            alert('!!!')
+        }).hover(function(){console.log('hover~~')})
+        .click(function(){console.log('click~!!')})
+    </script>
+</body>
+</html>

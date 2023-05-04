@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--리액트를 사용하기 위한 라이브러리 코드-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>    
+</head>
+<body>
+    <!-- 리액트를 통해서 div 태그에 h1태그를 삽입한 것 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        const imgUrl = 'https://th.bing.com/th/id/OIP.XtgeC0PQ-FHbAJZasKiAoQAAAA?pid=ImgDet&rs=1'
+        const name = '이동준'
+        const component =//<!--슬래시 꼭 필요-->
+        <div>
+            <h1>{name}</h1>
+            <img src={imgUrl}/> 
+        </div>
+        const container = document.getElementById('root')
+        ReactDOM.render(component, container) //render 그리다
+    </script>
+</body>
+</html>

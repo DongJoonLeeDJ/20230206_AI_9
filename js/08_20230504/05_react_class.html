@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--리액트를 사용하기 위한 라이브러리 코드-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>    
+</head>
+<body>
+    <!-- 리액트를 통해서 div 태그에 h1태그를 삽입한 것 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        //React에 있는 Component class를 더 개량해서
+        //MyApp이라는 클래스를 만들겠다!
+        //필요시에 이 MyApp 클래스를 가져다가 써서 
+        //내가 원하는 웹을 만들어내면 된다.
+        class MyApp extends React.Component {
+            render() {
+                return <div>
+                        <h1>{this.props.name}</h1>
+                        <img src={this.props.imgUrl}/>
+                    </div>
+            }
+        }
+        const container = document.getElementById('root')
+        //ReactDOM.render(component, container) //render 그리다
+        ReactDOM.render(<MyApp name='이동준' imgUrl='https://th.bing.com/th/id/OIP.XtgeC0PQ-FHbAJZasKiAoQAAAA?pid=ImgDet&rs=1'/>,container)
+    </script>
+</body>
+</html>

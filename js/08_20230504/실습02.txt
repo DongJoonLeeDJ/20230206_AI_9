@@ -1,0 +1,22 @@
+1. 02_students_jq 문제에서 학생 삭제, 학생 수정, 학생 조회 기능도 추가해보기
+
+2. 02_students_jq를 js로 바꿔보기
+
+3. prompt랑 04_react_img.html응용하여 입력한 값에 따라 다른 이미지 출력되게 하기
+참고) alt+z 누르면 url 길이 줄어드니 코딩할 때 참고하세요.
+
+4. 아래 사이트들의 내용 참고하여, 따라서 해보기
+https://blog.naver.com/jcosmoss
+http://visualssing.dothome.co.kr/javascript/example19.html
+https://blog.naver.com/jcosmoss/221709779356
+https://blog.naver.com/jcosmoss/221710082323
+https://blog.naver.com/jcosmoss/221710567485 // 얼굴 DB
+https://blog.naver.com/jcosmoss/221714036964 //영화 예고
+https://blog.naver.com/jcosmoss/221715332150
+https://blog.naver.com/jcosmoss/221716377404
+
+5. 자바 개발 환경 설정 마무리 짓고 Hello World 출력해보기
+
+6. 자바로 로또 번호 뽑는 프로그램 만들어 보기
+
+7. 자바로 최댓값, 최솟값 찾는 문제 해보기, 배열 만들고 정렬하는 거 해보기!
