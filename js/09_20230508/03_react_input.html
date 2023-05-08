@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let name = prompt('이름이 뭔가요?')
+        let imageUrl
+        let component
+        if(name == '프로토스')
+            imageUrl='https://www.mediaus.co.kr/news/photo/201511/51363_124191_1736.jpg'
+        else if(name=='저그')
+            imageUrl='https://i.namu.wiki/i/8pw6GkeJQRYAxVpoDo6R0yNpbVMP-zb_OZFwnXozhU_eaSwBZsTDfhoMdCTEQVNvWT5FQbUt4PFe79hUGbgQcw.webp'
+        else if(name=='테란')
+            imageUrl='https://www.bizhankook.com/upload/bk/article/201701/thumb/12646-20938-sampleM.jpg'
+        else
+            imageUrl='https://i.ytimg.com/vi/nRjIj9hwKRI/maxresdefault.jpg'
+        component = <div>
+            <h1>리액트 시작 : {name}</h1>
+            <img src={imageUrl}/>
+            </div>
+        const container = document.getElementById('root')
+        ReactDOM.render(component,container)
+    </script>
+</body>
+</html>
