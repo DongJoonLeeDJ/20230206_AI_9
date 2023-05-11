@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>    
+</head>
+<body>
+    <!-- 리액트를 통해서 div 태그에 h1태그를 삽입한 것 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        //변수 = <태그>값</태그>
+        //이런 형식으로 적을 수 있는 게 babel이라는 라이브덕분이다.
+        //이거를 JSX라고도 부름
+        //babel은 JSX를 자바스크립트로 변환을 시켜주는 것
+        const component = <h1>리액트 시작 </h1>
+        const container = document.getElementById('root')
+        //ReactDOM : 리액트 문법을 사용하기 위한 객체
+        ReactDOM.render(component, container) //render 그리다
+    </script>
+</body>
+</html>

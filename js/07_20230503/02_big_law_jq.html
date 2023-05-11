@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .max{color:deeppink}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- h1{$}*6 -->
+    <h1>1</h1>
+    <h1 class="a1">0</h1>
+    <h2 class="a1">0</h1>
+    <h1>2</h1>
+    <h1 class="a2">0</h1>
+    <h2 class="a2">0</h1>
+    <h1>3</h1>
+    <h1 class="a3">0</h1>
+    <h2 class="a3">0</h1>
+    <h1>4</h1>
+    <h1 class="a4">0</h1>
+    <h2 class="a4">0</h1>
+    <h1>5</h1>
+    <h1 class="a5">0</h1>
+    <h2 class="a5">0</h1>
+    <h1>6</h1>
+    <h1 class="a6">0</h1>
+    <h2 class="a6">0</h1>
+    <script>
+        let bigCountLaw = prompt('주사위 시도 횟수')
+        let emptyArray = [0,0,0,0,0,0]
+        for(let i = 0; i<bigCountLaw; i++) {
+            let random = Math.floor(Math.random()*6)
+            emptyArray[random]++
+        }
+        for(let i = 1; i<=6; i++)
+        {
+            //js와 jQ가 가장 다른 건
+            //DOM객체를 어떻게 다루느냐
+            //즉 태그를 선택하고 이벤트 추가 등등 하는 걸
+            //어떻게 하는지가 다르다
+            //js에 비해서 쉽게 할 수 있다.
+            
+            //js
+            //document.querySelector('h1.a'+i).textContent
+            //= emptyArray[i-1]
+            $('h1.a'+i).text(emptyArray[i-1])//해당 태그에 글 쓰는 것
+        }
+        let max = 0
+        let maxIndex = 0
+        for(let i = 1; i<=6; i++)
+        {
+            //js
+            //let percent = document.querySelector('h1.a'+i).textContent
+            //jQ
+            let percent = $('h1.a'+i).text() //text를 읽어오는 것
+            if(max<Number(percent))
+            {
+                max = percent
+                maxIndex = i
+            }
+            percent = (percent/bigCountLaw)*100
+            //js
+            //document.querySelector('h2.a'+i).textContent
+            //=percent.toFixed(2)+'%' //소수점 두번째 자리만 표시
+
+            //jQ
+            $('h2.a'+i).text(percent.toFixed(2)+'%')
+        }
+        //js
+        //document.querySelector('h1.a'+maxIndex).setAttribute
+        //('class','max')
+        //document.querySelector('h2.a'+maxIndex).setAttribute
+        //('class','max')
+
+        //jQ
+        $('h1.a'+maxIndex).addClass('max')
+        $('h2.a'+maxIndex).addClass('max')
+    </script>
+</body>
+</html>

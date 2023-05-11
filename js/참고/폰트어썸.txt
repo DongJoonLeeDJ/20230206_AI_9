@@ -1,0 +1,28 @@
+폰트 어썸 사이트 이용하기
+https://blog.naver.com/nsoft21/221544666162
+
+
+그냥 무조건 링크써서 하기 
+예시
+
+      <!doctype html>
+      <html>
+        <head>
+          <!-- Place your kit's code here -->
+          <script src="https://kit.fontawesome.com/8dc53e8d2e.js" crossorigin="anonymous"></script>
+        </head>
+
+        <body>
+          <i class="fas fa-thumbs-up fa-5x"></i>
+        </body>
+      </html>
+      
+
+
+색깔 바꾸기
+*클래스를 text-success로 설정하면 녹색이 적용됨(폰트어썸말고 부트스트랩.css에 있음 즉 출처는 여기다. ->   https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" )
+
+예시
+<div style="color: aqua;"><i class="fas fa-faucet fa-6x"></i></div>
+<div class="text-success"><i class="fas fa-faucet fa-6x"></i></div> 
+<i class="fas fa-coffee fa-xs" style="color: #ff922b;"></i>

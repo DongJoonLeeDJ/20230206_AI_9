@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myjq.js"></script>
+</head>
+<body>
+    <h1>박스오피스 탑 10</h1>
+    <p>최신 영화</p>
+    <div class="boxOffice">
+        <h2 class="boxOfficeType"></h2>
+        <p class="showRange"></p>
+        <ul class="boxOfficeList"></ul>
+    </div>
+    <script>
+        const key = '43acf2413769000d8f1218245a94a6ba'
+        const url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json'
+        const apiurl = `${url}?key=${key}&targetDt=20230502`
+        console.log(apiurl)
+        const boxOfficeType = $('.boxOfficeType')
+        const showRange = $('.showRange')
+        const myUl = $('.boxOfficeList')
+        $.ajax({
+            url:apiurl,
+            dataType:'json',
+            success : function(result) {
+                const boxOfficeResult = 
+                result['boxOfficeResult']
+                const movieList = boxOfficeResult['dailyBoxOfficeList']
+                boxOfficeType.text(boxOfficeResult['boxofficeType'])
+                showRange.text(boxOfficeResult['showRange'])
+                $(movieList).each(function(index,element){
+                    const mh2 = $('<h1></h1>')
+                    mh2.text(element['movieNm'])
+                    myUl.append(mh2)
+                })
+            }
+        })
+    </script>
+</body>
+</html>
