@@ -1,0 +1,16 @@
+1. Circle 클래스 만들기
+반지름 값 r
+원주율 값 pi(상수로 할 것. final 키워드)
+
+2. Circle 생성하고 r 값 set 할 때
+0이하의 값이 나오면 오류 메시지 쓰고
+r 값을 0으로 하기
+
+3. 원의 둘레(getRound)와 원의 넓이(getArea) 메소드(=함수) 만들기
+호출해보기
+
+ex)
+Circle a = new Circle();
+a.setR(10);
+System.out.println(a.getArea());
+System.out.println(a.getRound());
