@@ -168,19 +168,89 @@
                     },100
                 )
             }
-            else
-            {  // 볼과 스트라이크 개수를 샌다.
-                //output : 정잡
-                //arr에는  정답이 하나씩 들어 있다
+            else 
+            {
+                //ball,strike의 개수를 센다.
+                //output : 정답
+                //arr 에는 정답이 하나씩 들어 있다.
                 let arr = [output[0], output[1], output[2]]
                 let ball = 0
-                let srttkie = 0
-                for (let i = 0; i < h1output; i++) {
-                    const element = array[i];
-                    
+                let strike = 0
+                for(let i = 0; i<h1output.innerHTML.length; i++)
+                {
+                    let test = arr.indexOf(h1output.innerHTML[i])
+                    if(test!=-1) //ball or strike가 증가
+                    {
+                        if(arr[i] == h1output.innerHTML[i])
+                            strike++
+                        else
+                            ball++
+                    }
                 }
-                //없으면 아웃
-            }
+                
+                let h1Temp = h1output.innerHTML
+                //ball이랑 strike가 없으면 out
+                if(ball==0 && strike==0)
+                {
+                    h3input.innerHTML+=
+                    `[${h1output.innerHTML}] out <br>`
+                    h1output.innerHTML=''
+                }
+                else
+                {
+                    h3input.innerHTML+=
+                    `[${h1output.innerHTML}] ${strike}S ${ball}B <br>`
+                    h1output.innerHTML=''
+                }
+                
+
+                //시도 횟수에 따라서 다양한 예외처리들을 할 것
+                if(count==3)
+                {
+                    let exceptNum = Math.floor(Math.random()*10)
+                    let checkNumber = arr.indexOf(exceptNum+'')
+                    while(checkNumber!=-1) //arr에 있는거라면
+                    {
+                        //없는 거 나올 때 까지 다시 뽑기
+                        exceptNum = Math.floor(Math.random()*10)
+                        checkNumber = arr.indexOf(exceptNum+'')
+                    }
+                    buttons[exceptNum].style.color='red'
+                    buttons[exceptNum].disabled=true
+                }
+                else if(count==5||count==7||count==8)
+                {
+                    let exceptNum = Math.floor(Math.random()*10)
+                    let checkNumber = arr.indexOf(exceptNum+'')
+                    while(checkNumber!=-1 || 
+                    buttons[exceptNum].style.color!='') //arr에 있는거라면
+                    {
+                        //없는 거 나올 때 까지 다시 뽑기
+                        exceptNum = Math.floor(Math.random()*10)
+                        checkNumber = arr.indexOf(exceptNum+'')
+                    }
+                    buttons[exceptNum].style.color='red'
+                    buttons[exceptNum].disabled=true
+                }
+                if(count>=9)
+                {
+                    count = 0
+                    alert(`마지막으로 입력한 ${h1Temp}도 정답 아님! `
+                    +`정답은 ${output}입니다.`)
+                    h3input.innerHTML = ''
+                    shuffleNewNumber()
+                    h1output.innerHTML=''
+                    answer.innerHTML='정답은 ? '
+                    timecount = 0
+                    clearInterval(timeCountInterval)
+                    timeCountInterval=setInterval(
+                        function(){
+                            timecount++
+                            time.innerHTML=timecount
+                        }, 100
+                    )
+                }
+            }   
         })
         
         
