@@ -1,0 +1,31 @@
+.tt-share-entry-with-sns {clear:both !important;margin:0 !important;padding:10px 0 !important;}
+.tt-share-entry-with-sns div,
+.tt-share-entry-with-sns ul,
+.tt-share-entry-with-sns li {margin:0 !important;padding:0 !important;background-image:none !important;background-color:transparent !important;border:none !important;}
+.tt-share-entry-with-sns ul,
+.tt-share-entry-with-sns li {list-style-type:none !important;list-style-position:initial !important;list-style-image:none !important;}
+.tt-share-entry-with-sns a {display:block !important;overflow:hidden !important;width:100% !important;height:100% !important;text-indent:-9999px !important;}
+.tt-share-entry-with-sns a,
+.tt-share-entry-with-sns a:hover {text-decoration:none !important;cursor:pointer !important;background-image:none !important;background-color:transparent !important;border:none !important;}
+
+.tt-sns-icon-alignment-left .tt-sns-wrap {float:left;}
+.tt-sns-icon-alignment-center .tt-sns-wrap {margin:0 auto !important;}
+.tt-sns-icon-alignment-right .tt-sns-wrap {float:right;}
+
+.tt-share-entry-with-sns .tt-sns-wrap {position:relative;width:243px;height:30px;}
+.tt-share-entry-with-sns .tt-sns-service-default {background:url(//t1.daumcdn.net/tistory_admin/static/sns/socialShare_big2.png) no-repeat !important;width:243px;height:30px;}
+.tt-share-entry-with-sns .tt-sns-service-default li {float:left;height:30px;}
+.tt-share-entry-with-sns .tt-sns-service-default a {background:none !important;}
+.tt-share-entry-with-sns .tt-sns-service-kakaostory {width:96px;}
+.tt-share-entry-with-sns .tt-sns-service-twitter {width:68px;}
+.tt-share-entry-with-sns .tt-sns-service-facebook {width:78px;}
+
+.tt-sns-icon-size-small .tt-sns-wrap {width:82px;}
+.tt-sns-icon-size-small .tt-sns-service-default {background:url(//t1.daumcdn.net/tistory_admin/static/sns/socialShare_small2.png) no-repeat !important;width:82px;}
+.tt-sns-icon-size-small .tt-sns-service-kakaostory {width:28px;}
+.tt-sns-icon-size-small .tt-sns-service-twitter {width:27px;}
+.tt-sns-icon-size-small .tt-sns-service-facebook {width:27px;}
+
+.tt-sns-clear {clear:both;}
+
+.entry .article .tt-share-entry-with-sns ul {margin:0 !important;}

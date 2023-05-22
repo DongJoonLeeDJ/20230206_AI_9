@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+window.onload = () =>
+{
+    let submit = document.getElementById("submit")
+    let test = document.querySelector("form[name=test]")
+    fnc = function()
+    {
+        //alert(test.action)
+        test.submit()
+    }
+    submit.onclick = fnc
+}
+
+    </script>
+</head>
+<body>
+    <form action="https://www.naver.com" name="test">
+        <input id="submit" type="button" value="회원가입">
+        <input type="submit">
+    </form>
+</body>
+</html>

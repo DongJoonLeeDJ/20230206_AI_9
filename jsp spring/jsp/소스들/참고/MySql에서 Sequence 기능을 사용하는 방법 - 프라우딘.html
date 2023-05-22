@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://proudin.tistory.com/28 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/lightbox.min.css"><link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/font.css"><link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/content.css"><!--[if lt IE 9]><s src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></s><![endif]--><!--[if gte IE 9]>
+<!--><s src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/jquery-3.2.1.min.js.다운로드"></s><!--<![endif]-->
+<s src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/lightbox-plus-jquery.min.js.다운로드"></s>
+<s>
+lightbox.options.fadeDuration = 200;
+lightbox.options.resizeDuration = 200;
+lightbox.options.wrapAround = false;
+lightbox.options.albumLabel = "%1 / %2";
+</s>
+<s>var tjQuery = jQuery.noConflict(true);</s><style type="text/css">.tt_article_useless_p_margin p {padding-top:0 !important;padding-bottom:0 !important;margin-top:0 !important;margin-bottom:0 !important;}</style><meta name="referrer" content="always"><link rel="icon" href="https://t1.daumcdn.net/tistory_admin/static/top/favicon_0630.ico"><link rel="apple-touch-icon" href="https://img1.daumcdn.net/thumb/C180x180/?fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F3758824%2Fattach%2Fd4d86fc19d1449bcaca1052b28c80ef1">
+<link rel="apple-touch-icon" sizes="76x76" href="https://img1.daumcdn.net/thumb/C76x76/?fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F3758824%2Fattach%2Fd4d86fc19d1449bcaca1052b28c80ef1">
+<link rel="apple-touch-icon" sizes="120x120" href="https://img1.daumcdn.net/thumb/C120x120/?fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F3758824%2Fattach%2Fd4d86fc19d1449bcaca1052b28c80ef1">
+<link rel="apple-touch-icon" sizes="152x152" href="https://img1.daumcdn.net/thumb/C152x152/?fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F3758824%2Fattach%2Fd4d86fc19d1449bcaca1052b28c80ef1">
+<meta name="google-adsense-platform-account" content="ca-host-pub-9691043933427338">
+<meta name="google-adsense-platform-domain" content="tistory.com">
+<meta name="desion" content="오라클에서는 시퀀스명.nextval 이라는 편리한 기능이 존재하지만 MySql은 시퀀스 기능이 별도로 존재하지 않습니다. 조금 번거롭기는 하지만, 그래도 사용 할 방법은 있습니다. MySql에서 시퀀스 기능을 사용하려..">
+
+<!-- BEGIN OPENGRAPH -->
+<link rel="canonical" href="https://proudin.tistory.com/28"><meta property="og:type" content="article"><meta property="og:url" content="https://proudin.tistory.com/28"><meta property="og:article:author" content="　 　　 　　　　"><meta property="og:site_name" content="프라우딘"><meta property="og:title" content="MySql에서 Sequence 기능을 사용하는 방법"><meta name="by" content="　 　　 　　　　"><meta property="og:desion" content="오라클에서는 시퀀스명.nextval 이라는 편리한 기능이 존재하지만 MySql은 시퀀스 기능이 별도로 존재하지 않습니다. 조금 번거롭기는 하지만, 그래도 사용 할 방법은 있습니다. MySql에서 시퀀스 기능을 사용하려.."><meta property="og:image" content="https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png"><meta property="article:section" content="IT 인터넷">
+<!-- END OPENGRAPH -->
+
+
+
+<!-- BEGIN TWITTERCARD -->
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@TISTORY"><meta name="twitter:title" content="MySql에서 Sequence 기능을 사용하는 방법"><meta name="twitter:desion" content="오라클에서는 시퀀스명.nextval 이라는 편리한 기능이 존재하지만 MySql은 시퀀스 기능이 별도로 존재하지 않습니다. 조금 번거롭기는 하지만, 그래도 사용 할 방법은 있습니다. MySql에서 시퀀스 기능을 사용하려.."><meta property="twitter:image" content="https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png">
+<!-- END TWITTERCARD -->
+
+
+
+<!-- BEGIN DAUMAPP -->
+<meta property="dg:plink" content="https://proudin.tistory.com/28"><meta name="plink" content="https://proudin.tistory.com/28"><meta name="title" content="MySql에서 Sequence 기능을 사용하는 방법"><meta name="article:media_name" content="프라우딘"><meta property="article:mobile_url" content="https://proudin.tistory.com/m/28"><meta property="article:pc_url" content="https://proudin.tistory.com/28"><meta property="article:mobile_view_url" content="https://proudin.tistory.com/m/28"><meta property="article:pc_view_url" content="https://proudin.tistory.com/28"><meta property="article:talk_channel_view_url" content="https://proudin.tistory.com/m/28"><meta property="article:pc_service_home" content="https://www.tistory.com"><meta property="article:mobile_service_home" content="https://www.tistory.com/m"><meta property="article:txid" content="3758824_28"><meta property="article:published_time" content="2020-11-08T01:40:03+09:00"><meta property="og:regDate" content="20201108014003"><meta property="article:modified_time" content="2020-11-08T02:29:39+09:00">
+<!-- END DAUMAPP -->
+
+
+
+<!-- BEGIN STRUCTURED_DATA -->
+<s type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/proudin.tistory.com\/28"},"url":"https:\/\/proudin.tistory.com\/28","headline":"MySql\uc5d0\uc11c Sequence \uae30\ub2a5\uc744 \uc0ac\uc6a9\ud558\ub294 \ubc29\ubc95","desion":"\uc624\ub77c\ud074\uc5d0\uc11c\ub294 \uc2dc\ud000\uc2a4\uba85.nextval \uc774\ub77c\ub294 \ud3b8\ub9ac\ud55c \uae30\ub2a5\uc774 \uc874\uc7ac\ud558\uc9c0\ub9cc MySql\uc740 \uc2dc\ud000\uc2a4 \uae30\ub2a5\uc774 \ubcc4\ub3c4\ub85c \uc874\uc7ac\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4. \uc870\uae08 \ubc88\uac70\ub86d\uae30\ub294 \ud558\uc9c0\ub9cc, \uadf8\ub798\ub3c4 \uc0ac\uc6a9 \ud560 \ubc29\ubc95\uc740 \uc788\uc2b5\ub2c8\ub2e4. MySql\uc5d0\uc11c \uc2dc\ud000\uc2a4 \uae30\ub2a5\uc744 \uc0ac\uc6a9\ud558\ub824..","author":{"@type":"Person","name":"\u3000 \u3000\u3000 \u3000\u3000\u3000\u3000"},"image":{"@type":"ImageObject","url":"https:\/\/t1.daumcdn.net\/tistory_admin\/static\/images\/openGraph\/opengraph.png","width":"800px","height":"800px"},"datePublished":"20201108T01:40:03+09:00","dateModified":"20201108T02:29:39+09:00","publisher":{"@type":"Organization","name":"TISTORY","logo":{"@type":"ImageObject","url":"https:\/\/t1.daumcdn.net\/tistory_admin\/static\/images\/openGraph\/opengraph.png","width":"800px","height":"800px"}}}</s><meta name="robots" content="max-image-preview:large">
+<!-- END STRUCTURED_DATA -->
+
+
+<s data-ad-client="ca-pub-1865949948251214" async="" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/f.txt"></s>
+<s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/wcslog.js.다운로드"></s>
+<s type="text/javas">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "52839122d7d38";
+if(window.wcs) {
+wcs_do();
+}
+</s>
+	
+    <title>MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘</title>
+    
+    <meta name="title" content="MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘">
+    <meta name="desion" content="건강과 관련된 주제를 주로 다룹니다.">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+    <link rel="alternate" type="application/rss+xml" title="프라우딘" href="https://proudin.tistory.com/rss">
+    <link rel="shortcut icon" href="https://proudin.tistory.com/favicon.ico"> 
+    <link rel="stylesheet" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/style.css">
+	<s src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/jquery-3.3.1.min.js.다운로드"></s>
+    <s src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/common.js.다운로드"></s>
+    <style>
+        
+            #header_wrap{
+                background-color:#000000 !important;
+            }
+        
+        </style>
+<meta http-equiv="imagetoolbar" content="no"><link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/shareEntryWithSNS.css">
+<s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/shareEntryWithSNS.js.다운로드"></s>
+
+<style type="text/css">
+		#daumSearchBox {
+			height: 21px;
+			background-image : url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bg_search2_2.gif);
+			margin: 5px auto ;
+			padding: 0;
+		}
+		#daumSearchBox input {
+			background: none;
+			margin : 0;
+			padding : 0;
+			border : 0;
+		}
+		#daumSearchBox #daumLogo {
+			width: 34px;
+			height: 21px;
+			float: left;
+			margin-right: 5px;
+			background-image : url(//i1.daumcdn.net/img-media/tistory/img/bg_search1_2_2010ci.gif);
+		}
+		#daumSearchBox #show_q {
+			background-color: transparent;
+			border: none;
+			font: 12px Gulim, Sans-serif;
+			color: #555;
+			margin-top: 4px;
+			margin-right: 15px;
+			float: left;
+		}
+
+		#daumSearchBox #show_btn {
+			background-image : url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bt_search_2.gif);
+			width: 37px;
+			height: 21px;
+			float: left;
+			margin:0;
+			cursor:pointer;
+			text-indent:-1000em;
+		}
+	</style>
+<link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/style(1).css">
+<s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/profile.js.다운로드"></s>
+	<style type="text/css">
+		.another_category { border: 1px solid #E5E5E5; padding: 10px 10px 5px; margin:10px 0; clear: both; }
+		.another_category h4 { font-size: 12px !important; margin: 0 !important; border-bottom: 1px solid #E5E5E5 !important; padding: 2px 0 6px !important; }
+		.another_category h4 a { font-weight: bold !important; }
+		.another_category table { table-layout: fixed; border-collapse: collapse; width: 100% !important; margin-top: 10px !important; }
+		* html .another_category table { width: auto !important; }
+		*:first-child+html .another_category table { width: auto !important; }
+		.another_category th, .another_category td { padding: 0 0 4px !important; }
+		.another_category th { text-align: left; font-size: 12px !important; font-weight: normal;  word-break: break-all; overflow: hidden; line-height: 1.5; }
+		.another_category td { text-align: right; width: 80px; font-size: 11px; }
+		.another_category th a { font-weight: normal; text-decoration: none; border: none !important; }
+		.another_category th a.current{ font-weight: bold; text-decoration: none !important; border-bottom: 1px solid !important; }
+		.another_category th span { font-weight: normal; text-decoration: none; font: 10px Tahoma, Sans-serif; border: none !important; }
+
+		.another_category_color_gray, .another_category_color_gray h4 { border-color: #E5E5E5 !important; }
+		.another_category_color_gray * { color: #909090 !important; }
+		.another_category_color_gray th a.current{border-color:#909090 !important;}
+		.another_category_color_gray h4, .another_category_color_gray h4 a { color: #737373 !important; }
+
+
+		.another_category_color_red, .another_category_color_red h4 { border-color: #F6D4D3 !important;  }
+		.another_category_color_red * { color: #E86869 !important; }
+		.another_category_color_red th a.current{border-color:#E86869 !important;}
+		.another_category_color_red h4, .another_category_color_red h4 a { color: #ED0908 !important; }
+
+
+		.another_category_color_green, .another_category_color_green h4 { border-color: #CCE7C8 !important; }
+		.another_category_color_green * { color: #64C05B !important; }
+		.another_category_color_green th a.current{border-color:#64C05B !important;}
+		.another_category_color_green h4, .another_category_color_green h4 a { color: #3EA731 !important; }
+
+
+		.another_category_color_blue, .another_category_color_blue h4 { border-color: #C8DAF2 !important; }
+		.another_category_color_blue * { color: #477FD6 !important; }
+		.another_category_color_blue th a.current{border-color:#477FD6 !important;}
+		.another_category_color_blue h4, .another_category_color_blue h4 a { color: #1960CA !important; }
+
+
+		.another_category_color_violet, .another_category_color_violet h4 { border-color: #E1CEEC !important;  }
+		.another_category_color_violet * { color:#9D64C5 !important; }
+		.another_category_color_violet th a.current{border-color:#9D64C5 !important;}
+		.another_category_color_violet h4, .another_category_color_violet h4 a { color: #7E2CB5 !important; }
+	</style>
+<s type="text/javas">
+        
+        window.TistoryBlog = {
+            basePath: "",
+            url: "https://proudin.tistory.com",
+            tistoryUrl: "https://proudin.tistory.com",
+			manageUrl: 'https://proudin.tistory.com/manage',
+            token: 'G+SiX2ls/pooPRNpZ/iDSA=='
+        };
+        var servicePath = "";
+        var blogURL = "";
+    </s>
+
+	<s> (function() { window.orgjQuery = window.jQuery; window.jQuery = tjQuery })()</s>
+    <s type="text/javas" defer="" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/reaction-button-container.min.js.다운로드"></s>
+    <s> (function() { window.jQuery = window.orgjQuery; delete window.orgjQuery })()</s>
+        <s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/base.js.다운로드"></s>
+        <link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/dialog.css">
+            <link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/font(1).css">
+    <link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/postBtn.css">
+        <link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/tistory.css">
+        <s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/kakao.min.js.다운로드"></s>
+
+        <link rel="stylesheet" type="text/css" href="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/revenue.css"><style type="text/css">#DragSchLayer{display:block;position:absolute;z-index:1000;width:61px;height:31px;margin:-30px 0px 0px -5px;background:url(//search1.daumcdn.net/search/statics/common/pi/btn_drag_rect.png);cursor:pointer}             @media             only screen and (-webkit-min-device-pixel-ratio: 1.5),             only screen and (min-device-pixel-ratio: 1.5),             only screen and (min-resolution: 1.5dppx) {             #DragSchLayer{background-image:url(//search1.daumcdn.net/search/statics/common/pi/r2/btn_drag_rect.png);background-size:61px 31px}}            </style></head>
+
+<body id="tt-body-page" class="
+sidebar-on
+small-thumbnail
+" cz-shortcut-listen="true">
+
+	<s type="text/javas">
+	(function() {
+		if (!window.T) {
+			window.T = {}
+		}
+		window.T.config = {"TOP_SSL_URL":"https:\/\/www.tistory.com","PREVIEW":false,"ROLE":"guest","PREV_PAGE":"\/29","NEXT_PAGE":"\/27","BLOG":{"isDormancy":false,"title":"\ud504\ub77c\uc6b0\ub518"},"NEED_COMMENT_LOGIN":false,"COMMENT_LOGIN_CONFIRM_MESSAGE":"","LOGIN_URL":"https:\/\/www.tistory.com\/auth\/login\/?redirectUrl=http%3A%2F%2Fproudin.tistory.com%2F28","DEFAULT_URL":"https:\/\/proudin.tistory.com","USER":{"name":null,"homepage":null},"ROLE_GROUP":"visitor","SUBsION":{"status":"none","isConnected":false,"isProcessing":false,"isPending":false,"isWait":false,"isNone":true},"IS_LOGIN":false,"HAS_BLOG":false,"TOP_URL":"https:\/\/www.tistory.com","JOIN_URL":"https:\/\/www.tistory.com\/member\/join"};
+		window.appInfo = {"domain":"tistory.com","topUrl":"https:\/\/www.tistory.com","loginUrl":"https:\/\/www.tistory.com\/auth\/login","logoutUrl":"https:\/\/www.tistory.com\/auth\/logout"};
+
+        window.initData = {};
+        
+	})();
+</s>
+
+<s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/common.js(1).다운로드"></s>
+<div style="margin:0; padding:0; border:none; background:none; float:none; clear:none; z-index:0"></div>
+	<div id="header_wrap">
+		
+		<div id="header_gnb">
+			
+            <!-- 헤더 영역 -->
+			<header>
+				<div id="header-title">
+					<a href="https://proudin.tistory.com/">프라우딘</a>
+				</div>
+				<div class="dropdown-content">
+					<section id="tt-search" aria-labelledby="call-search">
+						<h2 class="sr-only" id="search_app">검색</h2>
+						<div class="tt-search-inner"><form id="search-form" autocomplete="off" role="form"><input type="search" name="search" value="" id="search-input" class="ie-nanum" onkeypress="if (event.keyCode == 13) { try{window.location.href=&#39;/search/&#39;+looseURIEncode(document.getElementsByName(&#39;search&#39;)[0].value);document.getElementsByName(&#39;search&#39;)[0].value=&#39;&#39;;return false;}catch(e){} }" placeholder="Search..." role="search"></form></div>
+					</section>
+					<ul id="myDropdown">
+
+						<li>
+							<a href="https://proudin.tistory.com/manage/entry/post"><i class="fas fa-pen"></i>글작성</a>
+						</li>
+						<li>
+							<a href="https://proudin.tistory.com/guestbook"><i class="fas fa-comment-alt"></i>방명록</a>
+						</li>
+						<li>
+							<a href="https://proudin.tistory.com/manage"><i class="fas fa-cog"></i>환경설정</a>
+						</li>
+						<li id="btn_goCategory">
+							<select class="res_tab" onchange="if (this.value) window.location.href=this.value">
+								<option>카테고리</option>
+							<option value="/category">
+			전체							(30)
+			
+					</option><option value="/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8">
+						건강 &amp; 다이어트													(6)
+						
+											</option><option value="/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8/%EC%A0%95%EB%B3%B4">
+									정보
+																			(5)
+									
+																	</option><option value="/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8/%EB%85%BC%EB%AC%B8">
+									논문
+																			(1)
+									
+																	</option><option value="/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89">
+						키토제닉													(6)
+						
+											</option><option value="/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EA%B8%B0%EC%B4%88">
+									기초
+																			(4)
+									
+																	</option><option value="/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EC%B9%BC%EB%9F%BC">
+									칼럼
+																			(0)
+									
+																	</option><option value="/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EB%8C%80%EC%B6%A9%EB%8C%80%EC%B6%A9%20%ED%82%A4%ED%86%A0%20%EB%A0%88%EC%8B%9C%ED%94%BC">
+									대충대충 키토 레시피
+																			(2)
+									
+																	</option><option value="/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/Q%26A">
+									Q&amp;A
+																			(0)
+									
+																	</option><option value="/category/%EB%B0%94%EC%9D%B4%EC%98%A4%ED%95%B4%ED%82%B9">
+						바이오해킹													(16)
+						
+											</option><option value="/category/%EB%B0%94%EC%9D%B4%EC%98%A4%ED%95%B4%ED%82%B9/%ED%98%88%EB%8B%B9%EC%B8%A1%EC%A0%95">
+									혈당측정
+																			(16)
+									
+																	</option><option value="/category/Language">
+						Language													(1)
+						
+											</option><option value="/category/Language/C%23">
+									C#
+																			(1)
+									
+																	</option><option value="/category/DB">
+						DB													(1)
+						
+											</option><option value="/category/DB/MsSql">
+									MsSql
+																			(0)
+									
+																	</option><option value="/category/DB/MySql">
+									MySql
+																			(1)
+									
+																	</option><option value="/category/DB/Oracle">
+									Oracle
+																			(0)
+									
+																	</option><option value="/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C">
+						자기계발													(0)
+						
+											</option><option value="/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C/%EC%97%90%EC%84%B8%EC%9D%B4">
+									에세이
+																			(0)
+									
+																	</option><option value="/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C/%EC%B1%85%EC%A0%95%EB%A6%AC">
+									책정리
+																			(0)
+									
+																	</option></select>
+						</li>
+						<li>
+							<div class="closeBtn">메뉴 닫기</div>
+						</li>
+					</ul>
+				</div>
+				<div id="header-ico">
+					<button class="btn_topMenu" id="btn_topbtn"><i id="topbtn" class="fas fa-bars"></i></button>
+
+				</div>
+			</header>
+		</div>
+	</div>
+	
+    <div id="wrap">
+			<!-- 상단 카테고리 적용 스크립트 -->
+        <div id="top_hide_menu">
+            <div id="expand-wrap" aria-labelledby="call-exmenu">
+                <div id="expand-menu">
+                    <div class="scrollable">
+                        <div class="expand-tt-cate tt-cate tt-cate-collapse ci-link">
+                            <span class="expand-hd sr-only">CATEGORY</span>
+													  <ul class="tt_category">
+	<li class="">
+		<a class="link_tit" href="https://proudin.tistory.com/category">
+			전체							<span class="c_cnt">(30)</span>
+			
+					</a>
+
+				<ul class="category_list">
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8">
+						건강 &amp; 다이어트													<span class="c_cnt">(6)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8/%EC%A0%95%EB%B3%B4">
+									정보
+																			<span class="c_cnt">(5)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8/%EB%85%BC%EB%AC%B8">
+									논문
+																			<span class="c_cnt">(1)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89">
+						키토제닉													<span class="c_cnt">(6)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EA%B8%B0%EC%B4%88">
+									기초
+																			<span class="c_cnt">(4)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EC%B9%BC%EB%9F%BC">
+									칼럼
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EB%8C%80%EC%B6%A9%EB%8C%80%EC%B6%A9%20%ED%82%A4%ED%86%A0%20%EB%A0%88%EC%8B%9C%ED%94%BC">
+									대충대충 키토 레시피
+																			<span class="c_cnt">(2)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/Q%26A">
+									Q&amp;A
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/%EB%B0%94%EC%9D%B4%EC%98%A4%ED%95%B4%ED%82%B9">
+						바이오해킹													<span class="c_cnt">(16)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EB%B0%94%EC%9D%B4%EC%98%A4%ED%95%B4%ED%82%B9/%ED%98%88%EB%8B%B9%EC%B8%A1%EC%A0%95">
+									혈당측정
+																			<span class="c_cnt">(16)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/Language">
+						Language													<span class="c_cnt">(1)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/Language/C%23">
+									C#
+																			<span class="c_cnt">(1)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/DB">
+						DB													<span class="c_cnt">(1)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/DB/MsSql">
+									MsSql
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/DB/MySql">
+									MySql
+																			<span class="c_cnt">(1)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/DB/Oracle">
+									Oracle
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C">
+						자기계발													<span class="c_cnt">(0)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C/%EC%97%90%EC%84%B8%EC%9D%B4">
+									에세이
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C/%EC%B1%85%EC%A0%95%EB%A6%AC">
+									책정리
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+					</ul>
+			</li>
+</ul>
+                        </div>
+                    </div>
+                    <div class="expand-admin ci-link visible-xs visible-sm">
+                        <ul class="lts-narrow">
+                            <li><a href="https://proudin.tistory.com/manage/entry/post"><i class="icon icon-pen"></i>글쓰기</a></li>
+                            <li><a href="https://proudin.tistory.com/manage"><i class="icon icon-cog"></i>환경설정</a></li>
+                            <li class="admin-login"><a href="https://www.tistory.com/login"><i class="icon icon-enter"></i>로그인</a></li>
+                            <li class="admin-logout"><a href="https://www.tistory.com/logout"><i class="icon icon-exit"></i>로그아웃</a></li>
+                            <li><a href="https://proudin.tistory.com/28#call-exmenu" class="btn-close"><i class="icon icon-cancel-circle"></i>취소</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="https://proudin.tistory.com/28#call-exmenu" class="btn-close bg-close"></a>
+            </div>
+        </div>
+			
+        <div id="container">
+
+            <div id="main" role="main">
+                <!-- content { -->
+                <div id="content">
+
+                    <!-- Category, Tag, Search Result { -->
+                    
+                    <!-- } Category, Tag, Search Result -->
+
+                    <!-- Taglog { -->
+                    
+                    <!-- } Taglog -->
+
+                    <!-- Local { -->
+                    
+                    <!-- } Local -->
+
+                    <!-- Media { -->
+                    
+                    <!-- } Media -->
+
+                    <!-- guest { -->
+                    
+                    <!-- } guestbook -->
+
+                    <!-- Notice { -->
+                    
+                    <!-- } Notice -->
+
+                    <!-- Protected { -->
+                    
+                    <!-- } Protected -->
+
+                    
+                    <article class="entry h-entry">
+                        <div class="content-width">
+                           
+                            
+
+                            
+                            <header class="hd">
+                                <div class="hd-inner">
+                                    <h1 class="hd-heading lts-narrow p-name" role="heading">
+                                        <a href="https://proudin.tistory.com/28">MySql에서 Sequence 기능을 사용하는 방법</a>
+                                    </h1>
+                                    <div class="sub-info">
+																				<span class="p-author h-card" rel="author" title="작성자"><span>BY</span> <a href="https://proudin.tistory.com/">　 　　 　　　　</a></span>
+                                        <span class="meta-cate">
+
+                                            <a href="https://proudin.tistory.com/category/DB/MySql" class="p-category target-bread">DB/MySql</a>
+                                        </span>
+                                        <abbr class="timeago dt-published" title="2020. 11. 8. 01:40">2020. 11. 8. 01:40</abbr>
+                                        
+                                    </div>
+                                </div>
+                            </header>
+
+                            
+
+                            <div class="e-content post-content">
+                                <div class="tt_article_useless_p_margin contents_style">            <div class="revenue_unit_wrap ">
+               <div class="revenue_unit_item adsense  responsive">
+                    <div class="revenue_unit_info">반응형</div>
+                    <s async="" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/f.txt"></s>
+                    <ins class="adsbygoogle" style="display:block;" data-ad-host="ca-host-pub-9691043933427338" data-ad-client="ca-pub-1865949948251214" data-ad-format="auto"></ins>
+                    <s>(adsbygoogle = window.adsbygoogle || []).push({}); </s>
+               </div>
+            </div><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>오라클에서는 시퀀스명.nextval 이라는 편리한 기능이 존재하지만</p>
+<p><b><span style="color: #ef5369;"><u>MySql은 시퀀스 기능이 별도로 존재하지 않습니다.</u></span></b></p>
+<p>조금 번거롭기는 하지만, 그래도 사용 할 방법은 있습니다.</p>
+<p>MySql에서 시퀀스 기능을 사용하려면, 다음과 같은 <span style="color: #333333;">조건과 절차가 요구됩니다.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p data-ke-size="size16"><b>1. 시퀀스를 사용 할 테이블 생성</b></p>
+<p data-ke-size="size16"><b>2. 시퀀스를 생성 할 프로시저 생성</b></p>
+<p data-ke-size="size16"><b>3. 생성 한 시퀀스의 다음 값을 가져오는 함수 생성</b></p>
+<p data-ke-size="size16"><b>4. 시퀀스를 생성 할 프로시저 실행</b></p>
+<p data-ke-size="size16"><b>5. 최종적으로&nbsp;nextval&nbsp;사용</b></p>
+<p>&nbsp;</p>
+<p>시퀀스의 생성부터 사용까지는 대략 5가지 단계가 필요합니다.</p>
+<p>아래는, 그 사용방법에 대한 예시 입니다.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<s async="" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/f.txt"></s>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1865949948251214" data-ad-slot="9246417595"></ins>
+<s>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</s>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4 data-ke-size="size20"><span style="color: #333333;"><u><b>1. 시퀀스를 사용 할 테이블 생성</b></u></span></h4>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;">
+<table class="colorser-code-table" style="margin: 0; padding: 0; border: none; background-color: #fafafa; border-radius: 4px;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 6px; border-right: 2px solid #e5e5e5; width: 235px;" colspan="3">
+<div style="margin: 0; padding: 0; color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; line-height: 130%;">
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;"><span style="color: #ff3399;">CREATE</span>&nbsp;<span style="color: #ff3399;">TABLE</span>&nbsp;SEQUENCES</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">(</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;NAME&nbsp;<span style="color: #0099cc;">VARCHAR</span>(<span style="color: #004fc8;">32</span>)</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;,&nbsp;CURRVAL&nbsp;BIGINT&nbsp;<span style="color: #ff3399;">UNSIGNED</span></div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">)</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;"><span style="color: #ff3399;">ENGINE</span>&nbsp;<span style="color: #010101;"></span><span style="color: #0099cc;">=</span>&nbsp;InnoDB</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span style="color: #333333; letter-spacing: 0px;"></span></div>
+<p>&nbsp;</p>
+<p><span style="color: #333333;">시퀀스로 사용 할 테이블이 필요하므로 테이블을 생성합니다.</span></p>
+<p><span style="color: #333333;">NAME = 시퀀스명, CURRVAL = 순서</span></p>
+<p>&nbsp;</p>
+<p><b><span style="color: #333333;">ex) NAME = 'Test', CURRVAL = 1</span></b></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4 data-ke-size="size20"><span style="color: #333333;"><u><b>2. 시퀀스를 생성 할 프로시저 </b><b>생성</b></u></span></h4>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;">
+<table class="colorser-code-table" style="margin: 0; padding: 0; border: none; background-color: #fafafa; border-radius: 4px;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 6px; border-right: 2px solid #e5e5e5; width: 483px;" colspan="3">
+<div style="margin: 0; padding: 0; color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; line-height: 130%;">
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">DELIMITER&nbsp;$$</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff3399;">CREATE</span>&nbsp;PROCEDURE&nbsp;<span style="color: #7da123;">`create_sequence`</span>&nbsp;(IN&nbsp;the_name&nbsp;<span style="color: #0099cc;">text</span>)</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;MODIFIES&nbsp;SQL&nbsp;DATA</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;DETERMINISTIC</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;BEGIN</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff3399;">DELETE</span>&nbsp;<span style="color: #ff3399;">FROM</span>&nbsp;sequences&nbsp;<span style="color: #ff3399;">WHERE</span>&nbsp;name&nbsp;<span style="color: #010101;"></span><span style="color: #0099cc;">=</span>&nbsp;the_name;</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff3399;">INSERT</span>&nbsp;<span style="color: #ff3399;">INTO</span>&nbsp;sequences&nbsp;<span style="color: #ff3399;">VALUES</span>(the_name,&nbsp;<span style="color: #004fc8;">0</span>);</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;END</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p data-ke-size="size14">&nbsp;</p>
+<p data-ke-size="size16">시퀀스를 생성하는 프로시저 입니다. IN으로 시퀀스명을 받습니다.</p>
+<p data-ke-size="size16">이미 생성 되어있는 시퀀스가 있다면, 시퀀스를 지우고 새로 생성합니다.</p>
+<p data-ke-size="size16">1개의 Row가 하나의 시퀀스라고 생각하면 되겠습니다.</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h4 data-ke-size="size20"><span style="font-family: AppleSDGothicNeo-Regular, &#39;Malgun Gothic&#39;, &#39;맑은 고딕&#39;, dotum, 돋움, sans-serif; color: #333333;"><b><u>3. 생성 한 시퀀스의 다음 값을 가져오는 함수 생성</u></b></span></h4>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;">
+<table class="colorser-code-table" style="margin: 0px; padding: 0px; border: none; background-color: #fafafa; border-radius: 4px; height: 209px;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 209px;">
+<td style="padding: 6px; border-right: 2px solid #e5e5e5; width: 648px; height: 209px;" colspan="3">
+<div style="margin: 0; padding: 0; color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; line-height: 130%;">
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">DELIMITER&nbsp;$$</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff3399;">CREATE</span>&nbsp;FUNCTION&nbsp;<span style="color: #7da123;">`nextval`</span>&nbsp;(the_name&nbsp;<span style="color: #0099cc;">VARCHAR</span>(<span style="color: #004fc8;">32</span>))</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;RETURNS&nbsp;BIGINT&nbsp;<span style="color: #ff3399;">UNSIGNED</span></div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;MODIFIES&nbsp;SQL&nbsp;DATA</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;DETERMINISTIC</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;BEGIN</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DECLARE&nbsp;ret&nbsp;BIGINT&nbsp;<span style="color: #ff3399;">UNSIGNED</span>;</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff3399;">UPDATE</span>&nbsp;sequences&nbsp;<span style="color: #ff3399;">SET</span>&nbsp;currval&nbsp;<span style="color: #010101;"></span><span style="color: #0099cc;">=</span>&nbsp;currval&nbsp;<span style="color: #010101;"></span><span style="color: #0099cc;">+</span><span style="color: #004fc8;">1</span>&nbsp;<span style="color: #ff3399;">WHERE</span>&nbsp;name&nbsp;<span style="color: #010101;"></span><span style="color: #0099cc;">=</span>&nbsp;the_name;</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff3399;">SELECT</span>&nbsp;currval&nbsp;<span style="color: #ff3399;">INTO</span>&nbsp;ret&nbsp;<span style="color: #ff3399;">FROM</span>&nbsp;sequences&nbsp;<span style="color: #ff3399;">WHERE</span>&nbsp;name&nbsp;<span style="color: #010101;"></span><span style="color: #0099cc;">=</span>&nbsp;the_name&nbsp;<span style="color: #ff3399;">LIMIT</span>&nbsp;<span style="color: #004fc8;">1</span>;</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RETURN&nbsp;ret;</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;END</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>실제로 nextval의 기능을 수행하는 함수입니다.</p>
+<p>오라클과 차이가 있다면 사용 문법에 있습니다.</p>
+<p>&nbsp;</p>
+<p data-ke-size="size16"><span style="font-family: AppleSDGothicNeo-Regular, &#39;Malgun Gothic&#39;, &#39;맑은 고딕&#39;, dotum, 돋움, sans-serif;">오라클 : 시퀀스명.nextval</span></p>
+<p data-ke-size="size16"><span style="font-family: AppleSDGothicNeo-Regular, &#39;Malgun Gothic&#39;, &#39;맑은 고딕&#39;, dotum, 돋움, sans-serif;">MySql : nextval('시퀀스명')</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4 data-ke-size="size20"><span style="font-family: AppleSDGothicNeo-Regular, &#39;Malgun Gothic&#39;, &#39;맑은 고딕&#39;, dotum, 돋움, sans-serif; color: #333333;"><u><b>4. 시퀀스를 생성 할 프로시저 실행</b></u></span></h4>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;">
+<table class="colorser-code-table" style="margin: 0px; padding: 0px; border: none; background-color: #fafafa; border-radius: 4px; height: 20px;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 20px;">
+<td style="padding: 6px; border-right: 2px solid #e5e5e5; height: 20px; width: 252px;" colspan="3">
+<div style="margin: 0; padding: 0; color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; line-height: 130%;">
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">CALL&nbsp;create_sequence(<span style="color: #7da123;">'Test'</span>);</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>프로시저를 호출해서 Test 라는 이름의 시퀀스를 생성합니다.</p>
+<p>Test라는 시퀀스에 0 값이 할당됩니다.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+<h4 data-ke-size="size20"><span style="color: #333333;"><u><b><span style="font-family: AppleSDGothicNeo-Regular, &#39;Malgun Gothic&#39;, &#39;맑은 고딕&#39;, dotum, 돋움, sans-serif;">5. 최종적으로&nbsp;nextval&nbsp;사용</span></b></u></span></h4>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;">
+<table class="colorser-code-table" style="margin: 0; padding: 0; border: none; background-color: #fafafa; border-radius: 4px;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 6px; border-right: 2px solid #e5e5e5; width: 268px;" colspan="3">
+<div style="margin: 0; padding: 0; color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; line-height: 130%;">
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;"><span style="color: #ff3399;">SELECT</span> nextval(<span style="color: #7da123;">'Test'</span>)&nbsp;<span style="color: #ff3399;">FROM</span>&nbsp;DUAL</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span style="color: #333333; font-family: AppleSDGothicNeo-Regular, &#39;Malgun Gothic&#39;, &#39;맑은 고딕&#39;, dotum, 돋움, sans-serif; letter-spacing: 0px;"></span></div>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;">&nbsp;</div>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;">&nbsp;</div>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;"><span style="color: #333333; font-family: AppleSDGothicNeo-Regular, &#39;Malgun Gothic&#39;, &#39;맑은 고딕&#39;, dotum, 돋움, sans-serif; letter-spacing: 0px;">INSERT문을 사용할 때 nextval 함수를 사용하면 됩니다.</span></div>
+</div>
+</div>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16"><span style="color: #333333;"><b>사용 예)</b></span></p>
+<div class="colorser-code" style="color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; position: relative !important; overflow: auto;">
+<table class="colorser-code-table" style="margin: 0; padding: 0; border: none; background-color: #fafafa; border-radius: 4px;" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 6px; border-right: 2px solid #e5e5e5; width: 326px;" colspan="3">
+<div style="margin: 0; padding: 0; color: #010101; font-family: Consolas, &#39;Liberation Mono&#39;, Menlo, Courier, monospace !important; line-height: 130%;">
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;"><span style="color: #ff3399;">INSERT</span>&nbsp;<span style="color: #ff3399;">INTO</span>&nbsp;USER_INFO</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">(</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;NUM</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;,&nbsp;USER_ID</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">)</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;"><span style="color: #ff3399;">VALUES</span></div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">(</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;&nbsp;&nbsp;(<span style="color: #ff3399;">SELECT</span>&nbsp;nextval(<span style="color: #7da123;">'Test'</span>)&nbsp;<span style="color: #ff3399;">FROM</span>&nbsp;DUAL)</div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">&nbsp;&nbsp;,&nbsp;<span style="color: #7da123;">'아이디'</span></div>
+<div style="padding: 0 6px; white-space: pre; line-height: 130%;">)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+<p>이상 MySql에서의 Sequence 사용방법에 대해서 알아보았습니다.</p>            <div class="revenue_unit_wrap ">
+               <div class="revenue_unit_item adsense  responsive">
+                    <div class="revenue_unit_info">반응형</div>
+                    <s async="" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/f.txt"></s>
+                    <ins class="adsbygoogle" style="display:block;" data-ad-host="ca-host-pub-9691043933427338" data-ad-client="ca-pub-1865949948251214" data-ad-format="auto"></ins>
+                    <s>(adsbygoogle = window.adsbygoogle || []).push({}); </s>
+               </div>
+            </div><div class="container_postbtn #post_button_group">
+    <div class="postbtn_like">
+        
+<s>
+    window.ReactionButtonType = 'reaction';
+    window.ReactionApiUrl = '//proudin.tistory.com/reaction';
+    window.ReactionReqBody = {
+        entryId: 28    }
+</s>
+<div class="wrap_btn" id="reaction-28"><button class="btn_post uoc-icon"><div class="uoc-icon"><span class="ico_postbtn ico_like">좋아요</span><span class="txt_like uoc-count">4</span></div></button></div>
+<s src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/reaction-button-container.min.js.다운로드"></s>
+        <div class="wrap_btn wrap_btn_share">
+    <button type="button" class="btn_post sns_btn btn_share" data-thumbnail-url="https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png" data-title="MySql에서 Sequence 기능을 사용하는 방법" data-desion="오라클에서는 시퀀스명.nextval 이라는 편리한 기능이 존재하지만 MySql은 시퀀스 기능이 별도로 존재하지 않습니다. 조금 번거롭기는 하지만, 그래도 사용 할 방법은 있습니다. MySql에서 시퀀스 기능을 사용하려.." data-profile-image="https://tistory4.daumcdn.net/tistory/3758824/attach/d4d86fc19d1449bcaca1052b28c80ef1" data-profile-name="　 　　 　　　　" data-pc-url="https://proudin.tistory.com/28" data-relative-pc-url="/28" data-blog-title="프라우딘">
+        <span class="ico_postbtn ico_share">공유하기</span>
+    </button>
+</div>
+                <div class="wrap_btn wrap_btn_etc" data-entry-id="28" data-entry-visibility="public" data-category-visibility="public">
+    <button type="button" class="btn_post btn_etc2"><span class="ico_postbtn ico_etc">글 요소</span></button>
+</div>
+    </div>
+    <button type="button" class="btn_menu_toolbar btn_subsion  #subscribe" data-blog-id="3758824" data-url="https://proudin.tistory.com/28" data-device="web_pc">
+    <em class="txt_state">구독하기</em>
+    <strong class="txt_tool_id">프라우딘</strong>
+    <span class="img_common_tistory ico_check_type1"></span>
+</button>
+    <div class="postbtn_ccl" data-ccl-type="1">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" target="_blank" class="link_ccl" rel="license">
+        <span class="bundle_ccl">
+            <span class="ico_postbtn ico_ccl1">저작자표시</span><span class="ico_postbtn ico_ccl2">비영리</span><span class="ico_postbtn ico_ccl3">변경금지</span>        </span>
+    </a>
+</div>
+    <!--
+<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Work rdf:about="">
+        <license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.0/kr/" />
+    </Work>
+    <License rdf:about="http://creativecommons.org/licenses/by-nc-nd/">
+        <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <requires rdf:resource="http://web.resource.org/cc/Notice"/>
+        <requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+                        <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/>
+            </License>
+</rdf:RDF>
+-->
+</div><div class="tt-plugin tt-share-entry-with-sns tt-sns-icon-alignment-left tt-sns-icon-size-big">
+	<div class="tt-sns-wrap" id="ttSnsWrap-28">
+		<ul class="tt-sns-service-default">
+			<li class="tt-sns-service-kakaostory"><a href="javas:;" onclick="ShareEntryWithSNS.share(&#39;kakaostory&#39;, &#39;28&#39;, &#39;MySql%EC%97%90%EC%84%9C%20Sequence%20%EA%B8%B0%EB%8A%A5%EC%9D%84%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95&#39;);">카카오스토리</a></li>
+			<li class="tt-sns-service-twitter"><a href="javas:;" onclick="ShareEntryWithSNS.share(&#39;twitter&#39;, &#39;28&#39;, &#39;MySql%EC%97%90%EC%84%9C%20Sequence%20%EA%B8%B0%EB%8A%A5%EC%9D%84%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95&#39;);">트위터</a></li>
+			<li class="tt-sns-service-facebook"><a href="javas:;" onclick="ShareEntryWithSNS.share(&#39;facebook&#39;, &#39;28&#39;, &#39;MySql%EC%97%90%EC%84%9C%20Sequence%20%EA%B8%B0%EB%8A%A5%EC%9D%84%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95&#39;);">페이스북</a></li>
+		</ul>
+	</div>
+	<div class="tt-sns-clear"></div>
+</div>
+<div class="another_category another_category_color_gray" style="display: none;">
+<h4>'<a href="https://proudin.tistory.com/category/DB">DB</a>&nbsp;&gt;&nbsp;<a href="https://proudin.tistory.com/category/DB/MySql">MySql</a>' 카테고리의 다른 글</h4>
+<table>
+<tbody><tr>
+<th>
+<a href="https://proudin.tistory.com/28?category=1161606" class="current">MySql에서 Sequence 기능을 사용하는 방법</a>&nbsp;&nbsp;<span>(4)</span>
+</th>
+<td>
+2020.11.08</td>
+</tr>
+</tbody></table></div></div>
+
+                                <!-- SNS 공유 버튼 -->
+                                <div class="sns-go">
+                                <ul><li><a href="https://proudin.tistory.com/28#" onclick="javas:window.open(&#39;http://share.naver.com/web/shareView.nhn?url=&#39; +encodeURIComponent(document.URL)+&#39;&amp;title=&#39;+encodeURIComponent(document.title), &#39;naversharedialog&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600&#39;);return false;" target="_blank" alt="Share on Naver"><img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/sns_naver.png" width="40" alt="네이버 블러그 공유하기"></a></li><li><a href="https://proudin.tistory.com/28#" onclick="javas:window.open(&#39;http://band.us/plugin/share?body=&#39;+encodeURIComponent(document.title)+encodeURIComponent(&#39;\r\n&#39;)+encodeURIComponent(document.URL)+&#39;&amp;route=&#39;+encodeURIComponent(document.URL), &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;" target="_blank" alt="네이버 밴드에 공유하기"><img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/naverband.png" width="40px" alt="네이버 밴드에 공유하기"></a></li><li><a href="https://proudin.tistory.com/28#" onclick="javas:window.open(&#39;https://www.facebook.com/sharer/sharer.php?u=&#39; +encodeURIComponent(document.URL)+&#39;&amp;t=&#39;+encodeURIComponent(document.title), &#39;facebooksharedialog&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600&#39;);return false;" target="_blank" alt="Share on Facebook"><img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/sns_face.png" width="40" alt="페이스북 공유하기"></a></li><li><a class="sr-only" href="https://life24korea.com/" alt="life24korea"><img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/sns_tw.png" width="40" alt="라이프코리아"></a><a href="https://proudin.tistory.com/28#" onclick="javas:window.open(&#39;https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20&#39; +encodeURIComponent(document.URL)+&#39;%20-%20&#39;+encodeURIComponent(document.title), &#39;twittersharedialog&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600&#39;);return false;" target="_blank" alt="Share on Twitter"><img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/sns_tw.png" width="40" alt="트위터 공유하기"></a></li><a class="sr-only" href="https://life24korea.com/" alt="life24korea"><img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/sns_tw.png" width="40" alt="shared"></a><li><a href="https://proudin.tistory.com/28#" onclick="javas:window.open(&#39;https://story.kakao.com/s/share?url=&#39; +encodeURIComponent(document.URL), &#39;kakaostorysharedialog&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes, height=400,width=600&#39;);return false;" target="_blank" alt="Share on kakaostory"><img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/sns_kakao.png" width="40" alt="카카오스토리 공유하기"></a></li></ul>
+                                </div>
+
+                                <!-- 카테고리 다른 글 더보기 -->
+                                <div id="MF_Reference1" class="another_category another_category_color_gray">
+<h4>'<a href="https://proudin.tistory.com/category/DB">DB</a>&nbsp;&gt;&nbsp;<a href="https://proudin.tistory.com/category/DB/MySql">MySql</a>' 카테고리의 다른 글</h4>
+<table>
+<tbody><tr>
+<th>
+<a href="https://proudin.tistory.com/28?category=1161606" class="current">MySql에서 Sequence 기능을 사용하는 방법</a>&nbsp;&nbsp;<span>(4)</span>
+</th>
+<td>
+2020.11.08</td>
+</tr>
+</tbody></table></div>
+                                <s type="text/javas">
+                                    //<![CDATA[
+                                    // Created by MissFlash(http://blog.missflash.com)
+                                    var MF_Reference = document.getElementById('MF_Reference');
+                                    MF_Reference.setAttribute("id", "MF_Reference" + MissFlash_Div_Num);
+                                    MF_Reference.className = "another_category another_category_color_gray";
+                                    var ref_source = getElementsByClass(MissFlash_Div_Num,"another_category");
+                                    if ( ref_source != undefined ) MF_Reference.innerHTML = ref_source;
+                                    MissFlash_Div_Num += 1;
+                                    //]]>
+                                </s>
+                            </div>
+
+                            
+                            <div class="entry-tag">
+                                <span class="txt">태그</span> <a href="https://proudin.tistory.com/tag/mysql" rel="tag">mysql</a>,
+<a href="https://proudin.tistory.com/tag/nextval" rel="tag">nextval</a>,
+<a href="https://proudin.tistory.com/tag/Sequence" rel="tag">Sequence</a>,
+<a href="https://proudin.tistory.com/tag/%EC%8B%9C%ED%80%80%EC%8A%A4" rel="tag">시퀀스</a>
+                            </div>
+                            
+
+                            <div class="post-reply">
+                                <div class="action-trail">
+                                    <a href="https://proudin.tistory.com/28#rp" onclick="" class="toggle-rp ie-nanum">
+                                    <i class="fas fa-comments"></i>
+                                        <span id="commentCount28_0">
+                                        <span class="cnt ff-h ci-color"> 4</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div id="entry28Comment">
+                                <div id="comment">
+                                    
+
+                                    
+                                    <ol>
+                                        
+                                            <li id="comment12585375">
+
+                                            <div class="reply_thumb">
+                                                <img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/profile_default_00.png" width="64px" height="64px">
+                                            </div>
+                                            <div class="rp_general reply_content">
+                                                <span class="blogicon"></span>
+                                                <span class="name">안녕하세요</span>
+                                                <div class="reply_date">2021.03.08 14:10
+
+                                                    <span class="control">
+                                                        <button class="cmtbtn"><i class="fas fa-comment-dots"></i></button>
+                                                        <ul class="cmt_dropdown">
+                                                            <li><a href="https://proudin.tistory.com/28#" onclick="commentComment(12585375); return false" class="write">댓글쓰기</a></li>
+                                                            <li><a href="https://proudin.tistory.com/28#" onclick="deleteComment(12585375);return false" class="modify">수정/삭제</a>
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                
+                                                </div>
+
+                                                <div class="comment-content"><p>안녕하세요 mysql 에서 sequence를 활용하는 좋은 방법 공유해주셔서 감사합니다.<br>
+제 velog에 작성해주신 글 인용해도 될지요?!</p></div>
+                                            </div>
+
+                                            
+                                                <ul>
+                                                
+                                                    <li id="comment12586569">
+                                                        <div class="reply_thumb">
+                                                            <img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/saved_resource" width="64px" height="64px">
+                                                        </div>
+                                                        <div class="rp_admin reply_content">
+                                                            <span class="blogicon"></span>
+                                                            <span class="name"><a href="https://proudin.tistory.com/" onclick="return openLinkInNewWindow(this)">　 　　 　　　　</a></span>
+                                                            <div class="reply_date">2021.03.09 13:50 <a href="https://proudin.tistory.com/toolbar/popup/abuseReport/?entryId=28&amp;commentId=12586569" onclick="window.open(this.href, &#39;ThisBlogReportPopup&#39;, &#39;width=550, height=510, toolbar=no, menubar=no, status=no, scrollbars=no&#39;); return false;">신고</a>
+
+                                                                <span class="control">
+                                                                    <button class="cmtbtn"><i class="fas fa-comment-dots"></i></button>
+                                                                    <ul class="cmt_dropdown">
+                                                                        <li>
+                                                                            <a href="https://proudin.tistory.com/28#" onclick="deleteComment(12586569); return false;" class="modify">
+                                                                            <span>수정/삭제</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </span>
+
+                                                            </div>
+                                                            <div class="comment-content"><p>넵. 출처만 밝혀주시면 괜찮습니다.</p></div>
+                                                        </div>
+                                                    </li>
+                                                
+                                                </ul>
+                                            
+                                            </li>
+                                        
+                                            <li id="comment12685033">
+
+                                            <div class="reply_thumb">
+                                                <img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/saved_resource(1)" width="64px" height="64px">
+                                            </div>
+                                            <div class="rp_general reply_content">
+                                                <span class="blogicon"></span>
+                                                <span class="name"><a href="https://chewingcandy.tistory.com/" onclick="return openLinkInNewWindow(this)">신동철</a></span>
+                                                <div class="reply_date">2021.05.28 03:34 <a href="https://proudin.tistory.com/toolbar/popup/abuseReport/?entryId=28&amp;commentId=12685033" onclick="window.open(this.href, &#39;ThisBlogReportPopup&#39;, &#39;width=550, height=510, toolbar=no, menubar=no, status=no, scrollbars=no&#39;); return false;">신고</a>
+
+                                                    <span class="control">
+                                                        <button class="cmtbtn"><i class="fas fa-comment-dots"></i></button>
+                                                        <ul class="cmt_dropdown">
+                                                            <li><a href="https://proudin.tistory.com/28#" onclick="commentComment(12685033); return false" class="write">댓글쓰기</a></li>
+                                                            <li><a href="https://proudin.tistory.com/28#" onclick="deleteComment(12685033);return false" class="modify">수정/삭제</a>
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                
+                                                </div>
+
+                                                <div class="comment-content"><p>감사합니다 좋은참고가 되었습니다.</p></div>
+                                            </div>
+
+                                            
+                                                <ul>
+                                                
+                                                    <li id="comment12690252">
+                                                        <div class="reply_thumb">
+                                                            <img src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/saved_resource" width="64px" height="64px">
+                                                        </div>
+                                                        <div class="rp_admin reply_content">
+                                                            <span class="blogicon"></span>
+                                                            <span class="name"><a href="https://proudin.tistory.com/" onclick="return openLinkInNewWindow(this)">　 　　 　　　　</a></span>
+                                                            <div class="reply_date">2021.06.01 12:36 <a href="https://proudin.tistory.com/toolbar/popup/abuseReport/?entryId=28&amp;commentId=12690252" onclick="window.open(this.href, &#39;ThisBlogReportPopup&#39;, &#39;width=550, height=510, toolbar=no, menubar=no, status=no, scrollbars=no&#39;); return false;">신고</a>
+
+                                                                <span class="control">
+                                                                    <button class="cmtbtn"><i class="fas fa-comment-dots"></i></button>
+                                                                    <ul class="cmt_dropdown">
+                                                                        <li>
+                                                                            <a href="https://proudin.tistory.com/28#" onclick="deleteComment(12690252); return false;" class="modify">
+                                                                            <span>수정/삭제</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </span>
+
+                                                            </div>
+                                                            <div class="comment-content"><p>도움이 되셨다니 다행입니다!</p></div>
+                                                        </div>
+                                                    </li>
+                                                
+                                                </ul>
+                                            
+                                            </li>
+                                        
+                                    </ol>
+                                    
+																	<h3 class="sr-only">댓글을 달아 주세요</h3>
+																	<hr class="hr">
+                                    <!-- comment-form { -->
+                                    <div id="comment-form" class="write-form">
+																			  <form method="post" action="https://proudin.tistory.com/comment/add/28" onsubmit="return false" style="margin: 0">
+																			   <div class="checkbox">
+                                                    <input type="checkbox" name="" id="secret">
+                                                    <label for="secret" class="clearfix">
+                                                            <span class="secret">비공개</span>
+                                                    </label>
+                                            </div>
+																				  
+																			 
+                                        <div class="input-wrap">
+                                            <div class="textbox focus-wrap">
+                                                <label for="input-name">닉네임<sup class="symbol">*</sup></label>
+                                                <input type="text" placeholder="닉네임" id="input-name" class="focus-target" name="name" value="" required="">
+                                            </div>
+                                            <div class="textbox focus-wrap">
+                                                <label for="input-passwd">비밀번호<sup class="symbol">*</sup></label>
+                                                <input type="password" placeholder="비밀번호" id="input-passwd" class="focus-target" maxlength="10" name="password" value="" required="">
+                                            </div>
+                                        </div>
+																				
+                                       
+                                        
+    <div class="textboxs focus-wrap">
+                                            <label for="textarea-input" class="textarea-input sr-only">댓글을 남겨주세요</label>
+                                            <textarea name="comment" rows="5" id="textarea-input" class="focus-target" placeholder="소중한 댓글 하나가 블로거에게 힘이 됩니다."></textarea>
+                                        </div>
+                                        <div class="comment_submit_form">
+                                            <span class="sr-only">"&gt;</span>
+                                            
+                                            <div class="submit-wrap">
+                                                    <button type="submit" onclick="addComment(this, 28); return false;" class="ccz-btn default">댓글 등록</button>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                    <!-- } comment-form -->
+                                </div>
+                                </div><s type="text/javas">loadedComments[28]=true;findFragmentAndHighlight(28)</s>
+                            </div>
+                            <!-- } post-reply -->
+                            
+
+                        </div><!-- /.content-width -->
+                    </article>
+                    
+
+                    
+                    <div id="paging">
+                        <ul class="pagination">
+                            <li class="prevpage">
+                                <a href="https://proudin.tistory.com/29" class="" id="prevPage" rel="prev">«</a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/32" class="num"> <span>1</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/31" class="num"> <span>2</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/30" class="num"> <span>3</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/29" class="num"> <span>4</span></a>
+                            </li>
+                            
+                            <li>
+                                <a class="num"> <span class="selected">5</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/27" class="num"> <span>6</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/25" class="num"> <span>7</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/24" class="num"> <span>8</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/23" class="num"> <span>9</span></a>
+                            </li>
+                            
+                            <li>
+                                <a class="num"> <span>···</span></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://proudin.tistory.com/2" class="num"> <span>30</span></a>
+                            </li>
+                            
+                            <li class="nextpage">
+                                <a href="https://proudin.tistory.com/27" class="" id="nextPage" rel="next">»</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <!-- } content -->
+
+
+                <div id="sidebar">
+                        
+                            <!-- 구글 광고 -->
+                                <div class="module module_plugin">
+                                    <h3 class="module-title sr-only"><span>구글 광고</span></h3>
+                                </div>
+                            
+                            <!-- 카테고리 -->
+                            <div class="module module-category" id="sidebar-category">
+                                    <h3 class="module-title sr-only"><span>CATEGORY</span></h3>
+                                    <div class="module-content tt-cate ci-link"><ul class="tt_category">
+	<li class="">
+		<a class="link_tit" href="https://proudin.tistory.com/category">
+			전체							<span class="c_cnt">(30)</span>
+			
+					</a>
+
+				<ul class="category_list">
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8">
+						건강 &amp; 다이어트													<span class="c_cnt">(6)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8/%EC%A0%95%EB%B3%B4">
+									정보
+																			<span class="c_cnt">(5)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EA%B1%B4%EA%B0%95%20%26%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8/%EB%85%BC%EB%AC%B8">
+									논문
+																			<span class="c_cnt">(1)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89">
+						키토제닉													<span class="c_cnt">(6)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EA%B8%B0%EC%B4%88">
+									기초
+																			<span class="c_cnt">(4)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EC%B9%BC%EB%9F%BC">
+									칼럼
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/%EB%8C%80%EC%B6%A9%EB%8C%80%EC%B6%A9%20%ED%82%A4%ED%86%A0%20%EB%A0%88%EC%8B%9C%ED%94%BC">
+									대충대충 키토 레시피
+																			<span class="c_cnt">(2)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%ED%82%A4%ED%86%A0%EC%A0%9C%EB%8B%89/Q%26A">
+									Q&amp;A
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/%EB%B0%94%EC%9D%B4%EC%98%A4%ED%95%B4%ED%82%B9">
+						바이오해킹													<span class="c_cnt">(16)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EB%B0%94%EC%9D%B4%EC%98%A4%ED%95%B4%ED%82%B9/%ED%98%88%EB%8B%B9%EC%B8%A1%EC%A0%95">
+									혈당측정
+																			<span class="c_cnt">(16)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/Language">
+						Language													<span class="c_cnt">(1)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/Language/C%23">
+									C#
+																			<span class="c_cnt">(1)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/DB">
+						DB													<span class="c_cnt">(1)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/DB/MsSql">
+									MsSql
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/DB/MySql">
+									MySql
+																			<span class="c_cnt">(1)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/DB/Oracle">
+									Oracle
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="https://proudin.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C">
+						자기계발													<span class="c_cnt">(0)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C/%EC%97%90%EC%84%B8%EC%9D%B4">
+									에세이
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="https://proudin.tistory.com/category/%EC%9E%90%EA%B8%B0%EA%B3%84%EB%B0%9C/%EC%B1%85%EC%A0%95%EB%A6%AC">
+									책정리
+																			<span class="c_cnt">(0)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+					</ul>
+			</li>
+</ul></div>
+                            </div>
+                                                    <div class="revenue_unit_wrap ">
+               <div class="revenue_unit_item adsense  responsive">
+                    <div class="revenue_unit_info">반응형</div>
+                    <s async="" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/f.txt"></s>
+                    <ins class="adsbygoogle" style="display:block;" data-ad-host="ca-host-pub-9691043933427338" data-ad-client="ca-pub-1865949948251214" data-ad-format="auto"></ins>
+                    <s>(adsbygoogle = window.adsbygoogle || []).push({}); </s>
+               </div>
+            </div>
+                            <!-- 최신 글, 댓글 탭형 -->
+                            <div class="module module-recents">
+                                    <h3 class="module-title sr-only">RECENTLY</h3>
+                                    <div class="module-content">
+                                        <ul id="recent-tab" class="nav-recent" role="tablist">
+                                            <li class="active" id="#tab-rpost"><a href="javas:void(0);" data-toggle="tab" role="tab">최근 글</a></li>
+                                            <li id="#tab-rcomment"><a class="btn-rcomment" href="javas:void(0);" data-toggle="tab" role="tab">최근 댓글</a></li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- #tab-rpost -->
+                                            <div id="tab-rpost" class="tab-pane active fade in">
+                                                <!-- 최근 글 -->
+                                                <section class="rpost ci-link">
+                                                    <h4 class="sr-only">최근 글</h4>
+                                                    <ul class="list-unstyled">
+                                                        
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/32" class="cut">
+                                                                    <span class="rpost-title">[대충대충 키토 레시피] 2. 새우 볶음 <span class="c_cnt"><span id="commentCountOnRecentEntries32"></span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/31" class="cut">
+                                                                    <span class="rpost-title">히스타민의 '효과'와 주의해야 할 히스⋯ <span class="c_cnt"><span id="commentCountOnRecentEntries31"></span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/30" class="cut">
+                                                                    <span class="rpost-title">피해야 할 식품첨가물 리스트 <span class="c_cnt"><span id="commentCountOnRecentEntries30"></span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/29" class="cut">
+                                                                    <span class="rpost-title">[대충대충 키토 레시피] 1. 오징어 볶음 <span class="c_cnt"><span id="commentCountOnRecentEntries29"></span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/28" class="cut">
+                                                                    <span class="rpost-title">MySql에서 Sequence 기능을 사용하는 방법 <span class="c_cnt"><span id="commentCountOnRecentEntries28">(4)</span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/27" class="cut">
+                                                                    <span class="rpost-title">C# 정규식 사용방법 예제 (회원가입 전용) <span class="c_cnt"><span id="commentCountOnRecentEntries27"></span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/25" class="cut">
+                                                                    <span class="rpost-title">16. BHC 치킨 뿌링클 혈당변화 <span class="c_cnt"><span id="commentCountOnRecentEntries25"></span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/24" class="cut">
+                                                                    <span class="rpost-title">케토시스 상태 확인 방법 <span class="c_cnt"><span id="commentCountOnRecentEntries24"></span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/23" class="cut">
+                                                                    <span class="rpost-title">15. 삼겹살과 쌀밥을 함께 먹으면 어떻⋯ <span class="c_cnt"><span id="commentCountOnRecentEntries23">(4)</span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/22" class="cut">
+                                                                    <span class="rpost-title">키토제닉 다이어트 무엇을 먹어야하나? <span class="c_cnt"><span id="commentCountOnRecentEntries22">(2)</span></span></span>
+                                                            </a>
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                </section>
+                                            </div>
+
+                                            <!-- #tab-rcomment -->
+                                            <s> var blogger = '　 　　 　　　　'; </s>
+                                            <div id="tab-rcomment" class="tab-pane fade">
+                                                <!-- 최근 댓글 -->
+                                                <section class="rcomment">
+                                                    <h4 class="nospace sr-only">최근댓글</h4>
+                                                    <ul class="list-unstyled">
+                                                        
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/28#comment12690252">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">　 　　 　　　　</span>
+                                                                <span class="dt-published"> 2021</span>
+                                                            </span>
+                                                            도움이 되셨다니 다행입니다!
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/28#comment12685033">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">신동철</span>
+                                                                <span class="dt-published"> 2021</span>
+                                                            </span>
+                                                            감사합니다 좋은참고가 되었습니다.
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/28#comment12586569">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">　 　　 　　　　</span>
+                                                                <span class="dt-published"> 2021</span>
+                                                            </span>
+                                                            넵. 출처만 밝혀주시면 괜찮습니다.
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/28#comment12585375">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">안녕하세요</span>
+                                                                <span class="dt-published"> 2021</span>
+                                                            </span>
+                                                            안녕하세요 mysql 에서 sequence를 활용⋯
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/23#comment12389925">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">　 　　 　　　　</span>
+                                                                <span class="dt-published"> 2020</span>
+                                                            </span>
+                                                            저는 식사 완료 시점부터 측정합니다.⋯
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/23#comment12389923">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">　 　　 　　　　</span>
+                                                                <span class="dt-published"> 2020</span>
+                                                            </span>
+                                                            키토식은 꾸준히 하고있습니다.
+요즘엔⋯
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/23#comment12382057">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">지나가다</span>
+                                                                <span class="dt-published"> 2020</span>
+                                                            </span>
+                                                            저도 키토에 관심 있어서 실행 해 보고⋯
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/23#comment12356090">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">스윗라벤더</span>
+                                                                <span class="dt-published"> 2020</span>
+                                                            </span>
+                                                            포스팅 너무 감사합니다. 예전 블로그로⋯
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/22#comment12252983">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">　 　　 　　　　</span>
+                                                                <span class="dt-published"> 2020</span>
+                                                            </span>
+                                                            😊
+                                                            </a>
+                                                        </li>
+                                                        
+
+                                                        <li>
+                                                            <a href="https://proudin.tistory.com/22#comment12252737">
+                                                            <span class="rcomment-meta cut">
+                                                                <span class="author">김키빈</span>
+                                                                <span class="dt-published"> 2020</span>
+                                                            </span>
+                                                            잘봤습니다!
+                                                            </a>
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                        </div> 
+                                    </div>
+                            </div> 
+                            
+                            <!-- 카운터 -->
+                            <div class="module module-visitor">
+                                <h3 class="module-title sr-only"><span>VISITOR</span></h3>
+                                <div class="module-content visitor">
+                                    <div class="visitor-row">
+                                        <span class="visitor-cell">오늘</span>
+                                        <span class="ff-h today visitor-date">9</span>
+                                    </div>
+                                    <div class="visitor-row">
+                                        <span class="visitor-cell">어제</span>
+                                        <span class="ff-h yesterday visitor-date">58</span>
+                                    </div>
+                                    <div class="visitor-row">
+                                        <span class="visitor-cell">전체</span>
+                                        <span class="ff-h total visitor-date">23,537</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                </div>
+                <!-- } sidebar -->
+
+            </div>
+
+                <!-- // aside -->
+        </div>
+        
+        <!-- footer -->
+        <footer id="footer">
+            <span class="fleft">
+                <a href="https://privatenote.tistory.com/">Powered by Privatenote</a>
+            </span>
+            Copyright © <a href="https://proudin.tistory.com/">프라우딘</a> All rights reserved.
+            <!---->
+            <span class="sr-only"><s_if_var_tistorywhaleskin>TistoryWhaleSkin3.3</s_if_var_tistorywhaleskin></span>
+        </footer>
+
+        <div id="mobile-arrow">
+            <span id="btn_scroll_up"><i class="fas fa-arrow-circle-up"></i></span>
+            <span id="btn_scroll_down"><i class="fas fa-arrow-circle-down"></i></span>
+        </div>
+
+     
+
+    </div>
+
+<s>
+   
+
+        /* 모바일 스크롤 */
+        $('#btn_scroll_up').click(function () {
+            $(document).scrollTop($('body').offset().top);
+        });
+
+        $('#btn_scroll_down').click(function () {
+            $(document).scrollTop($('#sidebar').offset().top);
+        });
+
+
+        /* 댓글 */
+        $(document).on('click', '.cmtbtn', function (e) {
+            $(this).parent().children('.cmt_dropdown').fadeToggle("middle");
+            if ($(this).parent().children('.cmt_dropdown').hasClass("active")) {
+                $(this).parent().children('.cmt_dropdown').removeClass("active");
+            } else {
+                $(this).parent().children('.cmt_dropdown').addClass("active");
+            }
+        });
+        $(document).on('click', '.cmt_dropdown li a', function (e) {
+            $(this).parent().parent().fadeToggle("middle");
+        });
+
+        /* 메뉴  */
+
+        $(".btn_topMenu").on('click', function () {
+            $("#myDropdown").fadeToggle('middle');
+            if ($(window).width() <= 930) {
+                $("#tt-search").attr("style", "display:block !important");
+            }
+            if ($("#myDropdwon").hasClass("active")) {
+                $("#myDropdown").removeClass("active");
+            } else {
+                $("#myDropdown").addClass("active");
+            }
+        });
+
+        $('body').on('click', function (e) {
+            $('.cmt_dropdown').each(function () {
+                if ($(this).hasClass("active")) {
+                    $(this).removeClass("active");
+                    $(this).fadeOut();
+                }
+            });
+        });
+
+        $('.closeBtn').click(function () {
+            $('#myDropdown').fadeOut();
+            if ($(window).width() <= 930) {
+                $("#tt-search").css("display", "none");
+            }
+        });
+
+        /* 사이드바 탭 분류 */
+        $("#recent-tab li").click(function () {
+            $("#recent-tab > li").removeClass("active");
+            $(this).addClass("active");
+            $(".tab-content .tab-pane").removeClass("active");
+            $($(this).attr("id")).addClass("active");
+        });
+
+        /* 셀렉트 카테고리  */
+        var res_tab = $(".res_tab");
+        $("#top_hide_menu .tt_category a").each(function (i) {
+            var name = $(this).text();
+            var href = $(this).attr("href");
+
+            res_tab.append($("<option></option>").attr("value", href).text(name));
+        });
+
+        $(document).keydown(function (event) {
+            if (event.keyCode == 123) { // Prevent F12
+                return false;
+            } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+                return false;
+            } else if (event.ctrlKey &&
+                (event.keyCode === 67 ||
+                    event.keyCode === 86 ||
+                    event.keyCode === 85 ||
+                    event.keyCode === 117)) {
+                return false;
+            }
+        });
+
+</s>
+
+<s type="text/javas">
+ document.oncontextmenu = new Function ('return false');
+ document.ondragstart = new Function ('return false');
+ document.onselectstart = new Function ('return false');
+  document.body.style.MozUserSelect = 'none';
+</s>
+<s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/functions.js.다운로드"></s>
+<s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/wcslog.js.다운로드"></s>
+<s type="text/javas">
+	if(!wcs_add) var wcs_add = {};
+	wcs_add["wa"] = encodeURI("	52839122d7d38");
+	wcs_do();
+</s><s src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/search_dragselection.min.js.다운로드"></s>
+
+	<s>
+	    lightbox.option({
+			"fadeDuration": 200,
+		    "resizeDuration": 200,
+		    "wrapAround": false,
+			"albumLabel": "%1 / %2",
+			"fitImagesInViewport":true ,
+			"stopEvent": false
+	    })
+	</s>            <s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/tiara.min.js.다운로드"></s>
+            <s type="text/javas">window.tiara = {"svcDomain":"user.tistory.com","section":"\uae00\ubdf0","trackPage":"\uae00\ubdf0_\ubcf4\uae30","page":"\uae00\ubdf0","key":"3758824-28","customProps":{"userId":0,"blogId":"3758824","role":"guest","filterTarget":false,"trackPage":"\uae00\ubdf0_\ubcf4\uae30","entryId":"28"},"entry":{"entryId":"28","categoryName":"MySql","categoryId":"1161606","author":"4281078","authorId":"4281078","image":"4281078","plink":"\/28","tags":["mysql","nextval","Sequence","\uc2dc\ud000\uc2a4"],"key":"3758824-28"},"sentryDsn":"https:\/\/a53520229cd744e798d42900d76b0e2a@aem-collector.daumkakao.io\/713","kakaoAppKey":"b8aef3eeb03fa312b81795386484f051","appUserId":null};</s>
+            <s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/tiara.min.js(1).다운로드" defer=""></s>
+                        <s type="text/javas">
+                window.roosevelt_params_queue = window.roosevelt_params_queue || [{channel_id: 'dk', channel_label: 'tistory'}];
+            </s>
+            <s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/roosevelt_dk_bt.js.다운로드" async=""></s><s type="text/javas">if(window.console!=undefined){setTimeout(console.log.bind(console,"%cTISTORY","font:8em Arial;color:#EC6521;font-weight:bold"),0);setTimeout(console.log.bind(console,"%c  나를 표현하는 블로그","font:2em sans-serif;color:#333;"),0);}</s><iframe style="position:absolute;width:1px;height:1px;left:-100px;top:-100px" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/api.html" id="editEntry"></iframe>            <div class="#menubar menu_toolbar ">
+                                <h2 class="screen_out">티스토리툴바</h2>
+                                <div class="btn_tool btn_tool_type1" id="menubar_wrapper"><button class="btn_menu_toolbar btn_menu_type2"><span class="img_common_tistory ico_tistory_sign">관리메뉴열기</span></button><div class="header_layer layer_tool" style="display: none;"><div class="inner_header_layer"><h2 class="screen_out">개인정보</h2><ul class="list_toolbar"><li><a href="https://www.tistory.com/" class="link_list">티스토리 홈</a></li><li><a href="https://www.tistory.com/category" class="link_list">스토리</a></li><li><a href="https://www.tistory.com/forum" class="link_list">포럼</a></li><li><a href="https://www.tistory.com/auth/login" class="link_list">로그인</a></li></ul></div></div></div><div class="btn_tool">
+                    <button class="btn_menu_toolbar btn_subsion  #subscribe" data-blog-id="3758824" data-url="https://proudin.tistory.com" data-device="web_pc">
+                        <strong class="txt_tool_id">프라우딘</strong>
+                        <em class="txt_state">구독하기</em>
+                        <span class="img_common_tistory ico_check_type1"></span>
+                    </button>
+                </div>
+                            </div><s type="text/javas" src="./MySql에서 Sequence 기능을 사용하는 방법 - 프라우딘_files/menubar.min.js.다운로드"></s>        <div class="layer_tooltip">
+            <div class="inner_layer_tooltip">
+                <p class="desc_g"></p>
+            </div>
+        </div>
+        <div id="tistoryEtcLayer" class="layer_post" style="display: none;"></div><div id="tistorySnsLayer" class="layer_post" style="display: none;"><div class="bundle_post"><a href="https://proudin.tistory.com/28#none" class="btn_mark" data-service="facebook"><span class="ico_sns ico_fb"></span>페이스북으로 공유</a><a href="https://proudin.tistory.com/28#none" class="btn_mark" data-service="kakaotalk"><span class="ico_sns ico_kt"></span>카카오톡으로 공유</a><a href="https://proudin.tistory.com/28#none" class="btn_mark" data-service="kakaostory"><span class="ico_sns ico_ks"></span>카카오스토리로 공유</a><a href="https://proudin.tistory.com/28#none" class="btn_mark" data-service="twitter"><span class="ico_sns ico_tw"></span>트위터로 공유</a><a href="https://proudin.tistory.com/28#none" class="btn_mark" data-service="url"><span class="ico_sns ico_url"></span>URL 복사</a><span class="ico_postbtn ico_arrbt"></span></div></div>
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="><div class="lb-nav"><a class="lb-prev" href="https://proudin.tistory.com/28"></a><a class="lb-next" href="https://proudin.tistory.com/28"></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>

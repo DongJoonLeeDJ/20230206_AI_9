@@ -1,0 +1,23 @@
+{
+  "ecmaVersion": 5,
+  "plugins": {
+    "guess-types": {
+      
+    },
+    "outline": {
+      
+    },
+    "complete_strings": {
+      
+    },
+    "es_modules": {
+      
+    },
+    "doc_comment": {
+      "strong": true
+    }
+  },
+  "libs": [
+    "browser"
+  ]
+}
