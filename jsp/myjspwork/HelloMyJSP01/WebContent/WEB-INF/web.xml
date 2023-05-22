@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>HelloMyJSP01</display-name>
+  <welcome-file-list><!-- 파일명 안 적으면 기본으로 이동하는 위치(기본 위치) -->
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!--com.javalex.ex.HelloWorld에 있는 클래스 파일에 연결하기 위한 작업  -->
+ <!-- 저 클래스 파일을 helloworld라고 부르고, /hw라는 url로 접근가능하게 하는 것 -->
+  <servlet>
+  	<servlet-name>helloworld</servlet-name>
+  	<servlet-class>com.javalex.ex.HelloWorld</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>helloworld</servlet-name>
+  	<url-pattern>/hw</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+
+
+
+
+
+
+
+
