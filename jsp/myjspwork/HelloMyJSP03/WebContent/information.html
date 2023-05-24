@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="requestParam.jsp">
+		이름 : <input type="text" name="name"><br>
+		비밀번호 : <input type="password" name="pw"><br>
+		<p>취미</p>
+		요리<input type="checkbox" name="hobby" value="cook" checked><br>
+		달리기<input type="checkbox" name="hobby" value="run"><br>
+		수영<input type="checkbox" name="hobby" value="swim"><br>
+		수면<input type="checkbox" name="hobby" value="sleep"><br>
+		<p>전공</p>
+		수학<input type="radio" name="major" value="math" checked><br>
+		영어<input type="radio" name="major" value="eng"><br>
+		국어<input type="radio" name="major" value="kor"><br>	
+		<label for="protocol">프로토콜</label>
+		<select name="protocol" id="protocol">
+			<option value="http" selected>http</option>
+			<option value="ftp">ftp</option>
+			<option value="smtp">smtp</option>
+			<option value="pop">pop</option>
+		</select>
+		<input type="submit" value="전송">
+		<input type="reset" value="초기화">
+		
+	</form>
+</body>
+</html>
+
+
+
+

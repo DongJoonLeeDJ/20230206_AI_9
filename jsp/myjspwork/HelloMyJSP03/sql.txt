@@ -1,0 +1,23 @@
+use myjsp;
+
+SELECT * FROM myjsp.student;
+select * from student;#ctrl enter 하면 해당 줄 실행함
+#ctrl shift enter 하면 전체 줄 다 실행
+insert into student values(1,'임나현');
+delete from student where beonho=1;
+update student set name='정선호' where beonho=1;
+select * from student where beonho=1;
+
+
+create table djemployee(
+name varchar(45) not null,
+sabeon int primary key,
+buseo varchar(45));
+
+insert into djemployee values ('정선호',1,'경영지원');
+insert into djemployee values ('소병수',2,'개발부');
+insert into djemployee values ('이동준',3,'경영지원');
+
+select * from djemployee;
+commit;
+
