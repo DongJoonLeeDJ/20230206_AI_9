@@ -1,0 +1,42 @@
+SELECT * FROM workjsp.student;
+-- insert into student values(1,'정홍근');
+-- insert into student values(1,'박세진');
+update student set name='정홍근님' where hakbeon=1;
+delete from student where hakbeon=1;
+
+
+use myjsp;
+
+SELECT * FROM myjsp.student;
+select * from student;#ctrl enter 하면 해당 줄 실행함
+#ctrl shift enter 하면 전체 줄 다 실행
+insert into student values(1,'임나현');
+delete from student where beonho=1;
+update student set name='정선호' where beonho=1;
+select * from student where beonho=1;
+
+
+create table djemployee(
+name varchar(45) not null,
+sabeon int primary key,
+buseo varchar(45));
+
+insert into djemployee values ('정선호',1,'경영지원');
+insert into djemployee values ('소병수',2,'개발부');
+insert into djemployee values ('이동준',3,'경영지원');
+
+select * from djemployee;
+commit;
+
+create table myuser
+( id varchar(45) primary key,
+pw varchar(100) not null);
+
+insert into myuser values('admin','1234');
+
+select * from myuser;
+
+-- Edit -> preferences -> SQL Editor -> Safe Updates 해제
+-- 그다음 껏다켜기
+delete from myuser;
+

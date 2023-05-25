@@ -1,0 +1,97 @@
+Editing
+
+Ctrl + D : 줄 삭제
+Ctrl + Alt + 위/아래 : 줄 복사
+Ctrl + Shift + Enter : 현재 줄에 새줄 추가
+Shift + Enter : 다음줄에 새줄 추가
+Ctrl + Right : 다음문자로 이동 (Ctrl + Left : 이전 문자로 이동 )
+Ctrl + Shift + / : 주석처리 (Ctrl + Shit + \ 주석 풀기)
+Ctrl + / : 라인별로 주석처리
+Ctrl + Shift + O : import 정리
+Ctrl + L : 원하는 라인으로 이동
+Alt + Shift + 방향키 : 블록선택하기
+Ctrl + J : 점증적 검색 - Ctrl + J 입력후 원하는 단어 입력하면 이클립스 하단바에 찍히고 바로 검색 가능
+Ctrl + K : 다음 찾기(Ctrl + Shift + K 이전 찾기)  - 현재 블럭설정된 단어 찾기
+Ctrl + H : 검색 다이얼로그(메서드, 타입, 패키지 등 검색 가능)
+Tab : 들여쓰기 (Shift + Tab : 내어쓰기)
+Ctrl + Space : 코드어시스트 (키보드 Type3를 쓸 경우에는 왼쪽 Ctrl을 누른 상태에서 오른쪽 Ctrl을 누르고 왼쪽 Ctrl을 뗀 후에(오른쪽 Ctrl은 누른 상태) Space를 눌러준다.)
+Shift + Alt + T : 리펙토링 메뉴 띄우기
+
+
+Navigation
+
+Ctrl + Shift + E : 에디터안에서 열린 파일간의 이동
+Ctrl + E : 에디터안에서 열린 파일간의 이동(작은 레이어로 뜬다.)
+Ctrl + F6 : 에디터안에 열링 파일간 이동하는데 F6누를때마다 하나씩 순차적으로 넘어감.
+Ctrl + E : 퀵 에디터간 이동
+Ctrl + F7 : 뷰간 전환
+Ctrl + F8 : 퍼스펙티브 간 전환
+F12 : 어디서든 에디터로 포커스 됨
+
+
+Information
+
+Ctrl + Shift + R : 리소스 찾기
+Ctrl + O : 레이어로 현재파일의 Outline 보여줌
+Ctrl + T : 레이어로 계층구조 보여줌
+Ctrl + Shift  + Space : 메서드의 괄호안에서 누르면 파라미터 타입 볼 수 있음.
+Ctrl + 1 : 에러난 곳(빨간 줄 표시)에서 누르면 레이어로 해결방법이 나옴.
+F3 : 해당 메서드나 클래스가 정의된 곳으로 이동
+Ctrl + Shift + G : 해당 메서드, 객체, 변수가 사용(호출)된 모든 곳을 찾는다.
+
+
+etc...
+
+Ctrl + Shift + L : 단축키 리스트
+Ctrl + 3 : Quick Access
+Ctrl + M : 화면 최대화
+Ctrl + W : 파일에디터 닫기
+Alt + Shift + X, R : Run on Server
+F11 or Ctrl + F11 : 최근 실행한 Run 실행
+
+
+▶ Ctrl + Shift + F ⇒ 자동 줄맞춤.
+▶ Ctrl + W ⇒ 창 끄기.
+▶ Ctrl + Shift + F4 ⇒ 모두 닫기.
+▶ Ctrl + Shift + L ⇒ 모든 단축키 보기.
+▶ Ctrl + 1 ⇒ 에러 자동 해결.
+▶ Ctrl + Spacebar ⇒ 문장 자동 완성.
+▶ Ctrl + L ⇒ 창에 숫자 입력->원하는 라인으로 이동.
+▶ Shift + Alt + R ⇒ 같은 이름 모두 바꾸기.
+▶ 블록지정 +Shift + Alt + Z ⇒　관련된 여러 가지 기능 문들 나옴.
+▶ Ctrl + Shift + F ⇒ 알아서 정렬.
+▶ Ctrl + Shift + / , \ ⇒ 블록 주석, 풀기.
+▶ Ctrl + O ⇒ 해당 소스의 메소드 리스트를 확인
+▶ Ctrl + T ⇒ 계층 구조 보기
+▶ Ctrl + / ⇒ 한줄 주석
+▶ Ctrl + D ⇒ 한줄 삭제
+▶ Ctrl + Alt + 방향키 ⇒ 아래나 위 로 하면 그줄이 복사가 된다.===== 에디터 변환 =====
+▶ 에디터가 여러 파일을 열어서 작업중일때 Ctrl + F6 키를 누르면 여러파일명이 나오고 F6키를 계속 누르면 아래로
+▶ Ctrl + Shift + F6 ⇒ 키를 누르면 위로 커서가 움직인다.
+▶ Ctrl + F6 ⇒ Tab기능(파일단위 이동).
+▶Ctrl + F7 ⇒ 뷰간 전환
+▶ Ctrl + F8 ⇒ 퍼스펙티브간 전환
+▶ F12 ⇒ 에디터로 포커스 위치 
+▶ Alt +방향키 ⇒ 소스코드 네비게이션(순서대로 나타나고 닫은창도 버퍼안 있으면 살아남)
+▶ Ctrl + F6 ⇒ 소스코드 네비게이션▶ Ctrl + F7 ⇒ 뷰간 네비게이션
+▶ Ctrl + F8 ⇒ 모드(Perspective)창 간의 네비게이션
+▶ Ctrl + 마우스커서(혹은 F3) ⇒ 클래스나 메소드 혹은 멤버를 상세하게 검색하고자 할때===== 실행 =====
+▶ Ctrl + F11 ⇒ 바로 전에 실행했던 클래스 실행.
+▶ Shift +Alt + X ⇒ 실행에 관련 된 단축키 나옴(A ⇒ 애플릿실행, R ⇒ 서버실행, J ⇒ 어플리케이션실행).
+▶ Ctrl +Alt +H ⇒ Call Hierarch.
+▶ Run - Run Configurations - Arguments tab - program arguments (매개변수 넣기)===== 문장 자동 기능 사용 시 키워드 =====
+▶ sysout ⇒ System.out.println()
+▶ try ⇒ try~catch문 완성.
+▶ for ⇒ for문 완성 배열에 관련된 변수가 조건문 알아서 들어감.
+▶ do ⇒ do~while문 완성.
+▶ while ⇒ while문 완성.===== 중요하진 않지만 알아두면 유용한 팁 =====
+▶ F2 ⇒ 컴파일 에러의 빨간줄에 커서를 갖져다가 이 키를 누르면 에러의 원인에 대한 힌트를 제공.
+▶ F4 ⇒ 클래스명을 선택하고 누르면 해당 클래스의 Hierarchy 를 볼 수 있다.
+▶ Ctrl + Shift + Space ⇒ 메소드의 가로안에 커서를 놓고 이 키를 누르면 파라미터 타입 힌트를 볼 수 있다.===== 문자열 찾기 =====
+▶ Ctrl + K ⇒ 찾고자 하는 문자열을 블럭으로 설정한 후 키를 누른다.
+▶ Ctrl + Shift + K ⇒ 역으로 찾고자 하는 문자열을 찾아감.
+▶ Ctrl + J ⇒ 입력하면서 찾을 수 있음.
+▶ Ctrl + Shift + J ⇒ 입력하면서 거꾸로 찾아갈 수 있음.
+▶ Ctrl + F ⇒ 기본적으로 찾기===== 이클립스 기본 설정 =====
+▶ Windows - Preferences - Java - Editor - Syntax Coloring - java==> - Keyword 'return' , Keywords excluding 'return' = (blue)- Classes - (red)
+▶Windows - Preferences - General - Appearance - Colors and Fonts - Basic -Text Font ->Tahoma,Verdana, 굵게, 크기12로 조정

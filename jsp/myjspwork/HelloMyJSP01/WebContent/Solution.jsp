@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="HiWorld">
+<!-- 생략시 get 방식 -->
+<form action="HiWorld" method="get">
 	<input type="submit" value="전송(안녕세상)">
 </form>
-<form action="Bye">
+<form action="Bye" method="post">
 	<input type="submit" value="전송(잘가)">
 	</form>
 	<% System.out.println("ㅎㅇㅎㅇ"); //그냥 자바코드, 이건 소스보기에서 안 보임 %>

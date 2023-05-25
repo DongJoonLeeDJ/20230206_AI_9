@@ -1,0 +1,3 @@
+create user tempUserDB@localhost identified by '1234';
+grant all privileges on `workjsp`.* to 'tempUserDB'@localhost with grant option;
+grant all on `workjsp`.* to 'tempUserDB'@localhost;

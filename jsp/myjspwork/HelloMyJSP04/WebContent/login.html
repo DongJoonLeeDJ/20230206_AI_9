@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function checkIt() {
+	if(!document.myForm.pw.value || !document.myForm.id.value) {
+		alert('id나 pw를 입력하지 않으셨어요')
+		document.myForm.id.focus()
+		return false //다음 페이지로 넘어가지 않음
+	}
+} //js나 jQ를 쓰기도 함. 
+</script>
+</head>
+<body>
+	<form action="LogInOk" name="myForm" method="post" 
+	onsubmit="return checkIt()">
+	ID : <input type="text" id="id" name="id"><br>
+	비번 : <input type="password" id="pw" name="pw"><br>
+	<input type="submit" value="로그인">
+	</form>
+</body>
+</html>
+
+
+
