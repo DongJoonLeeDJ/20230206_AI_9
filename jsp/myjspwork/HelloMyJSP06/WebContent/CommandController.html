@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="select.do">회원 전체 출력</a>
+<h1>회원 추가</h1>
+<form action="insert.do" method="post">
+	이름 : <input type="text" name="name"><br>
+	ID : <input type="text" name="id"><br>
+	PW : <input type="password" name="pw"><br>
+	<input type="submit" value="회원추가">
+</form>
+
+<h1>회원 수정</h1>
+<form action="update.do" method="post">
+	이름 : <input type="text" name="name"><br>
+	ID : <input type="text" name="id"><br>
+	PW : <input type="password" name="pw"><br>
+	<input type="submit" value="회원 수정">
+</form>
+
+<h1>회원 삭제</h1>
+<form action="delete.do" method="post">
+	ID : <input type="text" name="id"><br>
+	<input type="submit" value="회원  삭제">
+</form>
+
+
+<h1>로그인 test</h1>
+<form action="login.do" method="post">
+	ID : <input type="text" name="id"><br>
+	PW : <input type="password" name="pw"><br>
+	<input type="submit" value="확인해보기">
+</form>
+
+</body>
+</html>
+
