@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp03_Solve\bin\Debug\HelloCSharp03_Solve.exe.config
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp03_Solve\bin\Debug\HelloCSharp03_Solve.exe
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp03_Solve\bin\Debug\HelloCSharp03_Solve.pdb
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp03_Solve\obj\Debug\HelloCSharp03_Solve.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp03_Solve\obj\Debug\HelloCSharp03_Solve.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp03_Solve\obj\Debug\HelloCSharp03_Solve.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp03_Solve\obj\Debug\HelloCSharp03_Solve.exe
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp03_Solve\obj\Debug\HelloCSharp03_Solve.pdb

@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp\MyFirstConsole\bin\Debug\MyFirstConsole.exe.config
+D:\shareFolder\djCSharp\HelloCSharp\MyFirstConsole\bin\Debug\MyFirstConsole.exe
+D:\shareFolder\djCSharp\HelloCSharp\MyFirstConsole\bin\Debug\MyFirstConsole.pdb
+D:\shareFolder\djCSharp\HelloCSharp\MyFirstConsole\obj\Debug\MyFirstConsole.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp\MyFirstConsole\obj\Debug\MyFirstConsole.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp\MyFirstConsole\obj\Debug\MyFirstConsole.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp\MyFirstConsole\obj\Debug\MyFirstConsole.exe
+D:\shareFolder\djCSharp\HelloCSharp\MyFirstConsole\obj\Debug\MyFirstConsole.pdb

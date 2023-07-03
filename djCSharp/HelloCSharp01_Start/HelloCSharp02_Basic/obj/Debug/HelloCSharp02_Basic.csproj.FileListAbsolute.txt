@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp02_Basic\bin\Debug\HelloCSharp02_Basic.exe.config
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp02_Basic\bin\Debug\HelloCSharp02_Basic.exe
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp02_Basic\bin\Debug\HelloCSharp02_Basic.pdb
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp02_Basic\obj\Debug\HelloCSharp02_Basic.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp02_Basic\obj\Debug\HelloCSharp02_Basic.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp02_Basic\obj\Debug\HelloCSharp02_Basic.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp02_Basic\obj\Debug\HelloCSharp02_Basic.exe
+D:\shareFolder\djCSharp\HelloCSharp01_Start\HelloCSharp02_Basic\obj\Debug\HelloCSharp02_Basic.pdb
