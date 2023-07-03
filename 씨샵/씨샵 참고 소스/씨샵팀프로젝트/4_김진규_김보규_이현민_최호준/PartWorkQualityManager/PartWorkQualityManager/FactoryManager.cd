@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PartWorkQualityManager.DataManager" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAgEAgAEAAAEAIAQAAAAAQAAEAAABAAAAAAAABAAA=</HashCode>
+      <FileName>DataManager\DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.DBManager" Collapsed="true">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYQgEAAAAIAIEAIAAAAwAABAAFAAAAAQAAAAAQAAAA=</HashCode>
+      <FileName>DataManager\DBManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.JsonManager" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAgEAAAAAAAAAIAAAAAAAAAAFAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DataManager\JsonManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.CategoryDBHelper" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAABgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DB\CategoryDBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.DBHelper" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAoAAAAAAAAAAAAQAAAAAAAAAQgAAAAAAQCAAAAAAA=</HashCode>
+      <FileName>DB\DBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.FileImageDBHelper" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAABgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DB\FileImageDBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.PartDBHelper" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAABgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DB\PartDBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.PartWorkDBHelper" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAABgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DB\PartWorkDBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.QualityDBHelper" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAABgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DB\QualityDBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.Category" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAEAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Model\Category.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.318" Collapsed="true" />
+  </Class>
+  <Class Name="PartWorkQualityManager.FileImage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAEQAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Model\FileImage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PartWorkQualityManager.PartList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PartList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PartWorkQualityManager.PartWorkList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Model\PartWorkList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PartWorkQualityManager.QualityManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAgAAAAAAAAAAAAAAEEAAAAQACAAAAAAAgAA=</HashCode>
+      <FileName>Model\QualityManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PartWorkQualityManager.JsonNames" Collapsed="true">
+    <Position X="6.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKABACAAAEAAiAAAAANEAAAAkCQEAAAAAAgARAhQkEg=</HashCode>
+      <FileName>Names\JsonNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.TableNames" Collapsed="true">
+    <Position X="8.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAANAACACAAEhAAIAAIECAAAgkCAAAAAAIAQAAgAAEA=</HashCode>
+      <FileName>Names\TableNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.MainForm" Collapsed="true">
+    <Position X="12" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AjIEUNfBAmCEUAAhBAyAASQOAZQAoDAAZAEABIAAaog=</HashCode>
+      <FileName>ViewForms\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.Program" Collapsed="true">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.Forms.ChartForm" Collapsed="true">
+    <Position X="16.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAUABBACCEUAAABACAAABCABQAIBAAJAEABIEAQog=</HashCode>
+      <FileName>ViewForms\ChartForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.Forms.QualityDataForm" Collapsed="true">
+    <Position X="12" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAgSADAAJJBAAQGAQQBCIAAAeDAUCCAQAAAEAgg=</HashCode>
+      <FileName>ViewForms\QualityDataForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PartWorkQualityManager.Forms.TableColumnsManagerForm" Collapsed="true">
+    <Position X="14" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EQAAAAgAhCAAgDhAAhCIQUQSAggCIAAAQRAUqgAgBAA=</HashCode>
+      <FileName>ViewForms\TableColumnsManagerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PartWorkQualityManager.IManagerable" Collapsed="true">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IManagerable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PartWorkQualityManager.FileImages" Collapsed="true">
+    <Position X="6.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAQAABAAAA=</HashCode>
+      <FileName>Names\ColumnNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PartWorkQualityManager.Categories" Collapsed="true">
+    <Position X="4.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Names\ColumnNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PartWorkQualityManager.Qualities" Collapsed="true">
+    <Position X="10" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAEBAAAAAAEAAAAggAAAAAAAAAQAAgAAAA=</HashCode>
+      <FileName>Names\ColumnNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PartWorkQualityManager.Parts" Collapsed="true">
+    <Position X="8.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Names\ColumnNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PartWorkQualityManager.Works" Collapsed="true">
+    <Position X="4.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Names\ColumnNames.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

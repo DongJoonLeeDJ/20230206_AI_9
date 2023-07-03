@@ -1,0 +1,30 @@
+[2022-12-12 04:50:21.608]문자열이 유효한 DateTime으로 인식되지 않습니다.
+[2022-12-12 04:50:21.663]   위치: System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   위치: System.DateTime.Parse(String s)
+   위치: PartWorkQualityManager.JsonManager.Load(Dictionary`2 data) 파일 D:\Github\AI_BigData\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\DataManager\JsonManager.cs:줄 119
+[2022-12-12 04:52:49.721]문자열이 유효한 DateTime으로 인식되지 않습니다.
+[2022-12-12 04:52:49.721]   위치: System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   위치: System.DateTime.Parse(String s)
+   위치: PartWorkQualityManager.JsonManager.Load(Dictionary`2 data) 파일 D:\Github\AI_BigData\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\DataManager\JsonManager.cs:줄 119
+[2022-12-12 04:53:19.238]문자열이 유효한 DateTime으로 인식되지 않습니다.
+[2022-12-12 04:53:19.238]   위치: System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   위치: System.DateTime.Parse(String s)
+   위치: PartWorkQualityManager.JsonManager.Load(Dictionary`2 data) 파일 D:\Github\AI_BigData\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\DataManager\JsonManager.cs:줄 119
+[2022-12-12 05:09:48.296]ExecuteNonQuery: CommandText 속성이 초기화되지 않았습니다.
+[2022-12-12 05:09:48.326]   위치: System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   위치: System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   위치: System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   위치: PartWorkQualityManager.FileImageDBHelper.executeQuery(String command, String[] columns, Dictionary`2 data) 파일 D:\Github\AI_BigData\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\DB\FileImageDBHelper.cs:줄 105
+[2022-12-12 05:09:48.352]쿼리 실패
+[2022-12-12 05:13:48.893]이미지 로드 실패
+[2022-12-12 05:13:48.893]시퀀스에 일치하는 요소가 없습니다.
+[2022-12-12 05:13:48.908]   위치: System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate)
+   위치: PartWorkQualityManager.Forms.QualityDataForm..ctor(QualityManager q) 파일 D:\Github\AI_BigData\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\ViewForms\QualityDataForm.cs:줄 86
+[2022-12-12 14:59:31.921]이미지 로드 실패
+[2022-12-12 14:59:31.933]시퀀스에 일치하는 요소가 없습니다.
+[2022-12-12 14:59:32.425]   위치: System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate)
+   위치: PartWorkQualityManager.Forms.QualityDataForm..ctor(QualityManager q) 파일 D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\ViewForms\QualityDataForm.cs:줄 86
+[2022-12-12 15:01:18.352]이미지 로드 실패
+[2022-12-12 15:01:18.352]시퀀스에 일치하는 요소가 없습니다.
+[2022-12-12 15:01:18.352]   위치: System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate)
+   위치: PartWorkQualityManager.Forms.QualityDataForm..ctor(QualityManager q) 파일 D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\ViewForms\QualityDataForm.cs:줄 86

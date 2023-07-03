@@ -1,0 +1,17 @@
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\bin\Debug\PartWorkQualityManager.exe.config
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\bin\Debug\PartWorkQualityManager.exe
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\bin\Debug\PartWorkQualityManager.pdb
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.csproj.AssemblyReference.cache
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.csproj.SuggestedBindingRedirects.cache
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.Properties.Resources.resources
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.csproj.GenerateResource.cache
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.csproj.CoreCompileInputs.cache
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.exe
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.pdb
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\bin\Debug\Newtonsoft.Json.dll
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\bin\Debug\Newtonsoft.Json.xml
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.csproj.CopyComplete
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.Forms.QualityDataForm.resources
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.Forms.TableColumnsManagerForm.resources
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.Forms.ChartForm.resources
+D:\study\Xenoint_AI\AI_7차반\PartWorkQualityManager\PartWorkQualityManager\obj\Debug\PartWorkQualityManager.MainForm.resources

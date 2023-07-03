@@ -1,0 +1,12 @@
+use mydb;
+
+select parkingspot, drivername, pname from parkingmanager join Table_1 on parkingmanager.parkingspot=Table_1.parkingspot2; 
+
+
+select parkingspot, drivername, pname from parkingmanager left join Table_1 on parkingmanager.parkingspot=Table_1.parkingspot2; 
+
+
+select parkingspot, drivername, pname from parkingmanager right join Table_1 on parkingmanager.parkingspot=Table_1.parkingspot2; 
+
+
+-- 서로 참조는 하지만 독립되다. 이미지 데이터만 존재할 수도 있고 라벨링 데이터만 존재할 수도 있다

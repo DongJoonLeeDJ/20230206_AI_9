@@ -1,0 +1,101 @@
+{
+  "info": {
+    "contributor": "미래아이티컨소시엄",
+    "date_created": "2022-12-52 01:52:47.187588",
+    "name": "부품 품질 검사 영상 데이터(자동차)",
+    "description": "부품 품질 검사 영상 데이터(자동차)",
+    "version": "1.0",
+    "url": "miraeit.net/"
+  },
+  "images": [
+    {
+      "license": 1,
+      "file_name": "KakaoTalk_20221208_175359584.jpg",
+      "width": 4000,
+      "date_captured": "2022-12-11 01:52:25",
+      "id": 1,
+      "height": 3000
+    }
+  ],
+  "licenses": [
+    {
+      "name": "CC BY-NC",
+      "id": 1,
+      "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/"
+    }
+  ],
+  "categories": [
+    {
+      "supercategory": "자동차부품품질",
+      "id": 101,
+      "name": "스크래치"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 102,
+      "name": "외관 손상"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 201,
+      "name": "고정 불량"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 202,
+      "name": "고정핀 불량"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 203,
+      "name": "단차"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 204,
+      "name": "실링 불량"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 205,
+      "name": "연계 불량"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 207,
+      "name": "유격 불량"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 208,
+      "name": "장착 불량"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 209,
+      "name": "체결 불량"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 212,
+      "name": "헤밍 불량"
+    },
+    {
+      "supercategory": "자동차부품품질",
+      "id": 213,
+      "name": "홀 변형"
+    }
+  ],
+  "annotations": [
+    {
+      "category_id": 102,
+      "attributes": {
+        "work": "조립",
+        "part": "카울커버",
+        "quality": "양품"
+      },
+      "id": 1,
+      "image_id": 1
+    }
+  ]
+}

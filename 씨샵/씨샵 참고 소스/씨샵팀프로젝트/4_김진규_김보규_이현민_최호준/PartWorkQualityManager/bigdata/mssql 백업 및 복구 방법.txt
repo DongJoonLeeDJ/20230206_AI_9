@@ -1,0 +1,5 @@
+백업
+https://server-talk.tistory.com/129
+
+복구
+https://stackoverflow.com/questions/1535914/import-bak-file-to-a-database-in-sql-server
