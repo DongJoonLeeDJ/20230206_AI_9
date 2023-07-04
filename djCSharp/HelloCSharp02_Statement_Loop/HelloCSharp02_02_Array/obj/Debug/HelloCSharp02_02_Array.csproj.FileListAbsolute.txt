@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_02_Array\bin\Debug\HelloCSharp02_02_Array.exe.config
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_02_Array\bin\Debug\HelloCSharp02_02_Array.exe
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_02_Array\bin\Debug\HelloCSharp02_02_Array.pdb
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_02_Array\obj\Debug\HelloCSharp02_02_Array.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_02_Array\obj\Debug\HelloCSharp02_02_Array.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_02_Array\obj\Debug\HelloCSharp02_02_Array.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_02_Array\obj\Debug\HelloCSharp02_02_Array.exe
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_02_Array\obj\Debug\HelloCSharp02_02_Array.pdb

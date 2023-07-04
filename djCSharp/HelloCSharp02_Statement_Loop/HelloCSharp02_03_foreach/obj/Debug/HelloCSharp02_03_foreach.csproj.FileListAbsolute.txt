@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_03_foreach\bin\Debug\HelloCSharp02_03_foreach.exe.config
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_03_foreach\bin\Debug\HelloCSharp02_03_foreach.exe
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_03_foreach\bin\Debug\HelloCSharp02_03_foreach.pdb
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_03_foreach\obj\Debug\HelloCSharp02_03_foreach.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_03_foreach\obj\Debug\HelloCSharp02_03_foreach.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_03_foreach\obj\Debug\HelloCSharp02_03_foreach.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_03_foreach\obj\Debug\HelloCSharp02_03_foreach.exe
+D:\shareFolder\djCSharp\HelloCSharp02_Statement_Loop\HelloCSharp02_03_foreach\obj\Debug\HelloCSharp02_03_foreach.pdb
