@@ -1,0 +1,11 @@
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\bin\Debug\HelloCSharp04_03_ref_out.exe.config
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\bin\Debug\HelloCSharp04_03_ref_out.exe
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\bin\Debug\HelloCSharp04_03_ref_out.pdb
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\obj\Debug\HelloCSharp04_03_ref_out.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\obj\Debug\HelloCSharp04_03_ref_out.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\obj\Debug\HelloCSharp04_03_ref_out.Form1.resources
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\obj\Debug\HelloCSharp04_03_ref_out.Properties.Resources.resources
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\obj\Debug\HelloCSharp04_03_ref_out.csproj.GenerateResource.cache
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\obj\Debug\HelloCSharp04_03_ref_out.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\obj\Debug\HelloCSharp04_03_ref_out.exe
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_03_ref_out\obj\Debug\HelloCSharp04_03_ref_out.pdb

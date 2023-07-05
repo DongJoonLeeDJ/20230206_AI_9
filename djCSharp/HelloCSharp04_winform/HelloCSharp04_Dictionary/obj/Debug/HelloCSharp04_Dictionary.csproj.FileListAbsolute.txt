@@ -1,0 +1,11 @@
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\bin\Debug\HelloCSharp04_Dictionary.exe.config
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\bin\Debug\HelloCSharp04_Dictionary.exe
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\bin\Debug\HelloCSharp04_Dictionary.pdb
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\obj\Debug\HelloCSharp04_Dictionary.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\obj\Debug\HelloCSharp04_Dictionary.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\obj\Debug\HelloCSharp04_Dictionary.Form1.resources
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\obj\Debug\HelloCSharp04_Dictionary.Properties.Resources.resources
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\obj\Debug\HelloCSharp04_Dictionary.csproj.GenerateResource.cache
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\obj\Debug\HelloCSharp04_Dictionary.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\obj\Debug\HelloCSharp04_Dictionary.exe
+D:\shareFolder\djCSharp\HelloCSharp04_winform\HelloCSharp04_Dictionary\obj\Debug\HelloCSharp04_Dictionary.pdb
