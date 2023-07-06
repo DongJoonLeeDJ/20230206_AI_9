@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloCSharp05", "HelloCSharp05\HelloCSharp05.csproj", "{167CC715-0FDB-41FD-BC72-1026F93DFB31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloCSharp05_01_treasure", "HelloCSharp05_01_treasure\HelloCSharp05_01_treasure.csproj", "{3071EEEE-4757-403A-82C9-FBF10E04A357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloCSharp05_02_Basic_method", "HelloCSharp05_02_Basic_method\HelloCSharp05_02_Basic_method.csproj", "{27518FC5-7F72-4060-B090-E477082E8BAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloCSharp05_03_Inheritance", "HelloCSharp05_03_Inheritance\HelloCSharp05_03_Inheritance.csproj", "{95A9FA70-13C2-4117-9423-28FDFE1301AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloCSharp05_04_Inheri+winform", "HelloCSharp05_04_Inheri+winform\HelloCSharp05_04_Inheri+winform.csproj", "{EA88845A-9A8E-4829-8F66-7A000AF00CF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{167CC715-0FDB-41FD-BC72-1026F93DFB31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{167CC715-0FDB-41FD-BC72-1026F93DFB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{167CC715-0FDB-41FD-BC72-1026F93DFB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{167CC715-0FDB-41FD-BC72-1026F93DFB31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3071EEEE-4757-403A-82C9-FBF10E04A357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3071EEEE-4757-403A-82C9-FBF10E04A357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3071EEEE-4757-403A-82C9-FBF10E04A357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3071EEEE-4757-403A-82C9-FBF10E04A357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27518FC5-7F72-4060-B090-E477082E8BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27518FC5-7F72-4060-B090-E477082E8BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27518FC5-7F72-4060-B090-E477082E8BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27518FC5-7F72-4060-B090-E477082E8BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A9FA70-13C2-4117-9423-28FDFE1301AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A9FA70-13C2-4117-9423-28FDFE1301AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A9FA70-13C2-4117-9423-28FDFE1301AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A9FA70-13C2-4117-9423-28FDFE1301AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA88845A-9A8E-4829-8F66-7A000AF00CF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA88845A-9A8E-4829-8F66-7A000AF00CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA88845A-9A8E-4829-8F66-7A000AF00CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA88845A-9A8E-4829-8F66-7A000AF00CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC34A673-A05C-411F-95BE-03C12344F710}
+	EndGlobalSection
+EndGlobal

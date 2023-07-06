@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_03_Inheritance\bin\Debug\HelloCSharp05_03_Inheritance.exe.config
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_03_Inheritance\bin\Debug\HelloCSharp05_03_Inheritance.exe
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_03_Inheritance\bin\Debug\HelloCSharp05_03_Inheritance.pdb
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_03_Inheritance\obj\Debug\HelloCSharp05_03_Inheritance.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_03_Inheritance\obj\Debug\HelloCSharp05_03_Inheritance.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_03_Inheritance\obj\Debug\HelloCSharp05_03_Inheritance.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_03_Inheritance\obj\Debug\HelloCSharp05_03_Inheritance.exe
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_03_Inheritance\obj\Debug\HelloCSharp05_03_Inheritance.pdb

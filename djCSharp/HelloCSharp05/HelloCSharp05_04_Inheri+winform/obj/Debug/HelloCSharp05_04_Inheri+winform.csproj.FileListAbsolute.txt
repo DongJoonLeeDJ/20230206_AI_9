@@ -1,0 +1,12 @@
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\bin\Debug\HelloCSharp05_04_Inheri+winform.exe.config
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\bin\Debug\HelloCSharp05_04_Inheri+winform.exe
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\bin\Debug\HelloCSharp05_04_Inheri+winform.pdb
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri+winform.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri+winform.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri_winform.Form1.resources
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri_winform.Form2.resources
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri_winform.Properties.Resources.resources
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri+winform.csproj.GenerateResource.cache
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri+winform.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri+winform.exe
+D:\shareFolder\djCSharp\HelloCSharp05\HelloCSharp05_04_Inheri+winform\obj\Debug\HelloCSharp05_04_Inheri+winform.pdb
