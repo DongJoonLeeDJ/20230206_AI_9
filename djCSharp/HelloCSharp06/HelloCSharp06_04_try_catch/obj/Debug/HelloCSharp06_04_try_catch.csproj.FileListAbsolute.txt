@@ -1,0 +1,11 @@
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\bin\Debug\HelloCSharp06_04_try_catch.exe.config
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\bin\Debug\HelloCSharp06_04_try_catch.exe
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\bin\Debug\HelloCSharp06_04_try_catch.pdb
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\obj\Debug\HelloCSharp06_04_try_catch.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\obj\Debug\HelloCSharp06_04_try_catch.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\obj\Debug\HelloCSharp06_04_try_catch.Form1.resources
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\obj\Debug\HelloCSharp06_04_try_catch.Properties.Resources.resources
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\obj\Debug\HelloCSharp06_04_try_catch.csproj.GenerateResource.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\obj\Debug\HelloCSharp06_04_try_catch.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\obj\Debug\HelloCSharp06_04_try_catch.exe
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_04_try_catch\obj\Debug\HelloCSharp06_04_try_catch.pdb

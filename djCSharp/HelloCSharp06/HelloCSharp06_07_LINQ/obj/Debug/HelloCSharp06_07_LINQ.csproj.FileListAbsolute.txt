@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_07_LINQ\bin\Debug\HelloCSharp06_07_LINQ.exe.config
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_07_LINQ\bin\Debug\HelloCSharp06_07_LINQ.exe
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_07_LINQ\bin\Debug\HelloCSharp06_07_LINQ.pdb
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_07_LINQ\obj\Debug\HelloCSharp06_07_LINQ.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_07_LINQ\obj\Debug\HelloCSharp06_07_LINQ.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_07_LINQ\obj\Debug\HelloCSharp06_07_LINQ.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_07_LINQ\obj\Debug\HelloCSharp06_07_LINQ.exe
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_07_LINQ\obj\Debug\HelloCSharp06_07_LINQ.pdb

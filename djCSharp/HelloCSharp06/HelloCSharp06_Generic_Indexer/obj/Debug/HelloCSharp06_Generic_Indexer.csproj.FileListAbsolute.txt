@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_Generic_Indexer\bin\Debug\HelloCSharp06_Generic_Indexer.exe.config
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_Generic_Indexer\bin\Debug\HelloCSharp06_Generic_Indexer.exe
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_Generic_Indexer\bin\Debug\HelloCSharp06_Generic_Indexer.pdb
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_Generic_Indexer\obj\Debug\HelloCSharp06_Generic_Indexer.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_Generic_Indexer\obj\Debug\HelloCSharp06_Generic_Indexer.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_Generic_Indexer\obj\Debug\HelloCSharp06_Generic_Indexer.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_Generic_Indexer\obj\Debug\HelloCSharp06_Generic_Indexer.exe
+D:\shareFolder\djCSharp\HelloCSharp06\HelloCSharp06_Generic_Indexer\obj\Debug\HelloCSharp06_Generic_Indexer.pdb
