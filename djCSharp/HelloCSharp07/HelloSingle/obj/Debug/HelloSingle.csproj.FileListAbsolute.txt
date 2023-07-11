@@ -1,0 +1,8 @@
+D:\shareFolder\djCSharp\HelloCSharp07\HelloSingle\obj\Debug\HelloSingle.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp07\HelloSingle\obj\Debug\HelloSingle.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp07\HelloSingle\obj\Debug\HelloSingle.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp07\HelloSingle\bin\Debug\HelloSingle.exe.config
+D:\shareFolder\djCSharp\HelloCSharp07\HelloSingle\bin\Debug\HelloSingle.exe
+D:\shareFolder\djCSharp\HelloCSharp07\HelloSingle\bin\Debug\HelloSingle.pdb
+D:\shareFolder\djCSharp\HelloCSharp07\HelloSingle\obj\Debug\HelloSingle.exe
+D:\shareFolder\djCSharp\HelloCSharp07\HelloSingle\obj\Debug\HelloSingle.pdb

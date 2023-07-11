@@ -1,0 +1,14 @@
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\bin\Debug\HelloJsonAPI.exe.config
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\bin\Debug\HelloJsonAPI.exe
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\bin\Debug\HelloJsonAPI.pdb
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\bin\Debug\Newtonsoft.Json.dll
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\bin\Debug\Newtonsoft.Json.xml
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.Form1.resources
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.Properties.Resources.resources
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.csproj.GenerateResource.cache
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.csproj.CopyComplete
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.exe
+D:\shareFolder\djCSharp\HelloCSharp07\HelloJsonAPI\obj\Debug\HelloJsonAPI.pdb

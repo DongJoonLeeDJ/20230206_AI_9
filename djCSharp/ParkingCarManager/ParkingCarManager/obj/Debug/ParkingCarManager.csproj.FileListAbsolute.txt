@@ -1,0 +1,11 @@
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\bin\Debug\ParkingCarManager.exe.config
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\bin\Debug\ParkingCarManager.exe
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\bin\Debug\ParkingCarManager.pdb
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\obj\Debug\ParkingCarManager.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\obj\Debug\ParkingCarManager.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\obj\Debug\ParkingCarManager.Form1.resources
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\obj\Debug\ParkingCarManager.Properties.Resources.resources
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\obj\Debug\ParkingCarManager.csproj.GenerateResource.cache
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\obj\Debug\ParkingCarManager.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\obj\Debug\ParkingCarManager.exe
+D:\shareFolder\djCSharp\ParkingCarManager\ParkingCarManager\obj\Debug\ParkingCarManager.pdb

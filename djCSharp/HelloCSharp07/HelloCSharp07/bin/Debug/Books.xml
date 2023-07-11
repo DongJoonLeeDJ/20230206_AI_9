@@ -1,0 +1,42 @@
+<books>
+ <book>
+   <isbn>1234</isbn>
+   <name>이동준코딩</name>
+   <publisher>경북</publisher>
+   <page>99</page>
+   <borrowedAt>0001-01-01 오전 12:00:00</borrowedAt>
+   <isborrowed>0</isborrowed>
+   <userid></userid>
+   <username></username>
+ </book>
+ <book>
+   <isbn>12345</isbn>
+   <name>이동준코딩2</name>
+   <publisher>경북</publisher>
+   <page>37</page>
+   <borrowedAt>0001-01-01 오전 12:00:00</borrowedAt>
+   <isborrowed>0</isborrowed>
+   <userid></userid>
+   <username></username>
+ </book>
+ <book>
+   <isbn>a123</isbn>
+   <name>ABCD</name>
+   <publisher>영어책</publisher>
+   <page>93</page>
+   <borrowedAt>0001-01-01 오전 12:00:00</borrowedAt>
+   <isborrowed>0</isborrowed>
+   <userid></userid>
+   <username></username>
+ </book>
+ <book>
+   <isbn>오늘의 C#</isbn>
+   <name>C#컴퍼니</name>
+   <publisher>이동준출판사</publisher>
+   <page>195</page>
+   <borrowedAt>2023-07-11 오전 9:25:48</borrowedAt>
+   <isborrowed>1</isborrowed>
+   <userid>abcd</userid>
+   <username>임나현</username>
+ </book>
+</books>
