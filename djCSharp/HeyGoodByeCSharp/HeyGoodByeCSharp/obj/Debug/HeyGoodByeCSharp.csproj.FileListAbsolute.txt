@@ -1,0 +1,11 @@
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\bin\Debug\HeyGoodByeCSharp.exe.config
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\bin\Debug\HeyGoodByeCSharp.exe
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\bin\Debug\HeyGoodByeCSharp.pdb
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\obj\Debug\HeyGoodByeCSharp.csproj.AssemblyReference.cache
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\obj\Debug\HeyGoodByeCSharp.csproj.SuggestedBindingRedirects.cache
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\obj\Debug\HeyGoodByeCSharp.Form1.resources
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\obj\Debug\HeyGoodByeCSharp.Properties.Resources.resources
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\obj\Debug\HeyGoodByeCSharp.csproj.GenerateResource.cache
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\obj\Debug\HeyGoodByeCSharp.csproj.CoreCompileInputs.cache
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\obj\Debug\HeyGoodByeCSharp.exe
+D:\shareFolder\djCSharp\HeyGoodByeCSharp\HeyGoodByeCSharp\obj\Debug\HeyGoodByeCSharp.pdb
