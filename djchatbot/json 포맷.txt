@@ -1,0 +1,9 @@
+이미지랑 그림 동시에 띄우고 싶으면
+스킬쓰지 말아야 함
+스킬로는 어떻게 해야할지 모르겠다 ㅠㅠ
+
+
+https://i.kakao.com/docs/skill-response-format#skillpayload
+
+
+https://i.kakao.com/docs/tutorial-chatbot-response#%EB%A7%90%ED%92%8D%EC%84%A0-%ED%83%80%EC%9E%85%EB%B3%84-%EC%9D%91%EB%8B%B5-%EB%A7%8C%EB%93%A4%EA%B8%B0

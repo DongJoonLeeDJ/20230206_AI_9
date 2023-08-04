@@ -1,0 +1,23 @@
+@application.route("/animal",methods=['POST'])
+def animal():
+    req = request.get_json()
+    animal_type = req["action"]["detailParams"]["Animal_type"]["value"]
+    
+    print(req)
+    print(animal_type)
+    
+    answer = animal_type
+    
+    res = {
+        "version":"2.0",
+        "template": {
+            "outputs" : [
+                {
+                    "simpleText" : {
+                        "text" :answer
+                    }
+                }
+            ]
+        }
+    }
+    return jsonify(res)
