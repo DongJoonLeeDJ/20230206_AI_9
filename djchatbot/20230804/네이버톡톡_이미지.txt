@@ -1,0 +1,136 @@
+import requests, json
+from flask import Flask, request, jsonify,abort
+import urllib.request #json api 가져오기
+import sys
+application = Flask(__name__)
+
+
+@application.route("/")
+def hello():
+    return "<h1>Hello goorm!</h1>"
+
+@application.route("/a")
+def hello_a():
+    return "<h1 style='color:red'>Hello a!</h1>"
+
+@application.route("/animal",methods=['POST'])
+def animal():
+    req = request.get_json()
+    print(req)
+    animal_type = ""
+    try:
+        animal_type = req["action"]["detailParams"]["Animal_type"]["value"]
+    except:
+        animal_type = req["action"]["name"] +","+ req["userRequest"]["block"]["name"]
+    
+
+    print(animal_type)
+    
+    answer = animal_type
+    
+    res = {
+        "version":"2.0",
+        "template": {
+            "outputs" : [
+                {
+                    "simpleText" : {
+                        "text" :answer
+                    }
+                }
+            ]
+        }
+    }
+    return jsonify(res)
+
+@application.route("/mychatbot", methods=['POST'])
+def mychatbot():
+    authKey = '5YlPTtw4SrqjmQXLieja'
+    headers = {
+        'Content-type' : 'application/json;charset=UTF-8',
+        'Authorization' : authKey
+    }
+    
+    #입력받기
+    getReqJson = request.get_json()
+    userMsg = getReqJson['textContent']['text']
+    
+    user_key = request.get_json()['user'] #user 정보
+    
+    img = 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpuTfk%2Fbtsae6Rq8Jn%2F7x3Snt6lTLcXxqIBkkwOl1%2Fimg.jpg'
+    if userMsg == '쥐' or userMsg=='햄스터':
+        img = 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FqYaLm%2FbtsaPGYqtjz%2Ff9axLD4PHvdnwAWlMovNqK%2Fimg.png'
+    
+    data = {
+        'event' : 'send',
+        'user' : user_key,
+        "imageContent" : {
+            "imageUrl" : img
+        }
+        
+    }
+    
+    message = json.dumps(data)
+    response = requests.post('https://gw.talk.naver.com/chatbot/v1/event', 
+                            headers=headers, data=message)
+
+    
+    
+@application.route("/mylotto", methods=['POST'])
+def mylotto():
+    body = request.get_json() 
+    mymsg = body['userRequest']['utterance']
+    lottodata = ''
+    if mymsg.split()[0] == '로또':
+        url = 'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo='+\
+        mymsg.split()[1]
+        response = urllib.request.urlopen(url)
+        response_message = response.read().decode('utf8')
+        jresponse = json.loads(response_message)
+        
+        if jresponse['returnValue'] != 'success':
+            lottodata='잘못된 입력입니다.'
+        else:
+            lottodata = f"""
+            {jresponse['drwtNo1']} {jresponse['drwtNo2']} 
+            {jresponse['drwtNo3']} {jresponse['drwtNo4']} 
+            {jresponse['drwtNo5']} {jresponse['drwtNo6']} 
+            보너스 : {jresponse['bnusNo']}"""
+
+    else:
+        res = {
+            "version":"2.0",
+            "template": {
+                "outputs" : [
+                    {
+                        "simpleImage" : {
+                            "imageUrl" : 'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimage.fmkorea.com%2Ffiles%2Fattach%2Fnew3%2F20230316%2F486616%2F2779376928%2F5588440208%2F99b983892094b5c6d2fc3736e15da7d1.png&type=sc960_832',
+                            "altText" : "Hello"
+                        }
+                    }, 
+                    {
+                        'simpleText' : {
+                            'text' : '나도 모르겠다'
+                        }
+                    }
+                ]
+            }
+        }
+        return res
+    responseBody = {
+        "version" : "2.0",
+        "template" : {
+            "outputs" : [
+                {
+                    'simpleText' : {
+                        'text' : lottodata
+                    }
+                }
+            ]
+        }
+    }
+    return responseBody
+        
+                                          
+
+if __name__ == "__main__":
+    application.run(host='0.0.0.0', port=5000)
